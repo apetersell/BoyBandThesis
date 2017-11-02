@@ -1,0 +1,12 @@
+[
+	{
+		"title": "Start",
+		"tags": "",
+		"body": "<<move Aig StageLeft2>><<move Lee StageRight2>>\nLee: Hey Aigburth.\nAig: Yeah? What's up?\nLee: You seem to be working REALLY hard.\n->Of course!.\n    Aig: I sure have. Gotta make sure we're ready for this weekend, you know?\n    Lee: Well, yeah but...\n    Aig: But what?\n->Thanks!\n    Aig: Thanks! I'm just trying to keep up.\n    Lee: That's good, but...\n    Aig: But what?\n->Yeah, it's been hard.\n    Aig: Yeah.  It's been kind of rough, but I've been pulling through.\n    Lee: You sure?\n    Aig: Yeah, why?\nLee: It's just, you've got bags under your eyes.\nLee: Have you been getting enough sleep?\nAig: Uh, well...not really.\nLee: Practice is important, but make sure you rest too.\nLee: You're no use to anyone if you're just going to be sluggish on stage.\nAig: I guess you're right.\nLee: Go to sleep, ding dong.",
+		"position": {
+			"x": 540,
+			"y": 261
+		},
+		"colorID": 0
+	}
+]

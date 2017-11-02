@@ -1,0 +1,12 @@
+[
+	{
+		"title": "Start",
+		"tags": "",
+		"body": "<<move Aig StageLeft2>><<move Lee StageRight2>>\nLee: Aigburth, your singing has improved lately.\n->Thanks!\n    Aig: Oh, thanks!\n    You beam with pride.\n->I think it still needs work...\n    Aig: I think it still needs work.\n    Lee: That's a good attitude to have.\n    Lee: But just make sure not to work yourself too hard.\n    Aig: Okay!\n->Really?\n    Aig: Oh really?\n    Lee: Don't fish for more compliments, Aiggy. It's not attractive.",
+		"position": {
+			"x": 300,
+			"y": 260
+		},
+		"colorID": 0
+	}
+]

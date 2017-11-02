@@ -1,0 +1,12 @@
+[
+	{
+		"title": "Start",
+		"tags": "",
+		"body": "<<move Aig StageRight2>><<move Kent StageLeft2>>\nKent: Aig, I wanted to talk to you for a second.\n<<flip Aig>>\nAig: S-sure. What's up?\nKent: To be quite blunt, Aig, I'm not sure where you fit in this band.\nAig: What do you mean?\nKent: How do I put this.\nKent: When a fan looks at a Boy Band, they like to see strong, indetifiable personalities that are easy to connect with.\nKent: For instance, Jaypee is an unpredictable but charasmatic hearthrob with a bit of a wild side.\nKent: And Lee is the strong, sensitive leader who truly cares about the music.\nKent: Boom. Those right there are two big personalities that are easy to pick out of a line up.\nKent: But when I look at you, I don't see anything in particular. \nKent: To me, you're just...I don't know.  Some guy.\nAig: Just...some guy?\nKent: Exactly! You're...how do I put this...\nKent: You're handsome, but you're not gorgeous. \nKent: You're talented, but you're not a prodigy.\nKent: You're funny, but you're not hilarious.\nKent: You're nice, but you're not Ghandi.\nKent: Do you see what I'm saying?\n->Yeah.\n    Aig: Yeah...I think so.\n->Am I cute?\n    Aig: Well..am I cute?\n    Kent: Uh...\n    Kent: Well, yeah...\n    Kent: But you're not adorable.\n    Aig: Oh...\nKent: Look, Aig, you were able to coast through the Academy on you're mediocrity, but your career will die in the cradle if you don't start carving out a niche for yourself.\nKent: I want you to really focus on making yourself stand out.\nKent: If you want to succeed in this industry, you can't get away with being just a person any more. You have to be a personALITY. You get me?\nAig: Y-yeah. I get you.\nKent: Good! \n<<flip Kent>>\nKent: Now get back to work.\nAig: Yes, ma'am!\n<<move Kent OffStageLeft>><<move Aig CenterStage>>\nAig: Jesus.\n\n\n\n\n\n\n\n\n",
+		"position": {
+			"x": 543,
+			"y": 108
+		},
+		"colorID": 0
+	}
+]

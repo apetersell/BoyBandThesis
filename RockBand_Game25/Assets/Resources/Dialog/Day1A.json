@@ -1,0 +1,12 @@
+[
+	{
+		"title": "Start",
+		"tags": "",
+		"body": "<<move Aig StageLeft2>>\nAig: Man, one day down.\n<<move Jaypee StageRight2>>\nJ-Pe: Hey, Aig.\nAig: Oh, he J- Pe.\nJ-Pe: So I can't help but notice you've been putting a lot of time promoting yourself lately.\n->Yeah!\n    Aig: Yeah! It's fun!\n    J-Pe: A word of advice...\n->So what?\n    Aig: Uh, yeah. So what?\n    J-Pe: Oh, it's no big deal.\n->You threatened?\n    Aig: Are you feeling threatened, or something?\n    J-Pe: Please.\nJ-Pe: I just think it might be a better use of your time to spend it doing something else.\nJ-Pe: Dance practice maybe? Vocal training?\nJ-Pe: I mean, I think of think I'VE got promoting US covered.\nYou pick up one of the flyers on his bunk.\nAig: Uh, these flyers only have your face on them. And why does it say \"J-Pe and the Boys?\"\n<<move Jaypee StageLeft1>>\nHe snatches them from you.\nJ-Pe: I know what I'm doing! Clearly, YOU don't!.\n<<move Jaypee OffStageLeft>>\n<<flip Aig>>\nAig: Jesus. What's his problem?",
+		"position": {
+			"x": 540,
+			"y": 260
+		},
+		"colorID": 0
+	}
+]

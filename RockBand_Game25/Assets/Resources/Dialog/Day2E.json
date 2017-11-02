@@ -1,0 +1,12 @@
+[
+	{
+		"title": "Start",
+		"tags": "",
+		"body": "<<move Aig StageLeft2>><<move Jaypee StageRight2>>\nJ-Pe: Aig.\nAig: Yeah?\nJ-Pe: I know Lee talked to you about this yesterday, but really, you have to get your shit together.\nJ-Pe: Our debut concert is in TWO DAYS, and if you ruin this for m--US...I swear to god-\n->I'll work harder\n    Aig: I'll work harder, I swear!\n->Oopsy?\n    Aig:Uh...oopsy?\n    J-Pe: Seriously? That's all you have to say?\n    J-Pe: If this is you trying to brand yourself as \"the cute one\"...\n    J-Pe: NEWSFLASH--you won't even get to debut if you don't get your head in the game.\n->I do what I want.\n    Aig: I do what I want. I mean, I'm pretty sure I'm, like, the main character here, so...\n    J-Pe: Are you even listening to yourself? Are you really going to let years of training end like this?\nJ-Pe: PLEASE, Aig. I really need you to work harder. I don't want to have to debut without you.\nAig: Aw, that's so sweet--\nJ-Pe: I mean, can you imagine? If I have to debut as a DUO with LEE? Name one successful duo.\n<<flip Jaypee>>\nJ-Pe: GOD!\n<<move Jaypee OffStageRight>>\nAig:...or not.",
+		"position": {
+			"x": 540,
+			"y": 260
+		},
+		"colorID": 0
+	}
+]

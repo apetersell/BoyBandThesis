@@ -1,0 +1,12 @@
+[
+	{
+		"title": "Start",
+		"tags": "",
+		"body": "<<move Aig StageLeft2>><<move Lee StageRight2>>\nLee: Hey Aigburth.\nAig: Sup.\nLee: It seems like you're really working hard lately. Good job.\nAig: Yeah! Thanks!\nLee: But just a reminder, you shouldn't be neglecting the other parts of your training. \nLee: The company still wants us to be well-rounded, to an extent.\n->Ugh, really?\n    Aig: Ugh, really?\n->Sure thing.\n    Aig: Yeah, sure thing.\nLee: Yeah, it's kind of a pain. \nLee: You know that I'm no good at promoting myself, but I still gotta try.\nLee: Same goes for you--even if you don't think you're good at something, you should at least work on it a little.\nLee: They're not gonna take it easy on you just because you're the youngest, you know?\nAig: Yeah, yeah.",
+		"position": {
+			"x": 540,
+			"y": 260
+		},
+		"colorID": 0
+	}
+]

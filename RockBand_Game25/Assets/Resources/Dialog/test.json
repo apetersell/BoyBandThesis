@@ -1,0 +1,12 @@
+[
+	{
+		"title": "Start",
+		"tags": "",
+		"body": "Boy Band Academy Dormitories, Early Morning.\nAig: Alright man, get your shit together.\n<<move Aig in>>\nAig: Today's the big day! The day you finally get your big break!  \nAig: The day you finally make something out of your pathetic life!\nAig: The day you become...\nAig: ...\nAig: ...\nAig: ...\nAig: Man, I don't know, but...something.\nAig: Something great!\nAig: ...\nAig: ...or something.\nLee: Hey, Aig. Having a nice conversation with the mirror?\nAig: Lee?!\n<<move Lee in>>\nLee: Good morning.\nAig: H-how long have you been standing there!?\nLee: Long enough. Pretty much the whole time, actually.\nLee: You were really getting into it there, huh?\nAig: Oh man...so embarassing.\nLee: Ha ha! Relax, man! \nLee: I think it's actually pretty cute the way you psyche yourself up.\nAig: Is that...a good thing?\nLee: What, being cute?\nAig: Yeah.\nLee shrugs\nLee: Dunno. It is if you want it to be, I guess.\n->I can be cute.\n    Aig: I guess I can be the cute one, right?\n    Lee: Sure. It's an angle. \n    Lee: It'll get you pretty far in this business, that's for sure.\n    Aig: Hmmm. Maybe.\n    Aig: I guess so.\n->I don't want to be cute!\n    Aig: But I don't want to be cute!\n    Lee: Well, then stop talking to yourself in the mirror. It's too adorable.\n    Aig: Ha ha! Yeah I guess so.",
+		"position": {
+			"x": 543,
+			"y": 106
+		},
+		"colorID": 0
+	}
+]

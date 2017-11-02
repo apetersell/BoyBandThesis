@@ -1,0 +1,12 @@
+[
+	{
+		"title": "Start",
+		"tags": "",
+		"body": "<<move Lee StageRight2>><<move Aig StageLeft2>>\nLee: Hey Aigburth, you got a minute?\nAig: Yeah!\nLee: Listen, I think you might need to work a little harder.\nLee: Our debut is coming up soon, and it doesn't seem like you're putting in as much effort as you should be in your training...\n->I'll work harder.\n    Aig: I know. I'll do my best starting tomorrow!\n    Lee: Okay. As long as you're taking it seriously.\n->It was just a bad day.\n    Aig: Yeah...it was just a bad day for me.\n    Lee: I get that, but this is a crucial time for us.\n    Lee: There's a lot riding on this debut concert.\n    Aig: Okay.\n->I do what a want.\n    Aig: I do what I want! Besides, I fully intend to just coast through life on my good looks alone.\n    Lee: Hey! Do you know how many boy bands there are? Do you know how many of them are just as, if not MORE good-looking than us?\n    Lee: Besides, if you want to capatalize on your looks, you should at least put effort into it. Do you think I haven't noticed you skimping on your skincare routine.\n    Aig: What? I slap on some face cream like, once a week.  That's enough, right?\n    <<flip Lee>>\n    Lee shudders visibly.\n    <<flip Lee>>\n    Lee: We'll talk about...THAT...another time.\nLee: We need to work hard--for ourselves, and for...\nHis sentence trails off there, but you know who he's talking about.\n<<flip Lee>>\nThe two of you glance at the top right bunk, empty save for a wreath and several candles.\n",
+		"position": {
+			"x": 300,
+			"y": 260
+		},
+		"colorID": 0
+	}
+]

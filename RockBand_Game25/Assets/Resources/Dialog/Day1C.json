@@ -1,0 +1,12 @@
+[
+	{
+		"title": "Start",
+		"tags": "",
+		"body": "<<move Jaypee StageRight2>><<move Aig StageLeft2>>\nJ-Pe: Hey Aig.\nAig: Oh, hey J-Pe.\nJ-Pe: You've been taking dance practice seriously lately, huh?\n->It's fun!\n    Aig: Yeah, it's fun!\n    J-Pe: Well, keep up the good work.\n    Aig: Thanks!\n->I could be better...\n    Aig: Ah, I could be better...\n    J-Pe: Oh, don't be so hard on yourself.\n->I've always taken it seriously.\n    Aig: Well, I've always taken it seriously.\n    J-Pe: Oh, that's right, you got recruited through a dance audition, right?\n    Aig: Yeah, way back when...\n    J-Pe: Man, that was a few years ago now, wasn't it?\nJ-Pe: I still can't believe we're finally about to make our debut soon. Exciting, isn't it.\nAig: Yeah! I'm just glad to be with my two best bros for it.\nAs you say this, your gaze flickers up to the empty fourth bed in your dormitory for a second.\nYou try your best to put the lingering feeling of guilt out of your head.\n    ",
+		"position": {
+			"x": 540,
+			"y": 260
+		},
+		"colorID": 0
+	}
+]

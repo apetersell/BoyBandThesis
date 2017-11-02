@@ -1,0 +1,579 @@
+title: ConvergeStart
+tags: 
+colorID: 0
+position: 743,-2005
+---
+<<set p1_canSee to true>>
+<<set p2_canSee to true>>
+Shiki: Joshua! Hey, Hey Joshua!
+<<set p1_canSee to false>>
+Joshua: *ugh, this bitch*
+-> Hello, Shiki.
+    <<set p1_canSee to true>>
+    Joshua: Salutations, Shiki.
+    Shiki: Oh, uh, salutations.
+    Joshua: What can I do for you?
+    <<Set p2_canSee to false>>
+-> What do you want?
+    *sigh*
+    <<Set p1_canSee to true>>
+    Joshua: What do you want, Shiki?
+    <<Set p2_canSee to false>>
+    Shiki: *jeez, what's his problem*
+Shiki: *ah! Focus, Shiki! You're going to have to talk to him about prom eventually!*
+[[How are you?|1]]
+[[I wanted to talk to you about the prom.|2]]
+   
+
+
+
+===
+title: 1
+tags: 
+colorID: 0
+position: 494,-1750
+---
+*Just....maybe not yet.*
+<<set p2_canSee to true>>
+Shiki: Oh! Uh, nothing! Nothing in particular! Just, uh...how are you...doing?
+<<set p1_canSee to false>>
+*Weird*
+-> Never better.
+    <<set p1_canSee to true>>
+    Joshua: Dandy. Thanks for asking.
+    Shiki: Awesome! Ha ha! That's great!
+    Joshua: Yeah.
+    Shiki: Yeah!
+    Joshua: ...
+    Shiki: ...
+-> Fine I guess.
+    <<set p1_canSee to true>>
+    Joshua: I'm...fine.
+    Shiki: Oh! Haha! Just fine?
+    Joshua: Yup. Just okay.
+    Shiki: Well, thats...okay then! Haha! Right?
+    Joshua: Riiiight.
+<<set p2_canSee to false>>
+*Gah! You stupid idiot! Stop being awkward!*
+<<set p1_canSee to false>>
+<<set P2_canSee to true>>>
+*Jesus, Shiki's alway's been sort of...kooky...but this is some next level weirdo shit.
+[[Is that all you wanted to say?|11]]
+[[What's wrong with you?|12]]
+
+
+
+    
+
+===
+title: 11
+tags: 
+colorID: 1
+position: 225,-1493
+---
+<<set p1_canSee to true>>
+Joshua: Is that it? You just wanted to ask how I'm doing?
+Shiki: Oh, uh...
+<<set p2_canSee to false>>
+[[I wanted ask about prom|2]]
+[[Yup, that's it! (lie)|112]]
+===
+title: 2
+tags: 
+colorID: 6
+position: 988,-1766
+---
+<<set p2_canSee to true>>
+Shiki: Um...actually I wanted to talk to you about...the prom?
+<<set p1_canSee to false>>
+[[Are you asking me to the prom?|21]]
+[[Go on.|22]]
+
+
+===
+title: 112
+tags: 
+colorID: 0
+position: -123,-1478
+---
+<<set p2_canSee to true>>
+Shiki: HAHA! Yup! That's it!
+Joshua: ...
+Shiki: ...
+Joshua: Right. 
+Shiki: Yup.
+Joshua: I guess I'll see you around then.
+Shiki. Yup.
+Joshua: Cheers.
+Shiki: Bye!
+<<set p1_canSee to false>>
+*That was...weird.*
+<<set p2_canSee to false>>
+<<set p1_canSee to true>> 
+*GOD! I'M SUCH AN IDIOT!!!*
+<<set the_end to true>>
+===
+title: Node16
+tags: 
+colorID: 0
+position: -2541,1605
+---
+Empty Text
+===
+title: Node17
+tags: 
+colorID: 0
+position: -1631,1630
+---
+Empty Text
+===
+title: Node18
+tags: 
+colorID: 0
+position: -692,1656
+---
+Empty Text
+===
+title: Node23
+tags: 
+colorID: 0
+position: 206,1664
+---
+Empty Text
+===
+title: Node25
+tags: 
+colorID: 6
+position: -2657,1820
+---
+Empty Text
+===
+title: Node26
+tags: 
+colorID: 0
+position: -2911,2053
+---
+Empty Text
+===
+title: Node27
+tags: 
+colorID: 0
+position: -2696,2050
+---
+Empty Text
+===
+title: Node28
+tags: 
+colorID: 0
+position: -2397,1824
+---
+Empty Text
+===
+title: Node29
+tags: 
+colorID: 0
+position: -2413,2057
+---
+Empty Text
+===
+title: Node30
+tags: 
+colorID: 0
+position: -2191,2057
+---
+Empty Text
+===
+title: Node31
+tags: 
+colorID: 0
+position: -1757,1855
+---
+Empty Text
+===
+title: Node32
+tags: 
+colorID: 0
+position: -1498,1855
+---
+Empty Text
+===
+title: Node33
+tags: 
+colorID: 0
+position: -1753,2058
+---
+Empty Text
+===
+title: Node34
+tags: 
+colorID: 0
+position: -1953,2058
+---
+Empty Text
+===
+title: Node35
+tags: 
+colorID: 0
+position: -1495,2057
+---
+Empty Text
+===
+title: Node36
+tags: 
+colorID: 0
+position: -1292,2058
+---
+Empty Text
+===
+title: Node37
+tags: 
+colorID: 0
+position: -852,1859
+---
+Empty Text
+===
+title: Node38
+tags: 
+colorID: 0
+position: -548,1859
+---
+Empty Text
+===
+title: Node39
+tags: 
+colorID: 0
+position: -1048,2055
+---
+Empty Text
+===
+title: Node40
+tags: 
+colorID: 0
+position: -850,2054
+---
+Empty Text
+===
+title: Node41
+tags: 
+colorID: 0
+position: -547,2056
+---
+Empty Text
+===
+title: Node42
+tags: 
+colorID: 0
+position: -350,2056
+---
+Empty Text
+===
+title: Node43
+tags: 
+colorID: 0
+position: 70,1868
+---
+Empty Text
+===
+title: Node44
+tags: 
+colorID: 0
+position: 338,1868
+---
+Empty Text
+===
+title: Node45
+tags: 
+colorID: 0
+position: -124,2061
+---
+Empty Text
+===
+title: Node46
+tags: 
+colorID: 0
+position: 73,2061
+---
+Empty Text
+===
+title: Node47
+tags: 
+colorID: 0
+position: 334,2061
+---
+Empty Text
+===
+title: Node48
+tags: 
+colorID: 0
+position: 536,2061
+---
+Empty Text
+===
+title: Node49
+tags: 
+colorID: 0
+position: 1274,1653
+---
+Empty Text
+===
+title: Node50
+tags: 
+colorID: 0
+position: 1400,1854
+---
+Empty Text
+===
+title: Node51
+tags: 
+colorID: 0
+position: 1126,1854
+---
+Empty Text
+===
+title: Node52
+tags: 
+colorID: 0
+position: 963,2054
+---
+Empty Text
+===
+title: Node53
+tags: 
+colorID: 0
+position: 1614,2053
+---
+Empty Text
+===
+title: Node54
+tags: 
+colorID: 0
+position: 1407,2054
+---
+Empty Text
+===
+title: Node55
+tags: 
+colorID: 0
+position: 1148,2054
+---
+Empty Text
+===
+title: Node56
+tags: 
+colorID: 0
+position: 1902,2053
+---
+Empty Text
+===
+title: Node57
+tags: 
+colorID: 0
+position: 2556,2054
+---
+Empty Text
+===
+title: Node58
+tags: 
+colorID: 0
+position: 2355,2054
+---
+Empty Text
+===
+title: Node59
+tags: 
+colorID: 0
+position: 2347,1854
+---
+Empty Text
+===
+title: Node60
+tags: 
+colorID: 0
+position: 2103,2061
+---
+Empty Text
+===
+title: Node61
+tags: 
+colorID: 0
+position: 2103,1861
+---
+Empty Text
+===
+title: Node62
+tags: 
+colorID: 0
+position: 2215,1654
+---
+Empty Text
+===
+title: Node65
+tags: 
+colorID: 0
+position: 2836,2054
+---
+Empty Text
+===
+title: Node66
+tags: 
+colorID: 0
+position: 2985,1847
+---
+Empty Text
+===
+title: Node68
+tags: 
+colorID: 0
+position: 3015,2047
+---
+Empty Text
+===
+title: 12
+tags: 
+colorID: 0
+position: 541,-1507
+---
+<<set p1_canSee to true>>
+Joshua: So...is there any particular reason you're acting weird, or...
+<<set p2_canSee to false>>
+[[It's about the prom.|2]]
+[[I'm not being weird!|121]]
+					
+===
+title: 21
+tags: 
+colorID: 1
+position: 929,-1406
+---
+Empty Text
+===
+title: 22
+tags: 
+colorID: 0
+position: 1198,-1405
+---
+Empty Text
+===
+title: 121
+tags: 
+colorID: 0
+position: 372,-1215
+---
+<<set p2_canSee to true>>
+Shiki: No! What? No! I'm fine! Everything's...fine.  I don't think I'm being wierd! Am I being weird?
+<<set p1_canSee to false>>
+-> Yes you are.
+    *Jesus Christ*
+    <<set p1_canSee to true>>
+    Joshua: Yeah. Absolutely. This has not been a normal conversation so far.  You ddo realize that, don't you?
+    <<set p2_canSee to false>>
+    [[Well, you don't have to be a jerk about it|1111]]
+    [[I guess you're right|1112]]
+-> I guess not.
+    <<set p1_canSee to true>>
+    Joshua: Well, not any more than usual I guess.
+    Shiki: Haha! Yeah...
+    <<set p2_canSee to false>>
+    *Holy shit, I'm awkward.  Quick Shiki! Change the subject.*
+    [[So, are you excited about the prom?|1113]]
+    [[I have to go.|1114]]
+===
+title: 1111
+tags: 
+colorID: 0
+position: 132,-955
+---
+<<set p2_canSee to true>>
+Shiki: Well Jesus! You don't have to be such a dick about it!
+-> I'm not a dick.
+    Joshua: Not being a dick, sweetheart, I just calling them like I see them.
+    Shiki: You can't just SAY you're not a dick! That's not how that works!
+    Joshua: Right, so now I'm supposed to take social ediquette advice from Little Miss "No! What? No! I'm not wierd, am I"?
+-> I'm afraid I must be.
+    Joshua: I'm afraid I must be. It seems to be the only way to get through to people like you.
+<<set p2_canSee to false>>
+*Asshole!*
+<<set p1_canSee to false>>
+<<set p2_canSee to true>>
+*Dumb ass.*
+<<set p1_canSee to true>> 
+Shiki: Christ! I was just trying to be nice!
+Joshua: Well, swing and a miss on that one.
+Shiki: I'm leaving!
+Joshua: Byeeeee!
+<<set the_end to true>>
+===
+title: 1112
+tags: 
+colorID: 0
+position: 347,-954
+---
+*Oh my god, you awkward piece of shit*
+<<set p2_canSee to true>>
+Shiki: Oh...haha! You're right. I guess this has not been a very normal conversation. 
+<<set p1_canSee to false>>
+-> Would you like to try again?
+    <<set p1_canSee to true>>
+    Joshua: Would you like to try again?
+    <<set p2_canSee to false>>
+    [[Yes|11121]]
+    [[No|111211]]
+-> Welp, I gotta go.
+    <<set p1_canSee to true>>
+    Joshua: Well, as...riveting...as this has been, I'm afraid I must be going.
+    Shiki: Oh! Yeah, of course! Uh...don't let me keep you!
+    Joshua: I won't!
+    Shiki: See you later!.
+    Joshua: Ta ta!
+    <<set the_end_ to false>> 
+
+===
+title: 1113
+tags: 
+colorID: 0
+position: 568,-956
+---
+Empty Text
+===
+title: 1114
+tags: 
+colorID: 0
+position: 793,-959
+---
+Empty Text
+===
+title: 11121
+tags: 
+colorID: 0
+position: 170,-640
+---
+<<set p2_canSee to true>>
+Shiki: I...uh.  Yes, please.
+Joshua: Good! Right then. 
+<<set p1_canSee to false>>
+*Like talking to a fucking child*
+<<set p1_canSee to true>>
+Joshua: *ahem* Hello, Shiki. How are you today!
+Shiki: I'm...fine. Thanks.
+Joshua: Is there something you wanted to talk to me about?
+<<set p2_canSee to false>>
+[[I wanted to talk to you about the prom.|2]]
+[[Not really.|111211]]
+===
+title: 111211
+tags: 
+colorID: 0
+position: 362,-360
+---
+<<set p2_canSee to true>>
+Shiki: I, uh...no not really.
+Joshua: Splendid! Than is it okay if I leave?
+Shiki: Y-yeah.  Sorry.
+Joshua: Not to worry my dear. These things happen.
+<<set p1_canSee to false>>
+*Well, this has been a colossal waste of time.*
+<<set p2_canSee to false>>
+<<set p1_canSee to true>>
+*STUPID! STUPID IDIOT!*
+<<set the_end to true>>
+===

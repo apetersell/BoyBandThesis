@@ -1,0 +1,12 @@
+[
+	{
+		"title": "Start",
+		"tags": "",
+		"body": "<<flip Aig>><<move Aig StageRight2>><<move Lee StageRight1>><<move Jaypee CenterStage>><<move Kent StageLeft2>>\nKent: Alright boys, let's get down to business.\nKent: As you know, we've spent the last few months preparing for your big debut this weekend.\nKent: Don't worry, I've taken care of everything. \nAig: So what should WE do?\nKent: Whatever you want.\nKent: From now on, I leave it to you to determine your own schedules.\nKent: However, I suggest you use the next three days wisely.\nKent: Don't neglect practice. You boys have talent, but you could still brush up your vocals and choreography.\nKent: You could also spend some time doing a little self-promoting. \nKent: But most importantly, make sure you're rested for the show.  I don't want you guys running around town all week just to collapse on stage.\nLee: Of course.\nJ-Pe: Got it.\nKent: Aig, did you get all that?\n->Yes!\n    Aig: Yup! I'm ready!\n    Kent: Good. Now I all want you to schedule your time carefully.\n->So, I can do whatever I want?\n    Aig: So I can set up my daily schedule however I want?\n    Kent: Yes. It's entirely up to you. But I suggest you plan carefully.\nKent: Let's get to work.\n<<move Jaypee OffStageRight>><<move Lee OffStageRight>><<move Aig Center Stage>><<move Kent OffStageLeft>>\nAig: Oh, man...I better plan my week.\n<<move Aig OffStageRight>>\n\n\n\n\n\n\n\n\n",
+		"position": {
+			"x": 538,
+			"y": 106
+		},
+		"colorID": 0
+	}
+]

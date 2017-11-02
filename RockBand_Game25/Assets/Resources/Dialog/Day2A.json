@@ -1,0 +1,12 @@
+[
+	{
+		"title": "Start",
+		"tags": "",
+		"body": "<<move Aig StageLeft2>><<move Jaypee StageRight2>>\nJ-Pe: Aig, we need to talk.\nAig: Okay.\nJ-Pe: It seems like you're spending all your time promoting yourself lately...\n->I'm promoting US!\n    Aig: I'm just trying to promote us! Like, as a group!\n    J-Pe: Listen, a new group like us, we have to launch ourselves slowly. It's easier just to have one face out there, for now.\n->Yeah?\n    Aig: Yeah, so what?\n    J-Pe: Ugh! Do you have any idea-\n->I do what I want\n    Aig: I do what I want. You're not my manager.\nJ-Pe: We're a TEAM, Aig. And being in this team means I handle this sort of thing. I'm better at it anyway.\nOnce again, you grab a flyer off his bunk.\nAig: This doesn't even say \"J-Pe and the Boys\" on it anymore--which, by the way is not even the name of the group.\nAig: This is just a photo of you!\nJ-Pe: Aiggy, I know what I'm doing.  Trust me! Teamwork makes the dream work!\n<<move Jaypee StageRight1>>\nJ-Pe: I don't suppose you want to end up like...HIM, do you?\n<<flip Jaypee>>\nYour gaze lingers briefly on the wreath and candles--the only things you have to remember the bed's previous occupant by.\nAig: Um...no...?\n<<flip Jaypee>>\nJ-Pe: Yeah, that's what I thought.\n",
+		"position": {
+			"x": 540,
+			"y": 110
+		},
+		"colorID": 0
+	}
+]
