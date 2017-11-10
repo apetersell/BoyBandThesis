@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Beat;
 using UnityEngine;
 using UnityEngine.UI; 
 using UnityEngine.SceneManagement; 
@@ -35,11 +36,15 @@ public class GameManager : MonoBehaviour {
 	ScoreManager sm;
 	GlobalManager globe;
 	int bandPose;
+   Beat.Clock clock;
 
 
 	void Awake () 
 	{
-		maxTimer = firstSpeed;
+	   clock = Clock.Instance;
+      clock.SetBPM(100);
+      maxTimer = clock.MeasureLength();
+
 		if (!IsValidBag())  
 		{
 			poseBag = new ShuffleBag<Sprite> (); 
@@ -62,6 +67,7 @@ public class GameManager : MonoBehaviour {
 		goodBad = GameObject.Find ("GoodBad").GetComponent<Image> ();
 		endText = GameObject.Find ("EndText");
 		scoreBoard = GameObject.Find ("ScoreBoard");
+	   
 		for (int i = 0; i < bandMates.Length; i++) 
 		{
 			bandMates[i] = GameObject.Find("BandMate_" + i).GetComponent<Image>();
@@ -174,11 +180,12 @@ public class GameManager : MonoBehaviour {
 	void SpeedUp ()
 	{
 		if (gameTimer > firstSpeedUp) {
-			maxTimer = firstSpeed;
+			maxTimer = clock.HalfLength();
 		} else if (gameTimer <= firstSpeedUp && gameTimer > secondSpeedUp) {
-			maxTimer = secondSpeed;
-		} else {
-			maxTimer = thirdSpeed;
+			maxTimer = clock.QuarterLength();
+		} else
+		{
+		   maxTimer = clock.MeasureLength();
 		}
 
 		if (gameTimer <= firstSpeedUp + 1 && gameTimer > firstSpeedUp) 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Beat;
 using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour {
@@ -30,7 +31,7 @@ public class ScoreManager : MonoBehaviour {
 	GameObject scoreBoard;
 	GlobalManager globe;
 	AudioSource auds;
-
+   private Clock clock;
 
 	void Awake ()
 	{
@@ -77,20 +78,24 @@ public class ScoreManager : MonoBehaviour {
 			{
 				inARow++;
 				hits++;
-				auds.PlayOneShot (hitSound);
+			   auds.clip = hitSound;
+			   auds.PlayScheduled(clock.AtNextSixteenth());
 			}
 			if (inARow == firstMulti) 
 			{
-				auds.PlayOneShot (smallCheer);
+			   auds.clip = smallCheer;
+			   auds.PlayScheduled(clock.AtNextSixteenth());
 			}
 			if (inARow == secondMulti) 
 			{
-				auds.PlayOneShot (midCheer);
+			   auds.clip = midCheer;
+			   auds.PlayScheduled(clock.AtNextSixteenth());
 			}
 			if (inARow == thirdMulti) 
 			{
-				auds.PlayOneShot (bigCheer);
-			}
+			   auds.clip = bigCheer;
+			   auds.PlayScheduled(clock.AtNextSixteenth());
+         }
 		} 
 		else 
 		{
