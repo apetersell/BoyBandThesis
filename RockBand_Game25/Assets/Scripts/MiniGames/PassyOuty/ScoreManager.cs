@@ -35,6 +35,7 @@ public class ScoreManager : MonoBehaviour {
 
 	void Awake ()
 	{
+	   clock = Clock.Instance;
 		gameTimer = gameTimerMax;
 	}
 

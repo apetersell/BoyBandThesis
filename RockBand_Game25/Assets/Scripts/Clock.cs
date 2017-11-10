@@ -138,7 +138,7 @@ namespace Beat
       void Awake()
       {
          if (BPM.Equals(0.0)) Debug.LogWarning("_bpm not set! Please set the _bpm in the Beat Clock.");
-         //DontDestroyOnLoad(this);
+         DontDestroyOnLoad(this);
          Application.runInBackground = true;
 
       }

@@ -14,8 +14,8 @@ public class Dream : MonoBehaviour {
 		dir.Normalize();
 		transform.localScale = 0.1f*Vector3.one;
 		//GetComponent<SpriteRenderer>().DOFade(0,0f);
-		transform.DOScale(Vector3.one,0.5f);
-		GetComponent<SpriteRenderer>().DOFade(1,1f).OnComplete(fadeInComplete);
+		transform.DOScale(Vector3.one, Beat.Clock.Instance.MeasureLength());
+		GetComponent<SpriteRenderer>().DOFade(1, Beat.Clock.Instance.MeasureLength()).OnComplete(fadeInComplete);
 	}
 
 	void fadeInComplete(){
@@ -42,8 +42,8 @@ public class Dream : MonoBehaviour {
 		if(other.name.Equals("PlayerHead")){
 			//isFadeIn = false;
 			speed*=1.5f;
-			transform.DOScale(Vector3.one*0.3f,1f).OnComplete(AbsorbComplete);
-			transform.GetComponent<SpriteRenderer>().DOFade(0.3f,0.8f);
+			transform.DOScale(Vector3.one*0.3f, Beat.Clock.Instance.MeasureLength()).OnComplete(AbsorbComplete);
+			transform.GetComponent<SpriteRenderer>().DOFade(0.3f, Beat.Clock.Instance.HalfLength());
 		}else if(other.name.Equals("ZBullet")){
 			Destroy(gameObject);
 		}

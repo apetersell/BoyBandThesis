@@ -24,6 +24,8 @@ public class BulletZEmitter : MonoBehaviour {
 	//int currentAimIndex;
 	// Use this for initialization
 	void Start () {
+
+      Beat.Clock.Instance.SetBPM(120);
 		radius = GetComponent<CircleCollider2D>().radius + bulletZ.GetComponent<BoxCollider2D>().bounds.size.magnitude;
 
 		gm = FindObjectOfType(typeof(GlobalManager)) as GlobalManager;

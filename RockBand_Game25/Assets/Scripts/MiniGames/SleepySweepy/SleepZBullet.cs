@@ -11,6 +11,7 @@ public class SleepZBullet : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		transform.localScale = Vector3.one*0.5f;
+	   destroyTime = Beat.Clock.Instance.MeasureLength() + Beat.Clock.Instance.HalfLength();
 	}
 	
 	// Update is called once per frame
