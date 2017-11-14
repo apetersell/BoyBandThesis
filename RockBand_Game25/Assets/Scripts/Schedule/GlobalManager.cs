@@ -16,6 +16,7 @@ public class GlobalManager :  Singleton<GlobalManager>{
 	public List<string> scenesVisited = new List<string>(); 
 
 	public float DanceScore = 0,VocalScore = 0,PRScore = 0 ,Stress = 0;
+	public float stressMultiplier;
 	public int scheduleSettledCount; 
 	public string upNext;
 
@@ -97,7 +98,7 @@ public class GlobalManager :  Singleton<GlobalManager>{
 		//lessen stress when
 		if(currentType != UnitType.Sleep){
 			//if(Stress + currentTime*10f< 1000f){
-				Stress += currentTime*10f;
+			Stress += stressMultiplier;
 			//}else{
 			//	Stress = 1000f;
 			//	//game over
@@ -148,8 +149,6 @@ public class GlobalManager :  Singleton<GlobalManager>{
 			
 		}else if(myState == PlayerState.visualNoveling){
 
-
-			
 		}
 
 	}
