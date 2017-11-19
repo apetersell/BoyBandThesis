@@ -13,19 +13,26 @@ public enum PlayerState{
 
 public class GlobalManager :  Singleton<GlobalManager>{
 	protected GlobalManager () {}
-	public List<string> scenesVisited = new List<string>(); 
 
-	public float DanceScore = 0,VocalScore = 0,PRScore = 0 ,Stress = 0;
+	//Main Stats
+	public float DanceScore = 0;
+	public float VocalScore = 0;
+	public float PRScore = 0;
+	public float vocalScore = 0; 
+	public float Stress = 0;
+	public float jPeRelationship = 0;
+	public float leeRelationShip = 0; 
 	public float stressMultiplier;
+
 	public int scheduleSettledCount; 
 	public string upNext;
 
 	//public Dictionary allTextAssets;
 	public int dayIndex = 0;
-	string currentStats;
+	string sceneToLoad;
 	public TextAsset currentTextAsset{
 		get{
-			TextAsset ta = Resources.Load<TextAsset>("Dialog/Day"+dayIndex.ToString()+currentStats);
+			TextAsset ta = Resources.Load<TextAsset>("Dialog/Day"+dayIndex.ToString()+sceneToLoad);
 			return ta;
 		}
 	}
@@ -96,7 +103,8 @@ public class GlobalManager :  Singleton<GlobalManager>{
 
 
 		//lessen stress when
-		if(currentType != UnitType.Sleep){
+		if(currentType != UnitType.Sleep)
+		{
 			//if(Stress + currentTime*10f< 1000f){
 			Stress += stressMultiplier;
 			//}else{
@@ -118,25 +126,25 @@ public class GlobalManager :  Singleton<GlobalManager>{
 //		UnitType nextTime
 //		upNext = cu
 
-		if(myState == PlayerState.miniGaming){
+		if(myState == PlayerState.miniGaming)
+		{
 			timeCounter += Time.deltaTime;
-			if(timeCounter > currentTime){
-				
+			if(timeCounter > currentTime)
+			{
 				currentIndex ++;
-				if(currentIndex < scheduleList.Count){
-					
+				if(currentIndex < scheduleList.Count)
+				{
 					loadMiniGame();
-				}else{
+				}
+				else
+				{
 					scheduleList.Clear();
 
-					//currentStats = "A";
-					determineScene();
-					if (!scenesVisited.Contains (currentTextAsset.name)) 
+					sceneToLoad = StoryManager.determineScene(dayIndex, DanceScore, VocalScore, PRScore, Stress, jPeRelationship, leeRelationShip);
+					if (!StoryManager.scenesVisited.Contains (currentTextAsset.name)) 
 					{
-						scenesVisited.Add (currentTextAsset.name);
+						StoryManager.scenesVisited.Add (currentTextAsset.name);
 					}
-
-
 					SceneManager.LoadScene("VN");
 					myState = PlayerState.visualNoveling;
 					scheduleSettledCount = 0;
@@ -145,9 +153,13 @@ public class GlobalManager :  Singleton<GlobalManager>{
 
 			}
 
-		}else if(myState == PlayerState.timescheduling){
+		}
+		else if(myState == PlayerState.timescheduling)
+		{
 			
-		}else if(myState == PlayerState.visualNoveling){
+		}
+		else if(myState == PlayerState.visualNoveling)
+		{
 
 		}
 
@@ -163,86 +175,4 @@ public class GlobalManager :  Singleton<GlobalManager>{
 			GameObject.Find("BtnReady").SendMessage("showBtnReady");
 		}
 	}
-
-	void determineScene()
-	{
-		float highest;
-		float lowest;
-		float middle;
-		if (dayIndex == 1) 
-		{
-			DayOne();
-		}else if(dayIndex == 2){
-			DayTwo();
-		}
-
-		//scenesVisited
-	}
-
-	float Day1MinPRScore = 300,Day2MinPRScore = 600;
-	float Day1MinVocalScore = 300,Day2MinVocalScore =600;
-	float Day1MinDanceScore = 300,Day2MinDanceScore = 600;
-	float Day2MaxStress = 300;
-	void DayOne(){
-		currentStats = "";
-		if(PRScore < Day1MinPRScore && VocalScore < Day1MinVocalScore && DanceScore < Day1MinDanceScore){
-			currentStats = "D";
-			return;
-		}
-		if(isHighestStats(PRScore)){
-			currentStats = "A";
-		}else if(isHighestStats(VocalScore)){
-			currentStats = "B";
-		}else{
-			currentStats = "C";
-		}
-
-		if(currentStats == ""){
-			currentStats = "D";
-		}
-	}
-
-	void DayTwo(){
-		currentStats = "";
-		if(Stress > Day2MaxStress){
-			currentStats = "D";
-		}else if(isHighestStats(PRScore)){
-			if (scenesVisited.Contains ("Day1A")) {
-				currentStats = "A";
-			}else{
-				currentStats = "B";
-			}
-		}else if(isHighestStats(VocalScore) && DanceScore < Day2MinDanceScore && PRScore < Day2MinPRScore){
-			currentStats = "C";
-		}else{
-			//dance is highest
-			if(PRScore < Day2MinPRScore && VocalScore < Day2MinVocalScore && DanceScore < Day2MinDanceScore){
-				if (scenesVisited.Contains ("Day1D")){
-					currentStats = "E";
-				}else{
-					currentStats = "F";
-				}
-			}else if(VocalScore < Day2MinVocalScore && PRScore < Day2MinPRScore){
-				currentStats = "C";
-			}else{
-				currentStats = "G";
-				
-			}
-		}
-		if(currentStats == ""){
-			currentStats = "F";
-		}
-	}
-
-	bool isHighestStats(float score){
-		if(score >= DanceScore
-			&& score >= VocalScore
-			&&score >= PRScore)
-		{
-			return true;
-		}
-
-		return false;
-	}
-
 }
