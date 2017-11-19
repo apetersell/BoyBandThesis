@@ -27,11 +27,12 @@ public class ScoreManager : MonoBehaviour {
 	public AudioClip bigCheer;
 	public int inARow;
 	public float valueOfMatch;
+	public float relationshipMultiplier = 1;
 	bool theEnd;
 	GameObject scoreBoard;
 	GlobalManager globe;
 	AudioSource auds;
-   private Clock clock;
+   	private Clock clock;
 
 	void Awake ()
 	{
@@ -51,12 +52,10 @@ public class ScoreManager : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-
+	void Update () 
+	{
 		pointValue ();
-		displayScores ();
-//		handleEnding ();
-		
+		displayScores ();	
 	}
 
 	public void scorePoints (bool hit)
@@ -77,7 +76,7 @@ public class ScoreManager : MonoBehaviour {
 			}
 			if (game != "Sing") 
 			{
-				inARow++;
+			inARow++;
 				hits++;
 			   auds.clip = hitSound;
 			   auds.PlayScheduled(clock.AtNextSixteenth());
@@ -107,7 +106,7 @@ public class ScoreManager : MonoBehaviour {
 
 	void pointValue ()
 	{
-		valueOfMatch = baseValue * multiplier;
+		valueOfMatch = (baseValue * multiplier) * relationshipMultiplier;
 		if (inARow < firstMulti) {
 			multiplier = 1;
 		} else if (inARow >= firstMulti && inARow < secondMulti) {
@@ -118,7 +117,6 @@ public class ScoreManager : MonoBehaviour {
 		{
 			multiplier = 4;
 		}
-
 		if (inARow > streak) 
 		{
 			streak = inARow;
@@ -131,27 +129,4 @@ public class ScoreManager : MonoBehaviour {
 		multiplierDisplay.text = "Multiplier: X" + multiplier.ToString (); 
 		inARowDisplay.text = "Combo: " + inARow.ToString (); 
 	}
-
-	void handleEnding ()
-	{
-		gameTimer -= Time.deltaTime;
-		if (gameTimer <= 0) {
-			theEnd = true;
-		} else {
-			theEnd = false;
-		}
-
-		if (theEnd) {
-//			endText.SetActive (true);
-			scoreBoard.SetActive (false);
-//			if (Input.GetKeyDown(KeyCode.R))
-//			{
-//				SceneManager.LoadScene ("PoseyMatchy");
-//			}
-		} else {
-//			endText.SetActive (false);
-			scoreBoard.SetActive (true);
-		}
-	}
-
 }

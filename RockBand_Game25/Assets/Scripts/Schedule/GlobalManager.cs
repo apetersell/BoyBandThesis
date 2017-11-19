@@ -24,22 +24,25 @@ public class GlobalManager :  Singleton<GlobalManager>{
 	public float leeRelationShip = 0; 
 	public float stressMultiplier;
 
+	//Stats minus stress.
+	public float effectiveDance;
+	public float effectiveVocal;
+	public float effectivePR;
+
 	public int scheduleSettledCount; 
 	public string upNext;
 
 	//public Dictionary allTextAssets;
 	public int dayIndex = 0;
 	string sceneToLoad;
-	public TextAsset currentTextAsset{
+	public TextAsset currentTextAsset
+	{
 		get{
 			TextAsset ta = Resources.Load<TextAsset>("Dialog/Day"+dayIndex.ToString()+sceneToLoad);
 			return ta;
 		}
 	}
-
-//	public string[] VNScensNames;
-//	int dayIndex;
-
+		
 	public List<ScheduleUnit> scheduleList;
 	public int timerPerUnit;
 	[SerializeField]public int currentTime = 0;
@@ -91,7 +94,7 @@ public class GlobalManager :  Singleton<GlobalManager>{
 	void loadMiniGame(){
 		timeCounter = 0;
 		UnitType currentType = scheduleList[currentIndex].type;
-		currentTime =scheduleList[currentIndex].time*timerPerUnit;	
+		currentTime = scheduleList[currentIndex].time*timerPerUnit;	
 
 		Debug.Log(currentIndex+"."+currentType.ToString()+" for "+currentTime+"seconds");
 		switch(currentType){
@@ -106,16 +109,20 @@ public class GlobalManager :  Singleton<GlobalManager>{
 		if(currentType != UnitType.Sleep)
 		{
 			//if(Stress + currentTime*10f< 1000f){
-			Stress += stressMultiplier;
+			Stress += currentTime * stressMultiplier;
 			//}else{
 			//	Stress = 1000f;
 			//	//game over
 			//}
-
 		}
 	}
 
-	void Update(){
+	void Update()
+	{
+
+		effectiveDance = DanceScore - Stress;
+		effectiveVocal = VocalScore - Stress;
+		effectivePR = PRScore - Stress;
 
 		if (Input.GetKeyDown (KeyCode.R)) 
 		{
@@ -140,7 +147,7 @@ public class GlobalManager :  Singleton<GlobalManager>{
 				{
 					scheduleList.Clear();
 
-					sceneToLoad = StoryManager.determineScene(dayIndex, DanceScore, VocalScore, PRScore, Stress, jPeRelationship, leeRelationShip);
+					sceneToLoad = StoryManager.determineScene(dayIndex, effectiveDance, effectiveVocal, effectivePR, Stress, jPeRelationship, leeRelationShip);
 					if (!StoryManager.scenesVisited.Contains (currentTextAsset.name)) 
 					{
 						StoryManager.scenesVisited.Add (currentTextAsset.name);
