@@ -41,7 +41,7 @@ public class BulletZEmitter : MonoBehaviour {
 
 		timer = generategap;
 
-		stressDecreaseEachGoodDream = gm.timerPerUnit*10f*16f/GetComponent<DreamRandomGenertator>().generateGap/3f;
+		stressDecreaseEachGoodDream = gm.timePerUnit*10f*16f/GetComponent<DreamRandomGenertator>().generateGap/3f;
 		stressDecreaseEachBadDream = goodDreamCount*10f;
 	}
 	

@@ -19,7 +19,7 @@ public class MiniGameTimer : MonoBehaviour {
 	{
 		if (globe != null) 
 		{
-			GetComponent<Image> ().fillAmount = globe.timeLeft / globe.currentTime;
+			GetComponent<Image> ().fillAmount = globe.timeLeft / globe.maxGameTimer;
 		}
 	}
 }

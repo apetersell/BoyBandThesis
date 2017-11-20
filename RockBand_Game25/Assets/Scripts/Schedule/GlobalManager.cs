@@ -24,15 +24,15 @@ public class GlobalManager :  Singleton<GlobalManager>{
 	public float leeRelationShip = 0; 
 	public float stressMultiplier;
 
-	//Stats minus stress.
+	//Stats affected by stress.
 	public float effectiveDance;
 	public float effectiveVocal;
 	public float effectivePR;
 
-	public int scheduleSettledCount; 
-	public string upNext;
+	public int scheduleSettledCount; //How much of the schedule has been filled out?
+	public string upNext; //The name of the next mini-game.
 
-	//public Dictionary allTextAssets;
+	//Gets access to the VN text assets;
 	public int dayIndex = 0;
 	string sceneToLoad;
 	public TextAsset currentTextAsset
@@ -43,12 +43,14 @@ public class GlobalManager :  Singleton<GlobalManager>{
 		}
 	}
 		
-	public List<ScheduleUnit> scheduleList;
-	public int timerPerUnit;
-	[SerializeField]public int currentTime = 0;
-	[SerializeField]int currentIndex = 0; 
-	[SerializeField]float timeCounter = 0;
+	public List<ScheduleUnit> scheduleList; //The player's schedule.
+	public int timePerUnit; //How much time is each schedule unit worth?
+	[SerializeField]public int maxGameTimer = 0; //Max timer for current mini-game.
+	[SerializeField]int currentIndex = 0; //Where we are on the schedule.
+	[SerializeField]float currentGameTime = 0; //What the timer is currently at for the current mini-game. Ticks up to game timer.
 	public PlayerState myState = PlayerState.timescheduling;
+
+	//Finds the string for the next actiivty.
 	public string NextActivity{
 		get{
 			if(scheduleList.Count > 0){
@@ -62,15 +64,19 @@ public class GlobalManager :  Singleton<GlobalManager>{
 		}
 	}
 
-	public float timeLeft{
+	//Finds how much time is remaining;
+	public float timeLeft
+	{
 		get{
-			return currentTime - timeCounter;
+			return maxGameTimer - currentGameTime;
 		}
 	}
+
+	//Makes the GlobalManger into a Singleton
 	public static GameObject instance;
 
-	void Start() {
-		
+	void Start() 
+	{
 		if(instance == null){
 			instance = gameObject;
 		}else{
@@ -79,24 +85,28 @@ public class GlobalManager :  Singleton<GlobalManager>{
 
 		DontDestroyOnLoad(instance);
 	}
-		
-	void StartMiniGaming(){
-		currentIndex = 0;
-		dayIndex++;
+
+	//Called when mini-game phase begins.
+	void StartMiniGaming()
+	{
+		currentIndex = 0; //
+		dayIndex++; //Moves the day counter up 1.
 		float songUnit = (GameObject.Find ("GlobalStats").GetComponent<DJSchedgy> ().selectedTrack.length) / 12f;
-		timerPerUnit = Mathf.RoundToInt (songUnit);
+		timePerUnit = Mathf.RoundToInt (songUnit);
 
 		myState = PlayerState.miniGaming;
 		loadMiniGame();
 
 	}
 
+	//Loads each mini-game;
 	void loadMiniGame(){
-		timeCounter = 0;
+		currentGameTime = 0; //Resets timer;
 		UnitType currentType = scheduleList[currentIndex].type;
-		currentTime = scheduleList[currentIndex].time*timerPerUnit;	
+		maxGameTimer = scheduleList[currentIndex].time * timePerUnit;	//Sets game timer to the time from schedule.
 
-		Debug.Log(currentIndex+"."+currentType.ToString()+" for "+currentTime+"seconds");
+		Debug.Log(currentIndex+"."+currentType.ToString()+" for "+maxGameTimer+"seconds");
+		//Loads game type depending on schedule list.
 		switch(currentType){
 		case UnitType.Dance:SceneManager.LoadScene("PoseyMatchy");break;
 		case UnitType.Vocal:SceneManager.LoadScene("PitchyMatchy");break;
@@ -105,11 +115,11 @@ public class GlobalManager :  Singleton<GlobalManager>{
 		}
 
 
-		//lessen stress when
+		//If the current mini-game isn't sleeping, add stress.
 		if(currentType != UnitType.Sleep)
 		{
 			//if(Stress + currentTime*10f< 1000f){
-			Stress += currentTime * stressMultiplier;
+			Stress += maxGameTimer * stressMultiplier;
 			//}else{
 			//	Stress = 1000f;
 			//	//game over
@@ -119,34 +129,32 @@ public class GlobalManager :  Singleton<GlobalManager>{
 
 	void Update()
 	{
-
+		//Calculates stats minus stress.
 		effectiveDance = DanceScore - Stress;
 		effectiveVocal = VocalScore - Stress;
 		effectivePR = PRScore - Stress;
 
+		//Resets the game.
 		if (Input.GetKeyDown (KeyCode.R)) 
 		{
 			SceneManager.LoadScene (0);
 			Destroy (this.gameObject);
 		}
-
-//		UnitType nextTime
-//		upNext = cu
-
+			
+		//Mini-game stuff exclusive update.
 		if(myState == PlayerState.miniGaming)
 		{
-			timeCounter += Time.deltaTime;
-			if(timeCounter > currentTime)
+			currentGameTime += Time.deltaTime; // ticks up the mini-game timer.
+			if(currentGameTime > maxGameTimer)
 			{
-				currentIndex ++;
-				if(currentIndex < scheduleList.Count)
+				currentIndex ++; //Move to next game in schedule.
+				if(currentIndex < scheduleList.Count) //Load new game if we're not at the end of the list.
 				{
 					loadMiniGame();
 				}
-				else
+				else // If We're doine with the current schedule.
 				{
 					scheduleList.Clear();
-
 					sceneToLoad = StoryManager.determineScene(dayIndex, effectiveDance, effectiveVocal, effectivePR, Stress, jPeRelationship, leeRelationShip);
 					if (!StoryManager.scenesVisited.Contains (currentTextAsset.name)) 
 					{
@@ -156,15 +164,15 @@ public class GlobalManager :  Singleton<GlobalManager>{
 					myState = PlayerState.visualNoveling;
 					scheduleSettledCount = 0;
 				}
-				//switch to next game
-
 			}
 
 		}
+		//Schedule exclusive update.
 		else if(myState == PlayerState.timescheduling)
 		{
 			
 		}
+		//VN exclusive update.
 		else if(myState == PlayerState.visualNoveling)
 		{
 
@@ -172,13 +180,10 @@ public class GlobalManager :  Singleton<GlobalManager>{
 
 	}
 
-//	int scheduleSettledCount = 0;
-	//public Image i_ready;
+	//Fills in schedule during planning phase. Makes "Ready" show up when the schedule is full.
 	public void scheduleSettle(){
 		scheduleSettledCount ++;
-//		Debug.Log(scheduleSettledCount);
 		if(scheduleSettledCount >= 12){
-			//make the ui turns up
 			GameObject.Find("BtnReady").SendMessage("showBtnReady");
 		}
 	}
