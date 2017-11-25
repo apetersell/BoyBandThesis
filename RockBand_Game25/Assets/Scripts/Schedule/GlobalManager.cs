@@ -37,18 +37,40 @@ public class GlobalManager :  Singleton<GlobalManager>{
 	string sceneToLoad;
 	public TextAsset currentTextAsset
 	{
-		get{
-			TextAsset ta = Resources.Load<TextAsset>("Dialog/Day"+dayIndex.ToString()+sceneToLoad);
-			return ta;
+		get
+		{
+			if (dayIndex != 0) {
+				TextAsset ta = Resources.Load<TextAsset> ("Dialog/Day" + dayIndex.ToString () + sceneToLoad);
+				return ta;
+			} else {
+				TextAsset ta = Resources.Load<TextAsset> ("Dialog/shortopening");
+				return ta;
+			}
 		}
 	}
 		
 	public List<ScheduleUnit> scheduleList; //The player's schedule.
+	public List<ScheduleUnit> JPSchedule; 
+	public List<ScheduleUnit> LeeSchedule;
 	public int timePerUnit; //How much time is each schedule unit worth?
 	[SerializeField]public int maxGameTimer = 0; //Max timer for current mini-game.
 	[SerializeField]int currentIndex = 0; //Where we are on the schedule.
 	[SerializeField]float currentGameTime = 0; //What the timer is currently at for the current mini-game. Ticks up to game timer.
 	public PlayerState myState = PlayerState.timescheduling;
+	UnitType currentGame;
+
+
+	public bool JPPresent;
+	public bool LeePresent;
+	UnitType JPCurrentType;
+	UnitType LeeCurrentType;
+	public int JPIndex;
+	public int LeeIndex;
+	public int maxJPTime;
+	public float currentJPTime;
+	public int maxLeeTime;
+	public float currentLeeTime; 
+
 
 	//Finds the string for the next actiivty.
 	public string NextActivity{
@@ -90,20 +112,28 @@ public class GlobalManager :  Singleton<GlobalManager>{
 	void StartMiniGaming()
 	{
 		currentIndex = 0; //
+		JPIndex = 0;
+		LeeIndex = 0;
 		dayIndex++; //Moves the day counter up 1.
 		float songUnit = (GameObject.Find ("GlobalStats").GetComponent<DJSchedgy> ().selectedTrack.length) / 12f;
 		timePerUnit = Mathf.RoundToInt (songUnit);
 
 		myState = PlayerState.miniGaming;
 		loadMiniGame();
+		advanceFriendSchedule ("JP");
+		advanceFriendSchedule ("Lee");
 
 	}
 
 	//Loads each mini-game;
-	void loadMiniGame(){
+	void loadMiniGame()
+	{
 		currentGameTime = 0; //Resets timer;
-		UnitType currentType = scheduleList[currentIndex].type;
-		maxGameTimer = scheduleList[currentIndex].time * timePerUnit;	//Sets game timer to the time from schedule.
+		ScheduleUnit su = scheduleList [currentIndex];
+		UnitType currentType = su.type;
+		maxGameTimer = su.time * timePerUnit;	//Sets game timer to the time from schedule.
+
+		currentGame = currentType;
 
 		Debug.Log(currentIndex+"."+currentType.ToString()+" for "+maxGameTimer+"seconds");
 		//Loads game type depending on schedule list.
@@ -127,6 +157,26 @@ public class GlobalManager :  Singleton<GlobalManager>{
 		}
 	}
 
+	void advanceFriendSchedule (string name)
+	{
+		if (name == "JP")
+		{
+			currentJPTime = 0;
+			ScheduleUnit su = JPSchedule [JPIndex];
+			JPCurrentType = su.type;
+			maxJPTime = su.time * timePerUnit;
+		}
+
+		if (name == "Lee") 
+		{
+			currentLeeTime = 0;
+			ScheduleUnit su = LeeSchedule [LeeIndex];
+			LeeCurrentType = su.type;
+			maxLeeTime = su.time * timePerUnit;
+		}
+	}
+		
+
 	void Update()
 	{
 		//Calculates stats minus stress.
@@ -144,7 +194,14 @@ public class GlobalManager :  Singleton<GlobalManager>{
 		//Mini-game stuff exclusive update.
 		if(myState == PlayerState.miniGaming)
 		{
+			JPPresent = matching (currentGame, JPCurrentType);
+			LeePresent = matching (currentGame, LeeCurrentType);
+
 			currentGameTime += Time.deltaTime; // ticks up the mini-game timer.
+			currentJPTime += Time.deltaTime;
+			currentLeeTime += Time.deltaTime; 
+//			GameObject jp = GameObject.Find ("obj_JP");
+//			GameObject lee = GameObject.Find ("obj_Lee");
 			if(currentGameTime > maxGameTimer)
 			{
 				currentIndex ++; //Move to next game in schedule.
@@ -165,7 +222,24 @@ public class GlobalManager :  Singleton<GlobalManager>{
 					scheduleSettledCount = 0;
 				}
 			}
-
+			if (currentJPTime > maxJPTime) 
+			{
+				JPIndex++;
+				if (JPIndex < JPSchedule.Count) {
+					advanceFriendSchedule ("JP");
+				} else {
+					JPSchedule.Clear ();
+				}
+			}
+			if (currentLeeTime > maxLeeTime) 
+			{
+				LeeIndex++;
+				if (LeeIndex < LeeSchedule.Count) {
+					advanceFriendSchedule ("Lee");
+				} else {
+					LeeSchedule.Clear ();
+				}
+			}
 		}
 		//Schedule exclusive update.
 		else if(myState == PlayerState.timescheduling)
@@ -186,5 +260,10 @@ public class GlobalManager :  Singleton<GlobalManager>{
 		if(scheduleSettledCount >= 12){
 			GameObject.Find("BtnReady").SendMessage("showBtnReady");
 		}
+	}
+
+	bool matching (UnitType first, UnitType second)
+	{
+		return first == second;
 	}
 }

@@ -23,6 +23,8 @@ public class InputManager : MonoBehaviour
 {
 	Image sprite;
 	Color savedColor;
+	public UnitType JPeGame;
+	public UnitType LeeGame;
 	public static UnitType currentType = UnitType.None;
 	private UnitType myType = UnitType.None;
 	public UnitType MyType{

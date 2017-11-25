@@ -6,18 +6,16 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour {
 
-	public string game;
-	Text scoreDisplay;
+	public string game; //Name of the current min-game
+	Text scoreDisplay; // UI stuff
 	Text multiplierDisplay;
 	Text inARowDisplay;
-	public float score;
-	public float baseValue;
-	public float firstMulti;
-	public float secondMulti;
+	public float score; //Your score
+	public float baseValue; //How much is a match worth before multipliers
+	public float firstMulti; //How many notes do you need to hit in a row before multipliers
+	public float secondMulti; 
 	public float thirdMulti;  
-	public float multiplier = 1;
-	public float gameTimerMax;
-	public float gameTimer;
+	public float multiplier = 1; //How much you score is multlipied by this number
 	public float hits;
 	public float misses;
 	public float streak;
@@ -37,7 +35,6 @@ public class ScoreManager : MonoBehaviour {
 	void Awake ()
 	{
 	   clock = Clock.Instance;
-		gameTimer = gameTimerMax;
 	}
 
 	// Use this for initialization
@@ -60,24 +57,28 @@ public class ScoreManager : MonoBehaviour {
 
 	public void scorePoints (bool hit)
 	{
-		if (hit) {
+		if (hit) 
+		{
 			score += valueOfMatch;
 			if (globe != null) 
 			{
-				if (game == "PR") {
+				if (game == "PR") 
+				{
 					globe.PRScore += valueOfMatch;
 				}
-				if (game == "Sing") {
+				if (game == "Sing") 
+				{
 					globe.VocalScore += valueOfMatch;
 				}
-				if (game == "Dance") {
+				if (game == "Dance") 
+				{
 					globe.DanceScore += valueOfMatch;
 				}
 			}
 			if (game != "Sing") 
 			{
-			inARow++;
-				hits++;
+			   inARow++;
+			   hits++;
 			   auds.clip = hitSound;
 			   auds.PlayScheduled(clock.AtNextSixteenth());
 			}
@@ -101,6 +102,7 @@ public class ScoreManager : MonoBehaviour {
 		{
 			inARow = 0;
 			misses++;
+			globe.Stress += 10;
 		}
 	}
 

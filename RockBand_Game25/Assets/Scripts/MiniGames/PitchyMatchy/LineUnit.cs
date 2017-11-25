@@ -11,7 +11,7 @@ public class LineUnit : MonoBehaviour {
 	public bool unwinnable = false;
 	ScoreManager sm;
 	AudioSource auds;
-	HitEffect hi;
+	HitEffect he;
 
 	// Use this for initialization
 	void Start () 
@@ -19,7 +19,7 @@ public class LineUnit : MonoBehaviour {
 		scored = GameObject.Find ("Point").GetComponent<SpriteRenderer> ().color;
 		sm = GameObject.Find ("ScoreManager").GetComponent<ScoreManager> ();
 		auds = GameObject.Find ("ScoreManager").GetComponent<AudioSource> ();
-		hi = GameObject.Find ("HitEffect").GetComponent<HitEffect> ();
+		he = GameObject.Find ("HitEffect").GetComponent<HitEffect> ();
 	}
 	
 	// Update is called once per frame
@@ -51,7 +51,7 @@ public class LineUnit : MonoBehaviour {
 						sm.hits++;
 						sm.inARow++;
 						auds.PlayOneShot (sm.hitSound);
-						hi.active = true;
+						he.active = true;
 						if (sm.inARow == sm.firstMulti) 
 						{
 							auds.PlayOneShot (sm.smallCheer);

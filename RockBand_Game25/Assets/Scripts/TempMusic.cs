@@ -10,7 +10,7 @@ public class TempMusic : MonoBehaviour {
 	void Start () {
 
 		GlobalManager globe = (GlobalManager)FindObjectOfType(typeof(GlobalManager));
-		if (globe == null) 
+		if (globe != null) 
 		{
 			Destroy (this.gameObject);
 		}

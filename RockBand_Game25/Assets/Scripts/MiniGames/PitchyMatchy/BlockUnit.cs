@@ -5,12 +5,14 @@ using UnityEngine;
 public class BlockUnit : MonoBehaviour {
 
 	VocalBlockManager vbm;
+	GlobalManager globe;
 	public float pointOfNoReturn = -4.718f;
 	
 	// Use this for initialization
 	void Start () {
 
 		vbm = GameObject.Find ("VocalBlockManager").GetComponent<VocalBlockManager> ();
+		globe = (GlobalManager)FindObjectOfType(typeof(GlobalManager));
 		
 	}
 	
@@ -24,9 +26,13 @@ public class BlockUnit : MonoBehaviour {
 		{
 			if (GetComponent<SpriteRenderer> ().color != GetComponentInParent<LineUnit> ().scored) 
 			{
-				GetComponentInParent<LineUnit> ().unwinnable = true;
-				GameObject.Find ("ScoreManager").GetComponent<ScoreManager> ().misses++;
-				GameObject.Find ("ScoreManager").GetComponent<ScoreManager> ().inARow = 0;
+				if (GetComponentInParent<LineUnit> ().unwinnable == false) 
+				{
+					GetComponentInParent<LineUnit> ().unwinnable = true;
+					GameObject.Find ("ScoreManager").GetComponent<ScoreManager> ().misses++;
+					GameObject.Find ("ScoreManager").GetComponent<ScoreManager> ().inARow = 0;
+					globe.Stress += 10;
+				}
 			}
 		}
 

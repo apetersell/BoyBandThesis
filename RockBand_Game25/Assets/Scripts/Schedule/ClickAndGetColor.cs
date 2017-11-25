@@ -54,7 +54,6 @@ public class ClickAndGetColor : MonoBehaviour,IPointerClickHandler,IPointerEnter
 	}
 
 	public void OnPointerExit (PointerEventData eventData){
-		Debug.Log(this.name + " exit");
 		//if(!InputManager.currentType.ToString().Equals(this.name.Substring(3))){
 			tweenBack();
 		//}
