@@ -13,7 +13,13 @@ public class DJSchedgy : MonoBehaviour {
 	GlobalManager globe;
 	AudioSource aud;
 
-	void Awake () {
+	void Awake () 
+	{
+		
+	}
+	// Use this for initialization
+	void Start () 
+	{
 		globe = GetComponent<GlobalManager> ();
 		aud = GetComponent<AudioSource> ();
 		if (globe.myState == PlayerState.timescheduling) {
@@ -21,14 +27,12 @@ public class DJSchedgy : MonoBehaviour {
 			{
 				Text title;
 				title = GameObject.Find ("SongTitle" + (i + 1)).GetComponent<Text> ();
-				title.text = miniGameSongs [i].name;
+				if (title != null) 
+				{
+					title.text = miniGameSongs [i].name;
+				}
 			}
 		}
-	}
-	// Use this for initialization
-	void Start () 
-	{
-		
 	}
 	
 	// Update is called once per frame

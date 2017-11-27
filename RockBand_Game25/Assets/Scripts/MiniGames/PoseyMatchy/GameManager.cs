@@ -164,7 +164,6 @@ public class GameManager : MonoBehaviour {
 			if (player.sprite == choreographer.sprite) {
 				sm.scorePoints(true);
 				GameObject.Find ("PlayerIcon").transform.GetChild (0).GetComponent<HitEffectUI> ().active = true;
-				choreographer.transform.GetChild (0).GetComponent<HitEffectUI> ().active = true;
 				for (int i = 0; i < bandMates.Length; i++) 
 				{
 					bandMates [i].transform.GetChild (0).GetComponent<HitEffectUI> ().active = true;

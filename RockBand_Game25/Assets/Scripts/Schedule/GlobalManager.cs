@@ -70,6 +70,8 @@ public class GlobalManager :  Singleton<GlobalManager>{
 	public float currentJPTime;
 	public int maxLeeTime;
 	public float currentLeeTime; 
+	GameObject LeeImage;
+	GameObject JPImage;
 
 
 	//Finds the string for the next actiivty.
@@ -155,6 +157,8 @@ public class GlobalManager :  Singleton<GlobalManager>{
 			//	//game over
 			//}
 		}
+
+
 	}
 
 	void advanceFriendSchedule (string name)
@@ -194,6 +198,15 @@ public class GlobalManager :  Singleton<GlobalManager>{
 		//Mini-game stuff exclusive update.
 		if(myState == PlayerState.miniGaming)
 		{
+			findFriendObject ();
+			if (LeeImage != null) 
+			{
+				LeeImage.SetActive (LeePresent);
+			}
+			if (JPImage != null) 
+			{
+				JPImage.SetActive (JPPresent);
+			}
 			JPPresent = matching (currentGame, JPCurrentType);
 			LeePresent = matching (currentGame, LeeCurrentType);
 
@@ -207,6 +220,8 @@ public class GlobalManager :  Singleton<GlobalManager>{
 				currentIndex ++; //Move to next game in schedule.
 				if(currentIndex < scheduleList.Count) //Load new game if we're not at the end of the list.
 				{
+					JPImage = null;
+					LeeImage = null;
 					loadMiniGame();
 				}
 				else // If We're doine with the current schedule.
@@ -265,5 +280,15 @@ public class GlobalManager :  Singleton<GlobalManager>{
 	bool matching (UnitType first, UnitType second)
 	{
 		return first == second;
+	}
+
+	void findFriendObject ()
+	{
+		if (LeeImage == null) {
+			LeeImage = GameObject.Find ("obj_Lee");
+		}
+		if (JPImage == null) {
+			JPImage = GameObject.Find ("obj_JP");
+		}
 	}
 }

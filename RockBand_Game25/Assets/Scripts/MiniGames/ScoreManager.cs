@@ -10,6 +10,7 @@ public class ScoreManager : MonoBehaviour {
 	Text scoreDisplay; // UI stuff
 	Text multiplierDisplay;
 	Text inARowDisplay;
+	Text relationshipDisplay;
 	public float score; //Your score
 	public float baseValue; //How much is a match worth before multipliers
 	public float firstMulti; //How many notes do you need to hit in a row before multipliers
@@ -43,6 +44,7 @@ public class ScoreManager : MonoBehaviour {
 		scoreDisplay = GameObject.Find ("Score").GetComponent<Text> ();
 		multiplierDisplay = GameObject.Find ("Multiplier").GetComponent<Text> ();
 		inARowDisplay = GameObject.Find ("In a Row").GetComponent<Text> ();
+		relationshipDisplay = GameObject.Find ("Relationship").GetComponent<Text> ();
 		scoreBoard = GameObject.Find ("ScoreBoard");
 		auds = GetComponent<AudioSource> ();
 		
@@ -52,7 +54,8 @@ public class ScoreManager : MonoBehaviour {
 	void Update () 
 	{
 		pointValue ();
-		displayScores ();	
+		displayScores ();
+		determineRelationshipMulti ();
 	}
 
 	public void scorePoints (bool hit)
@@ -128,7 +131,40 @@ public class ScoreManager : MonoBehaviour {
 	void displayScores ()
 	{
 		scoreDisplay.text = "Score: " + score.ToString (); 
-		multiplierDisplay.text = "Multiplier: X" + multiplier.ToString (); 
+		multiplierDisplay.text = "Multiplier: x" + multiplier.ToString (); 
 		inARowDisplay.text = "Combo: " + inARow.ToString (); 
+		relationshipDisplay.text = "Friendship: x" + relationshipMultiplier.ToString ();
+	}
+
+	void determineRelationshipMulti ()
+	{
+		if (globe.JPPresent) {
+			if (globe.LeePresent) {
+				relationshipMultiplier = (multi (globe.jPeRelationship)) * (multi (globe.leeRelationShip));
+			} else {
+				relationshipMultiplier = multi (globe.jPeRelationship);
+			}
+		} else if (globe.LeePresent) {
+			relationshipMultiplier = multi (globe.leeRelationShip);
+		} else {
+			relationshipMultiplier = 1;
+		}
+	}
+
+	float multi (float score) 
+	{
+		float result = 0;
+		if (score <= 20) {
+			result = 0.5f;
+		} else if (score > 20 && score <= 40) {
+			result = 0.66f;
+		} else if (score > 40 && score <= 60) {
+			result = 1;
+		} else if (score > 60 && score <= 80) {
+			result = 1.5f;
+		} else{
+			result = 2;
+		}
+		return result;
 	}
 }

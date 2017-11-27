@@ -46,8 +46,6 @@ public class ExampleDialogueUI : Yarn.Unity.DialogueUIBehaviour
 		// The object that contains the dialogue and the options.
 		// This object will be enabled when conversation starts, and
 		// disabled when it ends.
-		public bool skipText;
-
 		public GameObject dialogueContainer;
 		
 		// The UI element that displays lines
@@ -89,10 +87,6 @@ public class ExampleDialogueUI : Yarn.Unity.DialogueUIBehaviour
 
 		void Update ()
 		{
-			if (Input.anyKeyDown) 
-			{
-				skipText = true;
-			}
 		}
 		
 		// Show a line of dialogue, gradually
@@ -101,7 +95,7 @@ public class ExampleDialogueUI : Yarn.Unity.DialogueUIBehaviour
 			// Show the text
 			lineText.gameObject.SetActive (true);
 			
-			if (skipText == false) 
+			if (textSpeed != 0) 
 			{
 				// Display the line one character at a time
 				var stringBuilder = new StringBuilder ();
@@ -120,7 +114,7 @@ public class ExampleDialogueUI : Yarn.Unity.DialogueUIBehaviour
 			if (continuePrompt != null) 
 			{
 				continuePrompt.SetActive (true);
-				skipText = false;
+
 			}
 			
 			// Wait for any user input

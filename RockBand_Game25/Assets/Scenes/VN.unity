@@ -330,7 +330,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 177895917}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -469.9098, z: 0}
+  m_LocalPosition: {x: 0, y: -470.17908, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1587440236}
@@ -732,8 +732,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 540263106}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 332.5, y: 187, z: 0}
-  m_LocalScale: {x: 0.34635416, y: 0.34635416, z: 0.34635416}
+  m_LocalPosition: {x: 335, y: 188.5, z: 0}
+  m_LocalScale: {x: 0.34895834, y: 0.34895834, z: 0.34895834}
   m_Children:
   - {fileID: 1799766721}
   - {fileID: 177895918}
@@ -1619,8 +1619,8 @@ MonoBehaviour:
   PRScore: 0
   vocalScore: 0
   Stress: 0
-  jPeRelationship: 0
-  leeRelationShip: 0
+  jPeRelationship: 50
+  leeRelationShip: 50
   stressMultiplier: 10
   effectiveDance: 0
   effectiveVocal: 0
@@ -1633,6 +1633,14 @@ MonoBehaviour:
   currentIndex: 0
   currentGameTime: 0
   myState: 2
+  JPPresent: 0
+  LeePresent: 0
+  JPIndex: 0
+  LeeIndex: 0
+  maxJPTime: 0
+  currentJPTime: 0
+  maxLeeTime: 0
+  currentLeeTime: 0
 --- !u!4 &1092553441
 Transform:
   m_ObjectHideFlags: 0
@@ -1918,7 +1926,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04317fce65da54f4997a5c4465b4e93c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skipText: 0
   dialogueContainer: {fileID: 177895917}
   lineText: {fileID: 749774901}
   continuePrompt: {fileID: 526324874}
