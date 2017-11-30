@@ -43,7 +43,7 @@ public class showScores : MonoBehaviour {
 				GetComponent<Text> ().text = status (gm.jPeRelationship) + "\n x" + multi (gm.jPeRelationship); 
 			}
 			if (Lee) {
-				GetComponent<Text> ().text = status (gm.leeRelationShip) + "\n x" + multi (gm.leeRelationShip);
+				GetComponent<Text> ().text = status (gm.leeRelationship) + "\n x" + multi (gm.leeRelationship);
 			}
 		}
 		else 

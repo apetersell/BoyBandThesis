@@ -401,6 +401,47 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 285395186}
+--- !u!1 &326725583
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 326725585}
+  - component: {fileID: 326725584}
+  m_Layer: 0
+  m_Name: Friendship
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &326725584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 326725583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dcf99e4929ec42d0937792ae1eb99c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 20
+--- !u!4 &326725585
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 326725583}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1731, y: 105, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &454146961
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,6 +577,7 @@ MonoBehaviour:
   stageRight2: {fileID: 454146962}
   stageLeft1: {fileID: 1931240847}
   stageleft2: {fileID: 978185454}
+  friendEffect: {fileID: 0}
 --- !u!114 &514857575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -938,6 +980,7 @@ MonoBehaviour:
   stageRight2: {fileID: 454146962}
   stageLeft1: {fileID: 1931240847}
   stageleft2: {fileID: 978185454}
+  friendEffect: {fileID: 0}
 --- !u!114 &748337067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1064,7 +1107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &897759935
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1429,7 +1472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1049908526
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1620,7 +1663,7 @@ MonoBehaviour:
   vocalScore: 0
   Stress: 0
   jPeRelationship: 50
-  leeRelationShip: 50
+  leeRelationship: 50
   stressMultiplier: 10
   effectiveDance: 0
   effectiveVocal: 0
@@ -1897,6 +1940,8 @@ MonoBehaviour:
   stageRight2: {fileID: 454146962}
   stageLeft1: {fileID: 1931240847}
   stageleft2: {fileID: 978185454}
+  friendEffect: {fileID: 1401008149565428, guid: c761c37cf96184db6b64bf3a4d5dfd89,
+    type: 2}
 --- !u!1 &1624659850
 GameObject:
   m_ObjectHideFlags: 0
@@ -2181,6 +2226,8 @@ MonoBehaviour:
   stageRight2: {fileID: 454146962}
   stageLeft1: {fileID: 1931240847}
   stageleft2: {fileID: 978185454}
+  friendEffect: {fileID: 1401008149565428, guid: c761c37cf96184db6b64bf3a4d5dfd89,
+    type: 2}
 --- !u!1 &1931240846
 GameObject:
   m_ObjectHideFlags: 0

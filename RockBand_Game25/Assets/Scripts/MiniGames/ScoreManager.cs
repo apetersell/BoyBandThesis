@@ -140,12 +140,12 @@ public class ScoreManager : MonoBehaviour {
 	{
 		if (globe.JPPresent) {
 			if (globe.LeePresent) {
-				relationshipMultiplier = (multi (globe.jPeRelationship)) * (multi (globe.leeRelationShip));
+				relationshipMultiplier = (multi (globe.jPeRelationship)) * (multi (globe.leeRelationship));
 			} else {
 				relationshipMultiplier = multi (globe.jPeRelationship);
 			}
 		} else if (globe.LeePresent) {
-			relationshipMultiplier = multi (globe.leeRelationShip);
+			relationshipMultiplier = multi (globe.leeRelationship);
 		} else {
 			relationshipMultiplier = 1;
 		}

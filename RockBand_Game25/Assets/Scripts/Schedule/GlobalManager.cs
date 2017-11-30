@@ -21,7 +21,7 @@ public class GlobalManager :  Singleton<GlobalManager>{
 	public float vocalScore = 0; 
 	public float Stress = 0;
 	public float jPeRelationship = 0;
-	public float leeRelationShip = 0; 
+	public float leeRelationship = 0; 
 	public float stressMultiplier;
 
 	//Stats affected by stress.
@@ -227,7 +227,7 @@ public class GlobalManager :  Singleton<GlobalManager>{
 				else // If We're doine with the current schedule.
 				{
 					scheduleList.Clear();
-					sceneToLoad = StoryManager.determineScene(dayIndex, effectiveDance, effectiveVocal, effectivePR, Stress, jPeRelationship, leeRelationShip);
+					sceneToLoad = StoryManager.determineScene(dayIndex, effectiveDance, effectiveVocal, effectivePR, Stress, jPeRelationship, leeRelationship);
 					if (!StoryManager.scenesVisited.Contains (currentTextAsset.name)) 
 					{
 						StoryManager.scenesVisited.Add (currentTextAsset.name);
@@ -289,6 +289,16 @@ public class GlobalManager :  Singleton<GlobalManager>{
 		}
 		if (JPImage == null) {
 			JPImage = GameObject.Find ("obj_JP");
+		}
+	}
+
+	[YarnCommand("friend")]
+	public void friendshipStats (string name)
+	{
+		if (name == "JP") {
+			jPeRelationship += 100;
+		} else {
+			leeRelationship += 100;
 		}
 	}
 }
