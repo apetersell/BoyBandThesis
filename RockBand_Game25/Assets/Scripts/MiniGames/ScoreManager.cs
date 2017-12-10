@@ -10,7 +10,6 @@ public class ScoreManager : MonoBehaviour {
 	Text scoreDisplay; // UI stuff
 	Text multiplierDisplay;
 	Text inARowDisplay;
-	Text relationshipDisplay;
 	public float score; //Your score
 	public float baseValue; //How much is a match worth before multipliers
 	public float firstMulti; //How many notes do you need to hit in a row before multipliers
@@ -44,7 +43,6 @@ public class ScoreManager : MonoBehaviour {
 		scoreDisplay = GameObject.Find ("Score").GetComponent<Text> ();
 		multiplierDisplay = GameObject.Find ("Multiplier").GetComponent<Text> ();
 		inARowDisplay = GameObject.Find ("In a Row").GetComponent<Text> ();
-		relationshipDisplay = GameObject.Find ("Relationship").GetComponent<Text> ();
 		scoreBoard = GameObject.Find ("ScoreBoard");
 		auds = GetComponent<AudioSource> ();
 		
@@ -130,10 +128,10 @@ public class ScoreManager : MonoBehaviour {
 
 	void displayScores ()
 	{
-		scoreDisplay.text = "Score: " + score.ToString (); 
-		multiplierDisplay.text = "Multiplier: x" + multiplier.ToString (); 
+		float trueMulti = multiplier * relationshipMultiplier;
+		scoreDisplay.text = "Score: " + Mathf.Round(score).ToString (); 
+		multiplierDisplay.text = "Multiplier: x" + trueMulti.ToString (); 
 		inARowDisplay.text = "Combo: " + inARow.ToString (); 
-		relationshipDisplay.text = "Friendship: x" + relationshipMultiplier.ToString ();
 	}
 
 	void determineRelationshipMulti ()

@@ -12,8 +12,6 @@ public struct ScheduleUnit
 
 public class TimetableGenerator : MonoBehaviour {
 	
-
-	public GameObject go_timeTable;
 	[SerializeField]InputManager[] im_timeTableUnits; //Input managers from each of the schedule nodes.
 	[SerializeField]List<ScheduleUnit> scheduleList; //List of chunked schedule units.
 	List<ScheduleUnit> JPSchedule; 
@@ -38,7 +36,7 @@ public class TimetableGenerator : MonoBehaviour {
 
 	//Any blank slots are changed to sleep (never called?)
 	void defaultUnitChangeToSleep(){
-		for(int i = 0;i < 12;i++){
+		for(int i = 0;i < 14;i++){
 			InputManager im_unit = im_timeTableUnits[i];
 			im_unit.SendMessage("checkDefaultToSleep");
 
@@ -62,7 +60,7 @@ public class TimetableGenerator : MonoBehaviour {
 		scheduleList = new List<ScheduleUnit>();
 		UnitType lastType = UnitType.None;
 		int hour = 0; //How many units worth of time is the chunk.
-		for(int i = 0;i < 12;i++)
+		for(int i = 0;i < 14;i++)
 		{
 			InputManager im_unit = im_timeTableUnits[i]; //Grab a node from the schedule
 			UnitType currentType = im_unit.MyType; // make the current type the type of the node we just pulled.
@@ -84,7 +82,7 @@ public class TimetableGenerator : MonoBehaviour {
 			else //if it is the same as the last one we pulled.
 			{
 				hour+= 1; //add time to it.
-				if(i == 11)//if it's the last one in the schdule
+				if(i == 13)//if it's the last one in the schdule
 				{
 					//Make the schedule unit.
 					ScheduleUnit currentUnit;// = new ScheduleUnit(lastType,hour);
@@ -106,7 +104,7 @@ public class TimetableGenerator : MonoBehaviour {
 			int hour = 0;
 			UnitType lastType = UnitType.Sleep;
 			JPSchedule = new List<ScheduleUnit>(); 
-			for (int i = 0; i < 12; i++) 
+			for (int i = 0; i < 14; i++) 
 			{
 				InputManager im_unit = im_timeTableUnits[i]; //Grab a node from the schedule
 				UnitType currentType = im_unit.JPeGame; // make the current type the type of the node we just pulled.
@@ -128,7 +126,7 @@ public class TimetableGenerator : MonoBehaviour {
 				else //if it is the same as the last one we pulled.
 				{
 					hour+= 1; //add time to it.
-					if(i == 11)//if it's the last one in the schdule
+					if(i == 13)//if it's the last one in the schdule
 					{
 						//Make the schedule unit.
 						ScheduleUnit currentUnit;// = new ScheduleUnit(lastType,hour);
@@ -145,7 +143,7 @@ public class TimetableGenerator : MonoBehaviour {
 			int hour = 0;
 			UnitType lastType = UnitType.Sleep;
 			LeeSchedule = new List<ScheduleUnit>(); 
-			for (int i = 0; i < 12; i++) 
+			for (int i = 0; i < 14; i++) 
 			{
 				InputManager im_unit = im_timeTableUnits[i]; //Grab a node from the schedule
 				UnitType currentType = im_unit.LeeGame; // make the current type the type of the node we just pulled.
@@ -167,7 +165,7 @@ public class TimetableGenerator : MonoBehaviour {
 				else //if it is the same as the last one we pulled.
 				{
 					hour+= 1; //add time to it.
-					if(i == 11)//if it's the last one in the schdule
+					if(i == 13)//if it's the last one in the schdule
 					{
 						//Make the schedule unit.
 						ScheduleUnit currentUnit;// = new ScheduleUnit(lastType,hour);

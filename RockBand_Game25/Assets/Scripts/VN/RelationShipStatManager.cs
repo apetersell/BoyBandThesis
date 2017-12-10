@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
+using UnityEngine.UI;
 
 public class RelationShipStatManager : MonoBehaviour 
 {
 	public float value;
+	public Text namey;
+	public CharacterSpriteController[] characters;
 
 	[YarnCommand("statUp")]
 	public void increaseFriendship (string name)
@@ -16,7 +19,7 @@ public class RelationShipStatManager : MonoBehaviour
 			GameObject.Find ("Lee").GetComponent<CharacterSpriteController> ().doFriendEffect (true);
 		} else {
 			globe.jPeRelationship += value;
-			GameObject.Find ("Jaypee").GetComponent<CharacterSpriteController> ().doFriendEffect (false);
+			GameObject.Find ("J-Pe").GetComponent<CharacterSpriteController> ().doFriendEffect (true);
 		}
 	}
 
@@ -29,7 +32,19 @@ public class RelationShipStatManager : MonoBehaviour
 			GameObject.Find ("Lee").GetComponent<CharacterSpriteController> ().doFriendEffect (false);
 		} else {
 			globe.jPeRelationship -= value;
-			GameObject.Find ("Jaypee").GetComponent<CharacterSpriteController> ().doFriendEffect (false);
+			GameObject.Find ("J-Pe").GetComponent<CharacterSpriteController> ().doFriendEffect (false);
 		}
+	}
+
+	[YarnCommand("name")]
+	public void changeName (string name)
+	{
+		for (int i = 0; i < characters.Length; i++) 
+		{
+			characters [i].speaking = false;
+		}
+		namey.text = name;
+		CharacterSpriteController csc = GameObject.Find (name).GetComponent<CharacterSpriteController> ();
+		csc.speaking = true;
 	}
 }

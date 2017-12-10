@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: c1bc48c59a45e4a95a3d95e8ef3b4152
+timeCreated: 1512663522
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Circula
+  fontNames:
+  - Circula
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

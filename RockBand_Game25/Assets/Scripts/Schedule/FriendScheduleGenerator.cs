@@ -11,8 +11,10 @@ public class FriendScheduleGenerator : MonoBehaviour
 		public UnitType type; 
 		public int time;
 	}
-	public Sprite[] jPeSprites;
-	public Sprite[] leeSprites;
+	public Color danceColor;
+	public Color vocalColor;
+	public Color prColor;
+	public Color blank;
 	public UnitType[] jPeGames;
 	public UnitType[] leeGames;
 	public ShuffleBag<UnitType> jPeBag;
@@ -56,9 +58,9 @@ public class FriendScheduleGenerator : MonoBehaviour
 
 	public void makeFriendSchedule(string workingOn)
 	{
-		for (int i = 0; i < 12; i++) 
+		for (int i = 0; i < 14; i++) 
 		{
-			Image spriteFace = GameObject.Find (workingOn + "_" + (i + 1)).GetComponent<Image> ();
+			Image icon = GameObject.Find (workingOn + "_" + (i + 1)).GetComponent<Image> ();
 			UnitType type = UnitType.None;
 			if (workingOn == "JPe") 
 			{
@@ -70,43 +72,26 @@ public class FriendScheduleGenerator : MonoBehaviour
 				type = leeBag.Next ();
 				im_timeTableUnits [i].LeeGame = type;
 			}
-			spriteFace.sprite = findSprite (workingOn, type);
+			icon.color = findColor (type);
 
 		}
 	}
 
-	public Sprite findSprite (string name, UnitType type) 
+	public Color findColor (UnitType type) 
 	{
-		Sprite sprite = null;
-		if (name == "JPe") 
-		{
-			if (type == UnitType.None) {
-				sprite = jPeSprites [0];   
-			}
-			if (type == UnitType.Dance) { 
-				sprite  = jPeSprites [1]; 
-			}
-			if (type == UnitType.Vocal) { 
-				sprite = jPeSprites [2];   
-			}
-			if (type == UnitType.PR) {
-				sprite = jPeSprites [3]; 
-			}
-		} else {
-			if (type == UnitType.None) {
-				sprite = leeSprites [0];
-			}
-			if (type == UnitType.Dance) {
-				sprite = leeSprites [1];
-			}
-			if (type == UnitType.Vocal) {
-				sprite = leeSprites [2];
-			}
-			if (type == UnitType.PR) {
-				sprite = leeSprites [3];
-			}
+		Color result = Color.white;
+		if (type == UnitType.None) {
+			result = blank;   
 		}
-
-		return sprite;
+		if (type == UnitType.Dance) { 
+			result = danceColor; 
+		}
+		if (type == UnitType.Vocal) { 
+			result = vocalColor;   
+		}
+		if (type == UnitType.PR) {
+			result = prColor; 
+		}
+		return result;
 	}
 }

@@ -21,66 +21,76 @@ public class InputManager : MonoBehaviour
 , IPointerExitHandler
 	// ... And many more available!
 {
-	Image sprite;
-	Color savedColor;
-	public UnitType JPeGame;
+	Image sprite; //Get Referecne to Image Script
+	Sprite savedSprite; //What sprite a unit will take on when hovered over.
+	public UnitType JPeGame; //Tracks what activities the boyz are doing that day.
 	public UnitType LeeGame;
-	public static UnitType currentType = UnitType.None;
-	private UnitType myType = UnitType.None;
+	public static UnitType currentType = UnitType.None; //What a unit will become when we click it.
+	private UnitType myType = UnitType.None; //The type current associated with with this unit block.
 	public UnitType MyType{
 		get{
 			return myType;
 		}
 	}
-	public static Color currentColor = Color.white;
-	public static bool isIncluding = false;
+	public static Sprite currentSprite = null; //What sprite a unit will take on when it's clicked.
+	public static Color blank = new Color(0,0,0,0); //Alpha'd out color.
+	public static bool mouseIsDown = false; //Returns true if the mouse is being held down.
 
 	void Awake()
 	{
-		savedColor = Color.white;
+		savedSprite = null; //Make sure we have no sprite to start.
 		sprite = GetComponent<Image>();
 	}
-		
 
+	void Update ()
+	{
+		if (sprite.sprite == null) {
+			sprite.color = blank;
+		} else {
+			sprite.color = Color.white;
+		}
+	}
+		
+	//When the unit is clicked.
 	public void OnPointerDown(PointerEventData eventData) // 3
 	{
-		//print("I was clicked");
-		sprite.color = currentColor;
-		setType();
-		isIncluding = true;
-	}
-
-	public void OnPointerUp(PointerEventData eventData) // 3
-	{
-		//print("I was clicked");
-		isIncluding = false;
-		sprite.color = currentColor;
-		setType();
-
+		sprite.sprite = currentSprite; // Change sprite to whatever activity we have selected.
+		setType(); //Set the units type to the correct type.
+		mouseIsDown = true;
 	}
 		
+	//When the mouse butto is released.
+	public void OnPointerUp(PointerEventData eventData) // 3
+	{
+		mouseIsDown = false;
+		sprite.sprite = currentSprite;
+		setType();
+
+	}
+
+	//When the pointer hovers over the node.
 	public void OnPointerEnter(PointerEventData eventData)
 	{
-		sprite.color = currentColor;
-		if(isIncluding){
+		sprite.sprite = currentSprite; //Change the sprite to whatever activity we have selected.
+		if(mouseIsDown){ //If the mouse is being held down, set its type to whatever type we have selected.
 			setType();
 		}
 	}
 
+	//Logic that sets type.
 	void setType(){
 
 		if(myType == UnitType.None && currentType != UnitType.None){
-//			Debug.Log("in");
 			GameObject.Find("GlobalStats").GetComponent<GlobalManager>().scheduleSettle();
 		}
-		savedColor = currentColor;
-		myType = currentType;
+		savedSprite = currentSprite; //Changed the reference of the saved sprite to current sprite;
+		myType = currentType; //Change this units type to the selected type.
 	}
 
 	public void OnPointerExit(PointerEventData eventData)
 	{
-		if(!isIncluding){
-			sprite.color = savedColor;
+		if(!mouseIsDown){
+			sprite.sprite = savedSprite;
 		}else{
 			setType();
 		}

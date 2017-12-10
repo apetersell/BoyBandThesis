@@ -117,7 +117,7 @@ public class GlobalManager :  Singleton<GlobalManager>{
 		JPIndex = 0;
 		LeeIndex = 0;
 		dayIndex++; //Moves the day counter up 1.
-		float songUnit = (GameObject.Find ("GlobalStats").GetComponent<DJSchedgy> ().selectedTrack.length) / 12f;
+		float songUnit = (GameObject.Find ("GlobalStats").GetComponent<DJSchedgy> ().selectedTrack.length) / 14f;
 		timePerUnit = Mathf.RoundToInt (songUnit);
 
 		myState = PlayerState.miniGaming;
@@ -187,6 +187,18 @@ public class GlobalManager :  Singleton<GlobalManager>{
 		effectiveDance = DanceScore - Stress;
 		effectiveVocal = VocalScore - Stress;
 		effectivePR = PRScore - Stress;
+		if (effectiveDance < 0) 
+		{
+			effectiveDance = 0;
+		}
+		if (effectiveVocal < 0) 
+		{
+			effectiveVocal = 0;
+		}
+		if (effectivePR < 0) 
+		{
+			effectivePR = 0;
+		}
 
 		//Resets the game.
 		if (Input.GetKeyDown (KeyCode.R)) 
@@ -272,7 +284,7 @@ public class GlobalManager :  Singleton<GlobalManager>{
 	//Fills in schedule during planning phase. Makes "Ready" show up when the schedule is full.
 	public void scheduleSettle(){
 		scheduleSettledCount ++;
-		if(scheduleSettledCount >= 12){
+		if(scheduleSettledCount >= 14){
 			GameObject.Find("BtnReady").SendMessage("showBtnReady");
 		}
 	}

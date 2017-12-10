@@ -16,16 +16,29 @@ public class CharacterSpriteController : MonoBehaviour {
 	public Transform stageleft2;
 	public GameObject friendEffect;
 	private Vector3 fadeInPos;
+	public Sprite [] casual;
+	public Sprite [] regular; 
+	public Sprite [] currentOutfit; 
+	Image img;
+	public bool speaking;
+	public Vector3 speakingScale;
+	public Vector3 normalScale;
 
 	// Use this for initialization
 	void Start () {
 		fadeInPos = transform.position;
 		transform.position = fadeOutTransfrom.position;
+		img = GetComponent<Image> ();
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update () 
+	{
+		if (speaking) {
+			transform.localScale = speakingScale;
+		} else {
+			transform.localScale = normalScale;
+		}
 	}
 
 	[YarnCommand("move")]
@@ -70,7 +83,8 @@ public class CharacterSpriteController : MonoBehaviour {
 	[YarnCommand("flip")] 
 	public void FlipCharacter()
 	{
-		transform.localScale = new Vector3 (transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+		speakingScale = new Vector3 (speakingScale.x * -1, speakingScale.y, speakingScale.y);
+		normalScale = new Vector3 (normalScale.x * -1, normalScale.y, normalScale.z);
 	}
 
 	public void doFriendEffect (bool isHappy)
@@ -79,5 +93,41 @@ public class CharacterSpriteController : MonoBehaviour {
 		effect.transform.SetParent (GameObject.Find ("Canvas (1)").transform);
 		effect.GetComponent<RectTransform> ().localPosition = GetComponent<RectTransform> ().localPosition;
 		effect.GetComponent<FriendEffect> ().happy = isHappy;
+	}
+
+	[YarnCommand("outfit")]
+	public void changeOutfit (string outfit)
+	{
+		Debug.Log (this.gameObject.name + " changed into" + "string");
+		if (outfit == "Casual") {
+			for (int i = 0; i < currentOutfit.Length; i++) 
+			{
+				currentOutfit [i] = casual [i];
+			}
+		} 
+		else 
+		{
+			for (int i = 0; i < currentOutfit.Length; i++) 
+			{
+				currentOutfit [i] = regular [i];
+			}
+		}
+	}
+
+	[YarnCommand("expression")]
+	public void changeExpression (string expression)
+	{
+		if (expression == "Neutral") 
+		{
+			img.sprite = currentOutfit [0];
+		}
+		if (expression == "Happy") 
+		{
+			img.sprite = currentOutfit [1];
+		}
+		if (expression == "Angry") 
+		{
+			img.sprite = currentOutfit [2];
+		}
 	}
 }
