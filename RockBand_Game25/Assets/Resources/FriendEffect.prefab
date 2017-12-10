@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be0f8d544aa634b5bb333b29a5edb0d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  happyFace: {fileID: 21300000, guid: 5130c775c0a79448a85998053e02e602, type: 3}
+  happyFace: {fileID: 21300000, guid: 8eb3f3e1c4ab544e195c725556661bf3, type: 3}
   angryFace: {fileID: 21300000, guid: 0be5d31b03d8c4e29a420f47ee6bf329, type: 3}
   happy: 1
   speed: 5

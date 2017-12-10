@@ -29,12 +29,19 @@ public class GlobalManager :  Singleton<GlobalManager>{
 	public float effectiveVocal;
 	public float effectivePR;
 
+	//Fans tracker
+	public float totalFans;
+	public float AigFans;
+	public float LeeFans;
+	public float JPFans;
+
 	public int scheduleSettledCount; //How much of the schedule has been filled out?
 	public string upNext; //The name of the next mini-game.
 
 	//Gets access to the VN text assets;
 	public int dayIndex = 0;
 	string sceneToLoad;
+	public TextAsset testText;
 	public TextAsset currentTextAsset
 	{
 		get
@@ -43,8 +50,8 @@ public class GlobalManager :  Singleton<GlobalManager>{
 				TextAsset ta = Resources.Load<TextAsset> ("Dialog/Day" + dayIndex.ToString () + sceneToLoad);
 				return ta;
 			} else {
-				TextAsset ta = Resources.Load<TextAsset> ("Dialog/shortopening");
-				return ta;
+				TextAsset ta = testText;
+				return ta; 
 			}
 		}
 	}
@@ -183,6 +190,9 @@ public class GlobalManager :  Singleton<GlobalManager>{
 
 	void Update()
 	{
+		//Calculate total fans.
+		totalFans = Mathf.Round(AigFans) + Mathf.Round (JPFans) + Mathf.Round(LeeFans);
+
 		//Calculates stats minus stress.
 		effectiveDance = DanceScore - Stress;
 		effectiveVocal = VocalScore - Stress;
@@ -222,11 +232,24 @@ public class GlobalManager :  Singleton<GlobalManager>{
 			JPPresent = matching (currentGame, JPCurrentType);
 			LeePresent = matching (currentGame, LeeCurrentType);
 
+			if (LeePresent) 
+			{
+				if (currentGame == UnitType.PR) 
+				{
+					LeeFans += Time.deltaTime;
+				}
+			}
+			if (JPPresent) 
+			{
+				if (currentGame == UnitType.PR) 
+				{
+					JPFans += Time.deltaTime;
+				}
+			}
+
 			currentGameTime += Time.deltaTime; // ticks up the mini-game timer.
 			currentJPTime += Time.deltaTime;
 			currentLeeTime += Time.deltaTime; 
-//			GameObject jp = GameObject.Find ("obj_JP");
-//			GameObject lee = GameObject.Find ("obj_Lee");
 			if(currentGameTime > maxGameTimer)
 			{
 				currentIndex ++; //Move to next game in schedule.
@@ -236,7 +259,7 @@ public class GlobalManager :  Singleton<GlobalManager>{
 					LeeImage = null;
 					loadMiniGame();
 				}
-				else // If We're doine with the current schedule.
+				else // If We're done with the current schedule.
 				{
 					scheduleList.Clear();
 					sceneToLoad = StoryManager.determineScene(dayIndex, effectiveDance, effectiveVocal, effectivePR, Stress, jPeRelationship, leeRelationship);

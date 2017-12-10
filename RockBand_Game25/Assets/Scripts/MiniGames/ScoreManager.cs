@@ -66,6 +66,7 @@ public class ScoreManager : MonoBehaviour {
 				if (game == "PR") 
 				{
 					globe.PRScore += valueOfMatch;
+					globe.AigFans++;
 				}
 				if (game == "Sing") 
 				{

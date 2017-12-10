@@ -12,6 +12,10 @@ public class StoryManager : MonoBehaviour {
 	public static float jPeRelationship;
 	public static float leeRelationship;
 
+	public static float statMilestone1 = 2000f;
+	public static float fanMileStone1 = 500;
+
+
 	//Keeps track of all the scenes we've already visited;
 	public static List<string> scenesVisited = new List<string>(); 
 

@@ -43,8 +43,14 @@ public class RelationShipStatManager : MonoBehaviour
 		{
 			characters [i].speaking = false;
 		}
-		namey.text = name;
-		CharacterSpriteController csc = GameObject.Find (name).GetComponent<CharacterSpriteController> ();
-		csc.speaking = true;
+		if (name != "...") {
+			namey.text = name;
+			CharacterSpriteController csc = GameObject.Find (name).GetComponent<CharacterSpriteController> ();
+			if (csc != null) {
+				csc.speaking = true;
+			}
+		} else {
+			namey.text = "";
+		}
 	}
 }

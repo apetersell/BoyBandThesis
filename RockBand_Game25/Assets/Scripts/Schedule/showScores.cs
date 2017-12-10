@@ -6,51 +6,50 @@ using UnityEngine.UI;
 public class showScores : MonoBehaviour {
 	//public Text txtDance,txtVocal,txtPR,txtEnergy;
 	GlobalManager gm;
-	public bool stressIndicator;
+	public bool fans;
 	public bool relationshipStatus; 
 	public bool Lee; 
 	public bool JP; 
+	public bool Dance;
+	public bool Vocal;
+	public bool PR;
+	public bool Stress;
 	string relationship;
 	float multiplier; 
+	Text t;
+	GUIStyle style = new GUIStyle(); 
 
 	void Start(){
 		gm = (GlobalManager)FindObjectOfType(typeof(GlobalManager));
+		t = GetComponent<Text> ();
 		updateStats();
+		style.richText = true;
 	}
-
+	 
 	void Update()
 	{
 		float flashSpeed = 1;
-		if (stressIndicator) 
-		{
-			Color lerpingColor = Color.Lerp(Color.white, Color.red, Mathf.PingPong(Time.time*flashSpeed, 1));
-			GetComponent<Text> ().color = lerpingColor;
-		}
 	}
 
 	void updateStats()
 	{
-		if (stressIndicator) {
-			if (gm.Stress > 0) {
-				GetComponent<Text> ().text = " - " + Mathf.RoundToInt (gm.Stress).ToString () +
-				"\n\n - " + Mathf.RoundToInt (gm.Stress).ToString () +
-				"\n\n - " + Mathf.RoundToInt (gm.Stress).ToString ();
-			} else {
-				GetComponent<Text> ().text = "";
-			}
-		} else if (relationshipStatus) {
+		if (Dance) {
+			t.text = Mathf.Round (gm.DanceScore).ToString () + "<color=#F49AC1FF> (-" + gm.Stress + ")</color>"; 
+		} else if (Vocal) {
+			t.text = Mathf.Round (gm.VocalScore).ToString () + "<color=#F49AC1FF> (-" + gm.Stress + ")</color>"; 
+		} else if (PR) {
+			t.text = Mathf.Round (gm.PRScore).ToString () + "<color=#F49AC1FF> (-" + gm.Stress + ")</color>"; 
+		} else if (Stress) {
+			t.text = gm.Stress.ToString ();
+		} else if (fans) {
+			t.text = gm.totalFans + " (Aig " + Mathf.Round (gm.AigFans) + "/<color=#9B61CEFF>J-Pe " + Mathf.Round (gm.JPFans) + " </color>/<color=#F49AC1FF>Lee " + Mathf.Round (gm.LeeFans) + "</color>)"; 
+		}else if (relationshipStatus) {
 			if (JP) {
-				GetComponent<Text> ().text = status (gm.jPeRelationship) + "\n x" + multi (gm.jPeRelationship); 
+				t.text = status (gm.jPeRelationship) + " x" + multi (gm.jPeRelationship); 
 			}
 			if (Lee) {
-				GetComponent<Text> ().text = status (gm.leeRelationship) + "\n x" + multi (gm.leeRelationship);
+				t.text = status (gm.leeRelationship) + " x" + multi (gm.leeRelationship);
 			}
-		}
-		else 
-		{
-			GetComponent<Text> ().text = "Dance:" + Mathf.RoundToInt (gm.DanceScore).ToString () +
-			"\n\nVocal:" + Mathf.RoundToInt (gm.VocalScore).ToString () +
-			"\n\nPR:" + Mathf.RoundToInt (gm.PRScore).ToString ();
 		}
 	}
 
