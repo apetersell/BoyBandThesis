@@ -22,17 +22,17 @@ public class DJSchedgy : MonoBehaviour {
 	{
 		globe = GetComponent<GlobalManager> ();
 		aud = GetComponent<AudioSource> ();
-		if (globe.myState == PlayerState.timescheduling) {
-			for (int i = 0; i < miniGameSongs.Length; i++) 
-			{
-				Text title;
-				title = GameObject.Find ("SongTitle" + (i + 1)).GetComponent<Text> ();
-				if (title != null) 
-				{
-					title.text = miniGameSongs [i].name;
-				}
-			}
-		}
+//		if (globe.myState == PlayerState.timescheduling) {
+//			for (int i = 0; i < miniGameSongs.Length; i++) 
+//			{
+//				Text title;
+//				title = GameObject.Find ("SongTitle" + (i + 1)).GetComponent<Text> ();
+//				if (title != null) 
+//				{
+//					title.text = miniGameSongs [i].name;
+//				}
+//			}
+//		}
 	}
 	
 	// Update is called once per frame

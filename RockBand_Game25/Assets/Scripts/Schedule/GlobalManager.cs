@@ -35,6 +35,11 @@ public class GlobalManager :  Singleton<GlobalManager>{
 	public float LeeFans;
 	public float JPFans;
 
+	//Used to handle calendar display
+	public float dateTimer;
+	public float dayNightTimer;
+	public bool night;
+
 	public int scheduleSettledCount; //How much of the schedule has been filled out?
 	public string upNext; //The name of the next mini-game.
 
@@ -126,7 +131,9 @@ public class GlobalManager :  Singleton<GlobalManager>{
 		dayIndex++; //Moves the day counter up 1.
 		float songUnit = (GameObject.Find ("GlobalStats").GetComponent<DJSchedgy> ().selectedTrack.length) / 14f;
 		timePerUnit = Mathf.RoundToInt (songUnit);
-
+		dateTimer = 0;
+		dayNightTimer = 0;
+		night = false;
 		myState = PlayerState.miniGaming;
 		loadMiniGame();
 		advanceFriendSchedule ("JP");
@@ -209,7 +216,6 @@ public class GlobalManager :  Singleton<GlobalManager>{
 		{
 			effectivePR = 0;
 		}
-
 		//Resets the game.
 		if (Input.GetKeyDown (KeyCode.R)) 
 		{
@@ -221,6 +227,7 @@ public class GlobalManager :  Singleton<GlobalManager>{
 		if(myState == PlayerState.miniGaming)
 		{
 			findFriendObject ();
+			handleCalendar ();
 			if (LeeImage != null) 
 			{
 				LeeImage.SetActive (LeePresent);
@@ -232,21 +239,15 @@ public class GlobalManager :  Singleton<GlobalManager>{
 			JPPresent = matching (currentGame, JPCurrentType);
 			LeePresent = matching (currentGame, LeeCurrentType);
 
-			if (LeePresent) 
+			if (LeeCurrentType == UnitType.PR) 
 			{
-				if (currentGame == UnitType.PR) 
-				{
-					LeeFans += Time.deltaTime;
-				}
+				LeeFans += Time.deltaTime;
 			}
-			if (JPPresent) 
+			if (JPCurrentType == UnitType.PR) 
 			{
-				if (currentGame == UnitType.PR) 
-				{
-					JPFans += Time.deltaTime;
-				}
+				JPFans += Time.deltaTime;
 			}
-
+			
 			currentGameTime += Time.deltaTime; // ticks up the mini-game timer.
 			currentJPTime += Time.deltaTime;
 			currentLeeTime += Time.deltaTime; 
@@ -326,14 +327,25 @@ public class GlobalManager :  Singleton<GlobalManager>{
 			JPImage = GameObject.Find ("obj_JP");
 		}
 	}
-
-	[YarnCommand("friend")]
-	public void friendshipStats (string name)
+		
+	void handleCalendar ()
 	{
-		if (name == "JP") {
-			jPeRelationship += 100;
-		} else {
-			leeRelationship += 100;
+		dateTimer += Time.deltaTime;
+		dayNightTimer += Time.deltaTime;
+		if (dateTimer >= timePerUnit * 2) 
+		{
+			GetComponent<CalendarTracker> ().advanceDay ();
+			dateTimer = 0;
+		}
+
+		if (dayNightTimer >= (timePerUnit)) 
+		{
+			if (night) {
+				night = false;
+			} else {
+				night = true;
+			}
+			dayNightTimer = 0;
 		}
 	}
 }

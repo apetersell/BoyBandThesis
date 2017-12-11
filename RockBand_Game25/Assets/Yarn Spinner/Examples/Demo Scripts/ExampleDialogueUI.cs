@@ -218,8 +218,10 @@ public class ExampleDialogueUI : Yarn.Unity.DialogueUIBehaviour
 				//Camera.main.
 				gm.myState = PlayerState.timescheduling;
 				SceneManager.LoadScene("Main");
+				gm.gameObject.GetComponent<CalendarTracker> ().advanceDay ();
 			}else{
 				SceneManager.LoadScene("Main");
+				gm.gameObject.GetComponent<CalendarTracker> ().advanceDay ();
 			}
 
 

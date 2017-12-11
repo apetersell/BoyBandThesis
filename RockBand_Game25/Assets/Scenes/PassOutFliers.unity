@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 82307087}
   - component: {fileID: 82307089}
   - component: {fileID: 82307088}
+  - component: {fileID: 82307090}
   m_Layer: 0
   m_Name: Day/Night
   m_TagString: Untagged
@@ -273,6 +274,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 82307086}
+--- !u!114 &82307090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 82307086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58efb2fc9a46f439bad492c83692b831, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  day: {fileID: 21300000, guid: ef518a51d0158433e961aff806834b01, type: 3}
+  night: {fileID: 21300000, guid: a43596d9f77eb4e8a954bb88706a48ea, type: 3}
 --- !u!1 &87534467
 GameObject:
   m_ObjectHideFlags: 0
@@ -1587,9 +1601,17 @@ MonoBehaviour:
   effectiveDance: 0
   effectiveVocal: 0
   effectivePR: 0
+  totalFans: 0
+  AigFans: 0
+  LeeFans: 0
+  JPFans: 0
+  dateTimer: 0
+  dayNightTimer: 0
+  night: 0
   scheduleSettledCount: 0
   upNext: 
   dayIndex: 0
+  testText: {fileID: 0}
   timePerUnit: 0
   maxGameTimer: 0
   currentIndex: 0

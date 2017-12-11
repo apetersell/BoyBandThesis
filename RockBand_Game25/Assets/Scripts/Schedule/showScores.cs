@@ -40,7 +40,7 @@ public class showScores : MonoBehaviour {
 		} else if (PR) {
 			t.text = Mathf.Round (gm.PRScore).ToString () + "<color=#F49AC1FF> (-" + gm.Stress + ")</color>"; 
 		} else if (Stress) {
-			t.text = gm.Stress.ToString ();
+			t.text = Mathf.Round(gm.Stress).ToString ();
 		} else if (fans) {
 			t.text = gm.totalFans + " (Aig " + Mathf.Round (gm.AigFans) + "/<color=#9B61CEFF>J-Pe " + Mathf.Round (gm.JPFans) + " </color>/<color=#F49AC1FF>Lee " + Mathf.Round (gm.LeeFans) + "</color>)"; 
 		}else if (relationshipStatus) {
