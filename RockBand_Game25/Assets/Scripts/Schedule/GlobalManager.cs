@@ -45,6 +45,14 @@ public class GlobalManager :  Singleton<GlobalManager>{
 
 	//Gets access to the VN text assets;
 	public int dayIndex = 0;
+	public int sceneLayers
+	{
+		get 
+		{
+			int layerNum = StoryManager.findLayers (dayIndex);
+			return layerNum;
+		}
+	}
 	string sceneToLoad;
 	public TextAsset testText;
 	public TextAsset currentTextAsset

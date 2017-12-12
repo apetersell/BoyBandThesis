@@ -2,10 +2,10 @@
 	{
 		"title": "Start",
 		"tags": "",
-		"body": "<<move Aig StageLeft2>><<move Lee StageRight2>>\nLee: Aigburth, your singing has improved lately.\n->Thanks!\n    Aig: Oh, thanks!\n    You beam with pride.\n->I think it still needs work...\n    Aig: I think it still needs work.\n    Lee: That's a good attitude to have.\n    Lee: But just make sure not to work yourself too hard.\n    Aig: Okay!\n->Really?\n    Aig: Oh really?\n    Lee: Don't fish for more compliments, Aiggy. It's not attractive.",
+		"body": "<<move Aig StageLeft2>><<move Lee StageRight2>>\n<<outfit Aig Casual>> \n<<outfit Lee Casual>> \n<<expression Aig Neutral>>\n<<expression Lee Neutral>>\n<<name Friendship Lee>> \nAigburth, your singing has improved lately.\n->Thanks!\n    <<name Friendship Aig>>\n    Aig: Oh, thanks!\n    You beam with pride.\n->I think it still needs work...\n    <<name Friendship Aig>>\n    Aig: I think it still needs work.\n    <<name Friendship Lee>>\n    Lee: That's a good attitude to have.\n    Lee: But just make sure not to work yourself too hard.\n    Aig: Okay!\n->Really?\n    Aig: Oh really?\n    <<name Friendship Lee>>\n    Lee: Don't fish for more compliments, Aiggy. It's not attractive.",
 		"position": {
-			"x": 300,
-			"y": 260
+			"x": 301,
+			"y": 261
 		},
 		"colorID": 0
 	}

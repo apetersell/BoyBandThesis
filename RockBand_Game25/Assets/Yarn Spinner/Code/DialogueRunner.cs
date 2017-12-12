@@ -94,7 +94,7 @@ namespace Yarn.Unity
 
 			GlobalManager gm = FindObjectOfType(typeof(GlobalManager)) as GlobalManager;
 			if(gm){
-				sourceText = new TextAsset[1]{gm.currentTextAsset};
+//				sourceText = new TextAsset[1]{gm.currentTextAsset};
 			}
 			// Load all JSON
 			foreach (var source in sourceText) {

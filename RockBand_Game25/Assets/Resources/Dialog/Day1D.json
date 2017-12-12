@@ -2,10 +2,30 @@
 	{
 		"title": "Start",
 		"tags": "",
-		"body": "<<move Lee StageRight2>><<move Aig StageLeft2>>\nLee: Hey Aigburth, you got a minute?\nAig: Yeah!\nLee: Listen, I think you might need to work a little harder.\nLee: Our debut is coming up soon, and it doesn't seem like you're putting in as much effort as you should be in your training...\n->I'll work harder.\n    Aig: I know. I'll do my best starting tomorrow!\n    Lee: Okay. As long as you're taking it seriously.\n->It was just a bad day.\n    Aig: Yeah...it was just a bad day for me.\n    Lee: I get that, but this is a crucial time for us.\n    Lee: There's a lot riding on this debut concert.\n    Aig: Okay.\n->I do what a want.\n    Aig: I do what I want! Besides, I fully intend to just coast through life on my good looks alone.\n    Lee: Hey! Do you know how many boy bands there are? Do you know how many of them are just as, if not MORE good-looking than us?\n    Lee: Besides, if you want to capatalize on your looks, you should at least put effort into it. Do you think I haven't noticed you skimping on your skincare routine.\n    Aig: What? I slap on some face cream like, once a week.  That's enough, right?\n    <<flip Lee>>\n    Lee shudders visibly.\n    <<flip Lee>>\n    Lee: We'll talk about...THAT...another time.\nLee: We need to work hard--for ourselves, and for...\nHis sentence trails off there, but you know who he's talking about.\n<<flip Lee>>\nThe two of you glance at the top right bunk, empty save for a wreath and several candles.\n",
+		"body": "<<move Lee StageRight2>><<move Aig StageLeft2>>\n<<outfit Aig Regular>>\n<<outfit Lee Regular>>\n<<expression Aig Neutral>>\n<<expression Lee Neutral>>\n<<name Friendship Lee>>\nHey Aigburth, you got a minute?\n<<name Friendship Aig>>\nYeah!\n<<name Friendship Lee>>\nListen, I think you might need to work a little harder.\nOur debut is coming up soon, and it doesn't seem like you're putting in as much effort as you should be in your training...\n->I'll work harder.\n    <<name Friendship Aig>>\n    I know. I'll do my best starting tomorrow!\n    <<name Friendship Lee>>\n    Okay. As long as you're taking it seriously.\n->It was just a bad day.\n    <<name Friendship Aig>>\n    Yeah...it was just a bad day for me.\n    <<name Friendship Lee>>\n    I get that, but this is a crucial time for us.\n    There's a lot riding on this debut concert.\n    <<name Friendship Aig>>\n    Okay.\n->I do what a want.\n    <<expression Aig Angry>>\n    <<name Friendship Aig>>\n    I do what I want! Besides, I fully intend to just coast through life on my good looks alone.\n    <<name Friendship Lee>>\n    <<expression Lee Angry>>\n    <<statDown Friendship Lee>>\n    Hey! Do you know how many boy bands there are? Do you know how many of them are just as, if not MORE good-looking than us?\n    Besides, if you want to capatalize on your looks, you should at least put effort into it. Do you think I haven't noticed you skimping on your skincare routine.\n    <<name Friendship Aig>>\n    <<expression Aig Neutral>>\n    What? I slap on some face cream like, once a week.  That's enough, right?\n    <<flip Lee>>\n    <<name Friendship ...>>\n    <<statDown Friendship Lee>>\n    Lee shudders visibly.\n    <<flip Lee>>\n    <<name Friendship Lee>>\n    We'll talk about...THAT...another time.\n<<expression Lee Neutral>>\n<<name Friendship Lee>>\nWe need to work hard--for ourselves, and for...\n<<name Friendship ...>>\nHis sentence trails off there, but you know who he's talking about.\n<<flip Lee>>\nThe two of you glance at the top right bunk, empty save for a wreath and several candles.\n",
 		"position": {
-			"x": 300,
-			"y": 260
+			"x": 276,
+			"y": 75
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Layer 3",
+		"tags": "",
+		"body": "AAAHHHHHHHHHHHH!!!!!!!!",
+		"position": {
+			"x": -1,
+			"y": 352
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Layer 2",
+		"tags": "",
+		"body": "OOOOH BABY",
+		"position": {
+			"x": 273,
+			"y": 348
 		},
 		"colorID": 0
 	}

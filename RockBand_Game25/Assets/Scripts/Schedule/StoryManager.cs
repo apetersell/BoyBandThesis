@@ -15,7 +15,6 @@ public class StoryManager : MonoBehaviour {
 	public static float statMilestone1 = 2000f;
 	public static float fanMileStone1 = 500;
 
-
 	//Keeps track of all the scenes we've already visited;
 	public static List<string> scenesVisited = new List<string>(); 
 
@@ -57,6 +56,35 @@ public class StoryManager : MonoBehaviour {
 		return result;
 	}
 
+	public static int findLayers (int dayIndex)
+	{
+		int result = 0;
+		if (dayIndex == 4) {
+			result = 3;
+		} else {
+			result = 1;
+		}
+		return result;
+	}
+
+	public static string findNewNode (string day, int layer)
+	{
+		string result = "";
+		if (day == "Day1D") 
+		{
+			if (layer == 3) 
+			{
+				result = "Layer 3";
+			}
+			if (layer == 2) 
+			{
+				result = "Layer 2";
+			}
+		}
+
+		return result;
+		
+	}
 	//String functions for each day.
 		
 	// PRE - DEBUT **************************************************************************************************************

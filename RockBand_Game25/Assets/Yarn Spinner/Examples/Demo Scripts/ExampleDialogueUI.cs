@@ -42,6 +42,8 @@ using UnityEngine.SceneManagement;
 namespace Yarn.Unity.Example {
 public class ExampleDialogueUI : Yarn.Unity.DialogueUIBehaviour
 	{
+		GUIStyle style = new GUIStyle(); 
+		public int layersDeep;
 		
 		// The object that contains the dialogue and the options.
 		// This object will be enabled when conversation starts, and
@@ -69,6 +71,7 @@ public class ExampleDialogueUI : Yarn.Unity.DialogueUIBehaviour
 
 		void Awake ()
 		{
+			style.richText = true;
 			// Start by hiding the container, line and option buttons
 			if (dialogueContainer != null)
 				dialogueContainer.SetActive(false);
@@ -82,6 +85,8 @@ public class ExampleDialogueUI : Yarn.Unity.DialogueUIBehaviour
 			// Hide the continue prompt if it exists
 			if (continuePrompt != null)
 				continuePrompt.SetActive (false);
+			GlobalManager gm = FindObjectOfType(typeof(GlobalManager)) as GlobalManager;
+			layersDeep = gm.sceneLayers;
 		}
 			
 
@@ -209,19 +214,30 @@ public class ExampleDialogueUI : Yarn.Unity.DialogueUIBehaviour
 				dialogueContainer.SetActive(false);
 
 			// Show the game controls.
-			if (gameControlsContainer != null) {
+			if (gameControlsContainer != null) 
+			{
 				gameControlsContainer.gameObject.SetActive(true);
 			}
 
-			GlobalManager gm = FindObjectOfType(typeof(GlobalManager)) as GlobalManager;
-			if(gm){
-				//Camera.main.
-				gm.myState = PlayerState.timescheduling;
-				SceneManager.LoadScene("Main");
-				gm.gameObject.GetComponent<CalendarTracker> ().advanceDay ();
-			}else{
-				SceneManager.LoadScene("Main");
-				gm.gameObject.GetComponent<CalendarTracker> ().advanceDay ();
+			if (layersDeep == 1) {
+				GlobalManager gm = FindObjectOfType (typeof(GlobalManager)) as GlobalManager;
+				if (gm) {
+					//Camera.main.
+					gm.myState = PlayerState.timescheduling;
+					SceneManager.LoadScene ("Main");
+					gm.gameObject.GetComponent<CalendarTracker> ().advanceDay ();
+				} else {
+					SceneManager.LoadScene ("Main");
+					gm.gameObject.GetComponent<CalendarTracker> ().advanceDay ();
+				}
+			} else 
+			{
+				DialogueRunner dr = GetComponent<DialogueRunner> (); 
+				string nodeString = dr.sourceText [0].name + layersDeep;
+				Debug.Log (nodeString);
+				dr.startNode = StoryManager.findNewNode (dr.sourceText[0].name, layersDeep);
+				dr.StartDialogue (); 
+				layersDeep--;
 			}
 
 

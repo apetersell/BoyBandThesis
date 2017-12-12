@@ -38,17 +38,14 @@ public class InputManager : MonoBehaviour
 
 	void Awake()
 	{
-		savedSprite = null; //Make sure we have no sprite to start.
+		savedSprite = Resources.Load<Sprite> ("blank"); //Make sure we have no sprite to start.
+		currentSprite = savedSprite;
 		sprite = GetComponent<Image>();
 	}
 
 	void Update ()
 	{
-		if (sprite.sprite == null) {
-			sprite.color = blank;
-		} else {
-			sprite.color = Color.white;
-		}
+
 	}
 		
 	//When the unit is clicked.

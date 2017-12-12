@@ -330,7 +330,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 177895917}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -469.60785, z: 0}
+  m_LocalPosition: {x: 0, y: -470.3015, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1587440236}
@@ -807,8 +807,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 540263106}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 306, y: 172, z: 0}
-  m_LocalScale: {x: 0.31875, y: 0.31875, z: 0.31875}
+  m_LocalPosition: {x: 298.5, y: 168, z: 0}
+  m_LocalScale: {x: 0.3109375, y: 0.3109375, z: 0.3109375}
   m_Children:
   - {fileID: 1799766721}
   - {fileID: 177895918}
@@ -1796,7 +1796,7 @@ MonoBehaviour:
   scheduleSettledCount: 0
   upNext: 
   dayIndex: 0
-  testText: {fileID: 4900000, guid: e683c2fb77a7f489b8d4fd6a2e49d380, type: 3}
+  testText: {fileID: 4900000, guid: 2560d9495ef9d472093cb1b593c82c6e, type: 3}
   timePerUnit: 0
   maxGameTimer: 0
   currentIndex: 0
@@ -2139,6 +2139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04317fce65da54f4997a5c4465b4e93c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layersDeep: 0
   dialogueContainer: {fileID: 177895917}
   lineText: {fileID: 749774901}
   continuePrompt: {fileID: 526324874}
@@ -2179,7 +2180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sourceText:
-  - {fileID: 4900000, guid: 3af53852168094bc1b034c9781f9d2b0, type: 3}
+  - {fileID: 4900000, guid: 49d7e3522529c414aa6fb188e601bd1a, type: 3}
   variableStorage: {fileID: 1624659852}
   dialogueUI: {fileID: 1624659851}
   startNode: Start
