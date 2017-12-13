@@ -1,0 +1,162 @@
+[
+	{
+		"title": "Start",
+		"tags": "",
+		"body": "<<outfit Aig Regular>>\r\n<<outfit J-Pe Regular>>\r\n<<outfit Lee Regular>>\r\n<<flip Aig>>\r\n<<flip Kent>>\r\n<<move Aig StageRight2>>\r\n<<move Lee StageRight1>>\r\n<<move J-Pe CenterStage>>\r\n<<move Kent StageLeft2>>\r\n<<name Friendship Kent>>\r\nWell lads, today’s the day. How are you all feeling?\r\n<<expression J-Pe Happy>>\r\n<<name Friendship J-Pe>>\r\nNever better!\r\n<<name Friendship Lee>>\r\nPrepared.\r\n<<name Friendship Kent>>\r\nAs expected from you two.\r\n<<expression J-Pe Neutral>>\r\n<<expression Lee Neutral>>\r\nAigburth, how about you?\r\n->Great!\r\n    <<statUp Friendship J-Pe>>\r\n    <<expression Aigburth Happy>>\r\n    <<name Friendship Aig>>\r\n    I’m great. I’m ready to shake up the world!   \r\n    <<name Friendship Kent>>\r\n    Glad to hear it.\r\n    <<expression J-Pe Happy>>\r\n    <<name Friendship J-Pe>>\r\n    Let’s tear it up! I’m ready to land right smack on top of the Top 40.\r\n    <<name Friendship Lee>>\r\n    You guys are… frighteningly optimistic… It’s not even like we’re releasing any music yet, it’s just a debut concert today.\r\n    <<name Friendship Aig>>\r\n    C’mon, Lee -- no need to be a fun sponge on today of all days!\r\n    <<name Friendship J-Pe>>\r\n    Ha! “Fun sponge”! Nice one.\r\n->Ready as I’ll ever be?\r\n    <<statUp Friendship Lee>>\r\n    <<name Friendship Aig>>\r\n    Um, I guess I’m ready?\r\n    <<expression J-Pe Angry>>\r\n    <<name Friendship J-Pe>>\r\n    Wow, try to sound a little less enthusiastic.\r\n    <<name Friendship Lee>>\r\n    Well, I can understand being a little apprehensive. Statistically, most rookie groups don’t make i-\r\n    <<expression J-Pe Neutral>>    \r\n    <<name Friendship J-Pe>>\r\n    Yeah, “most rookie groups”. But this group has ME.\r\n->I’m gonna throw up.\r\n    <<statDown Friendship J-Pe>>\r\n    <<name Friendship Aig>>\r\n    I… think I’m going to be sick.\r\n    <<name Friendship ...>>\r\n    Right on cue, you throw up over your brand new sneakers.\r\n    <<name Friendship Kent>>\r\n    Aigburth! Those are on loan!\r\n    <<expression J-Pe Angry>>\r\n    <<name Friendship J-Pe>>\r\n    Urgh, a fleck got on my shoes, too. These are G*cci, Aigburth! Honestly.\r\n    <<name Friendship Lee>>\r\n    Come on, it’s natural to be a little nervous, right?\r\n    You should, uh… probably take another shower before we leave, though.\r\n<<name Friendship Kent>>\r\nAnyway, the main reason I’m here this early is so that I can let you know about a few last minute changes for your debut.\r\n<<expression Aig Neutral>>\r\n<<name Friendship Lee>>\r\nChanges?\r\n",
+		"position": {
+			"x": 319,
+			"y": -318
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Dance",
+		"tags": "",
+		"body": "<<name Friendship Kent>>\r\nYes. Taking into account Aigburth’s growth over the past week, we’ve decided to give him the center role in the stage choreography.\r\n<<expression Aig Happy>>\r\n<<name Friendship Aig>>\r\nOh, really?! Thanks!\r\n<<expression Lee Happy>>\r\n<<name Friendship Lee>>\r\nCongratulations! You have been working hard in dance lately.\r\n<<expression J-Pe Happy>>\r\n<<name Friendship J-Pe>>\r\nHonestly, I think we should thank you. My back still hurts from attempting that flip right after the chorus. I’m just glad it’s not me doing it!\r\n<<name Friendship Kent>>\r\nNow that that's sorted, I'll let you three get ready for the concert tonight.\r\n<<move J-Pe OffStageRight>><<move Lee OffStageRight>><<move Aig OffStageRight>><<move Kent OffStageLeft>>",
+		"position": {
+			"x": -186,
+			"y": -104
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Publicity",
+		"tags": "",
+		"body": "<<name Friendship Kent>>\r\nThat’s right. So, seeing as both J-Pe and Aigburth have amassed a bit of a following on their own-\r\n<<expression J-Pe Angry>>\r\n<<name Friendship J-Pe>>\r\nReally? Aigburth, too?\r\n<<name Friendship Kent>>\r\n-we thought it’d be interesting to market them as friendly rivals!\r\n<<expression Aig Neutral>>\r\n<<name Friendship Aig>>\r\n...What exactly does that mean?\r\n<<name Friendship Kent>>\r\nHmm, maybe play it up a little on the stage? A bit of light-hearted ribbing and banter, or something. I’m sure your fans would love to see you interact with each other.\r\n<<expression Aig Happy>>\r\n<<name Friendship Aig>>\r\nSure thing!\r\n<<expression J-Pe Neutral>>\r\n<<name Friendship J-Pe>>\r\nI guess.\r\n<<name Friendship Kent>>\r\nAs for you, Lee, just stay in the back a little while they chat, maybe?\r\n<<expression Lee Angry>>\r\n<<name Friendship Lee>>\r\n...Right.\r\n<<name Friendship Kent>>\r\nNow that that's sorted, I'll let you three get ready for the concert tonight.\r\n<<move J-Pe OffStageRight>><<move Lee OffStageRight>><<move Aig OffStageRight>><<move Kent OffStageLeft>>",
+		"position": {
+			"x": 52,
+			"y": -105
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Vocals",
+		"tags": "",
+		"body": "<<name Friendship Kent>>\r\nYes. So we had a listen to the pre-recording you guys did for the backing track, and it seems like Aigburth has improved in his singing recently.\r\n<<expression Lee Happy>>\r\n<<name Friendship Lee>>\r\nYeah, you have been spending a lot of time in vocal training.\r\n<<expression J-Pe Angry>>\r\n<<name Friendship J-Pe>>\r\nAre you implying that some of us haven’t?\r\n<<expression Lee Neutral>>\r\n<<name Friendship Lee>>\r\nNo, I’m just sa-\r\n<<name Friendship Kent>>\r\nBoys.\r\n<<expression J-Pe Neutral>>\r\nAs I was just about to say, we’ve decided to change the line distribution for your debut song a little.\r\nWe’ll be moving Lee off the chorus and onto the verses, and Aigburth will take the chorus.\r\n<<expression Aig Happy>>\r\n<<name Friendship Aig>>\r\nOh! Thanks so much!\r\n<<name Friendship J-Pe>>\r\nHang on, what about me?\r\n<<name Friendship Kent>>\r\nOh, you get this line… here… and this other one.\r\n<<expression J-Pe Angry>>\r\n<<name Friendship J-Pe>>\r\nTWO LINES?!\r\n<<name Friendship Kent>>\r\nDon’t worry, you also get all the “yeah”s and the “baby”s.\r\n<<name Friendship J-Pe>>\r\nWh-\r\n<<name Friendship Kent>>\r\nAnyway, you guys better remember the new distribution -- I don’t want any fuck ups on stage tonight.\r\n<<name Friendship Lee>>\r\nOf course.\r\n<<name Friendship J-Pe>>\r\n...Unbelievable.\r\n<<name Friendship Kent>>\r\nNow that that's sorted, I'll let you three get ready for the concert tonight.\r\n<<move J-Pe OffStageRight>><<move Lee OffStageRight>><<move Aig OffStageRight>><<move Kent OffStageLeft>>",
+		"position": {
+			"x": 310,
+			"y": -98
+		},
+		"colorID": 0
+	},
+	{
+		"title": "AllRounder",
+		"tags": "",
+		"body": "<<name Friendship Kent>>\r\nIt’s nothing big. We’ve just decided to give Aigburth one more line in the debut song, and he can have the first short dance break.\r\nIt’s just a good opportunity to show that we have well-rounded idols, right from the beginning.\r\n<<expression Aig Happy>>\r\n<<name Friendship Aig>>\r\nGot it!\r\n<<name Friendship Kent>>\r\nNow that that's sorted, I'll let you three get ready for the concert tonight.\r\n<<move J-Pe OffStageRight>><<move Lee OffStageRight>><<move Aig OffStageRight>><<move Kent OffStageLeft>>",
+		"position": {
+			"x": 544,
+			"y": -94
+		},
+		"colorID": 0
+	},
+	{
+		"title": "LowStats",
+		"tags": "",
+		"body": "<<name Friendship Kent>>\r\nWell, it’s more of a warning, I suppose.\r\n<<name Friendship J-Pe>>\r\nA warning?\r\n<<name Friendship Kent>>\r\nAigburth. A word?\r\n<<name Friendship Aig>>\r\nYeah?\r\n<<name Friendship Kent>>\r\nYou originally were given the opportunity to join this academy because your audition was impressive, and you were given the opportunity to be in this group because you worked hard in the academy following that.\r\nI just don’t understand how you could have let yourself slip this far during the past three weeks.\r\nIt’s too close to debut to suddenly change things up, so we’ll still let this group go forward. So…\r\n<<name Friendship Aig>>\r\n...Yeah?\r\n<<name Friendship Kent>>\r\nJust stay in the back, alright? Don’t fuck it up for J-Pe or Lee.\r\n<<name Friendship Aig>>\r\nGot it.\r\n<<name Friendship Kent>>\r\nAnd you better get your act back together after today.\r\n<<expression Aig Angry>>\r\n<<name Friendship Aig>>\r\n...Got it.\r\n<<name Friendship Kent>>\r\nNow that that's sorted, I'll let you three get ready for the concert tonight.\r\n<<move J-Pe OffStageRight>><<move Lee OffStageRight>><<move Aig OffStageRight>><<move Kent OffStageLeft>>",
+		"position": {
+			"x": 813,
+			"y": -96
+		},
+		"colorID": 0
+	},
+	{
+		"title": "PreConcert",
+		"tags": "",
+		"body": "<<outfit Aig Regular>>\r\n<<outfit J-Pe Regular>>\r\n<<outfit Lee Regular>>\r\n<<move Aig StageLeft1>>\r\n<<move Lee StageRight2>>\r\n<<move J-Pe StageRight1>>\r\n<<name Friendship J-Pe>>\r\nAlright, this is it! Fans, fame, fortune, I’m ready!\r\n->Yeah!\r\n    <<expression Aig Happy>>\r\n    <<name Friendship Aig>>\r\n    Yeah! Let’s go!\r\n->Scream into the void.\r\n    <<statDown Friendship J-Pe>>\r\n    <<statDown Friendship Lee>>\r\n    <<expression Aigburth Angry>>\r\n    <<name Friendship Aig>>\r\n    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\r\n    <<name Friendship Lee>>\r\n    Aiggy, your mic is on.\r\n    <<expression Aig Neutral>>\r\n    <<name Friendship Aig>>\r\n    Oopsy.\r\n    <<name Friendship Lee>>\r\n    Anyway, let’s go.\r\nThe three of you quickly huddle together in a group hug before setting off to go on stage.\r\n<<move Aig OffStageLeft>>\r\n<<move Lee OffStageRight>>\r\n<<move J-Pe OffStageRight>>\r\n",
+		"position": {
+			"x": 306,
+			"y": 125
+		},
+		"colorID": 0
+	},
+	{
+		"title": "PostConcert",
+		"tags": "",
+		"body": "<<outfit Aig Casual>>\r\n<<outfit J-Pe Casual>>\r\n<<outfit Lee Casual>>\r\n<<expression Aig Neutral>>\r\n<<expression J-Pe Neutral>>\r\n<<expression Lee Neutral>>\r\n<<move Aig StageLeft1>>\r\n<<move Lee StageRight2>>\r\n<<move J-Pe StageRight1>>\r\n<<name Friendship J-Pe>>\r\nI can’t believe it’s over already!\r\n<<name Friendship Lee>>\r\nYeah, it felt way too short.\r\n->I can’t wait for the next one!\r\n    <<statUp Friendship Lee>>\r\n    <<expression Aig Happy>>\r\n    <<name Friendship Aig>>\r\n    Yeah, I’m looking forward to the next one.\r\n    I’ll work even harder then!\r\n    <<expression Lee Happy>>\r\n    <<name Friendship Lee>>\r\n    That’s a good attitude to have.\r\n->It was nothing.\r\n    <<statUp Friendship J-Pe>>\r\n    <<expression Aig Happy>>\r\n    <<name Friendship Aig>>\r\n    It was a breeze!\r\n    I almost feel like it was too easy. Maybe we were even like, over practiced.\r\n    It felt like everything went so smoothly! We were BORN to do this!\r\n    <<expression J-Pe Happy>>\r\n    <<name Friendship J-Pe>>\r\n    Yeah, that's how I felt, too!\r\n    <<name Friendship Lee>>\r\n    You two sure are confident.\r\n->I was so nervous...\r\n    <<name Friendship Aig>>\r\n    I was so nervous! I did okay, right?\r\n    <<name Friendship Lee>>\r\n    It was fine.\r\n    <<name Friendship J-Pe>>\r\n    You’re really going to have to work on that confidence, Aigburth.\r\n<<expression J-Pe Happy>> <<expression Aig Neutral>> <<expression Lee Neutral>>\r\n<<name Friendship J-Pe>>\r\nAnyway, I’m sure fan reactions on twitter are going to be fun to scroll through tonight!\r\n->Let’s have a look, then!\r\n    <<statUp Friendship J-Pe>>\r\n    <<expression Aig Happy>>\r\n    <<name Friendship Aig>>\r\n    Go on, then -- what does it say?\r\n    <<expression J-Pe Neutral>>\r\n    <<name Friendship J-Pe>>\r\n    That's the spirit!\r\n->I don’t want to read it.\r\n    <<statUp Friendship Lee>>\r\n    <<statDown Friendship J-Pe>>\r\n    <<name Friendship Aig>>\r\n    I’m not sure if I even want to read that…\r\n    <<name Friendship Lee>>\r\n    I agree with Aiggy.\r\n    <<expression J-Pe Angry>>\r\n    <<name Friendship J-Pe>>\r\n    Oh, come on! We should get some insight on what the fans are saying!\r\n    <<name Friendship Aig>>\r\n    I don’t know, I’d rather just have Kent give us the rundown, if it’s really important. Isn’t that her job?\r\n    <<name Friendship Aig>>\r\n    What if people are mean?!\r\n    <<expression J-Pe Neutral>>\r\n    <<name Friendship J-Pe>>\r\n    Ugh, fine. If you really don’t want to read it, I’m not gonna force you.\r\n    <<name Friendship Aig>>\r\n    Cool. I’m going to bed.\r\n    <<name Friendship J-Pe>>\r\n    Okay, I lied. I am gonna force you. You too, Lee.\r\n    If you two are going to bed, I’m just gonna yell-read these tweets while you try to fall asleep.\r\n    <<name Friendship Aig>>\r\n    Honestly, I’m so sleep deprived I could probably sleep through you blasting an airhorn in my ear. But whatever. Go on, then.\r\n",
+		"position": {
+			"x": 304,
+			"y": 334
+		},
+		"colorID": 0
+	},
+	{
+		"title": "MediocreConcert",
+		"tags": "",
+		"body": "<<name Friendship J-Pe>>\r\nWell, it’s pretty mixed reviews.\r\nOh, here’s a good one.\r\nTwitter user @xix_exclub says, “#XIXDEBUT WAS GOOD, LOVELY TO SEE MY BOYS. CONTINUE WORKING HARD!!” followed by flexing and heart emojis.\r\n<<expression Aig Happy>>\r\n<<name Friendship Aig>>\r\nOh, cute!\r\n<<name Friendship Lee>>\r\nWhat about the non-fan reactions?\r\n<<name Friendship J-Pe>>\r\nThat’s where it gets a little rough…\r\nUser @c0rgibumz has this to say… “I had high hopes for #XIXDEBUT, but it seems like they’re just like any other boy band out right now…”\r\n<<expression J-Pe Happy>>\r\nThey do reply to that tweet with a second one though: “Still love J-Pe though.”\r\nSo we’re good on that front.\r\n<<name Friendship Lee>>\r\nUh-huh.\r\n<<expression J-Pe Neutral>>\r\n<<name Friendship J-Pe>>\r\nAnd here’s one from @crepefan16, “#XIXDEBUT was like… okay? I mean, it wasn’t outstanding, but I’ve definitely seen worse.”\r\n<<expression Aig Neutral>>\r\n<<name Friendship Aig>>\r\nI’m almost scared to see what people are saying about me, but at the same time, I’m so curious...",
+		"position": {
+			"x": 303,
+			"y": 542
+		},
+		"colorID": 0
+	},
+	{
+		"title": "GoodConcert",
+		"tags": "",
+		"body": "<<name Friendship J-Pe>>\r\nSo twitter user @xix_exclub says, in all caps, “#XIXDEBUT WAS THE BEST EXPERIENCE OF MY LIFE LOVE SEEING MY BOYS 10/10 WOULD RECOMMEND”.\r\n<<expression Aig Happy>>\r\n<<name Friendship Aig>>\r\nWell, it seems like they liked the show.\r\n<<name Friendship Lee>>\r\nNot trying to be too negative or anything, but they do seem like they might be a bit biased… going off their username?\r\n<<expression J-Pe Happy>>\r\n<<name Friendship J-Pe>>\r\nHere’s one from @jpe_only: “HOLY SHIT I WOULD SELL MY HOUSE AND CAR FOR J-PE #XIXDEBUT #JPE”\r\n<<expression Lee Angry>>\r\n<<name Friendship Lee>>\r\nAgain, the username…\r\n<<expression J-Pe Angry>>\r\n<<name Friendship J-Pe>>\r\nFine, here’s user @eggsaladrecipes saying “I had my doubts about #XIXDEBUT, but their concert tonight was pretty impressive. Maybe it’s time to become an eX?”\r\n<<expression Lee Neutral>>\r\nI mean, you can just scroll through yourself. Most of the comments are positive.\r\n<<expression J-Pe Neutral>>\r\nPat yourselves on the backs, boys -- we did well.\r\n<<expression Aig Happy>>\r\n<<name Friendship Aig>>\r\nNow I’m kind of curious what people are saying about me… It can’t hurt to take a look, right?",
+		"position": {
+			"x": 90,
+			"y": 544
+		},
+		"colorID": 0
+	},
+	{
+		"title": "BadConcert",
+		"tags": "",
+		"body": "<<expression J-Pe Angry>>\r\n<<name Friendship J-Pe>>\r\nWell, shit.\r\n<<expression J-Pe Neutral>>\r\nI guess there’s this kind of positive one from @xix_exclub? “#XIXDEBUT wasn’t what I expected either, but you shouldn't trash the boys! Their management probably isn’t feeding them, they looked tired! @TheCompany EXPLAIN!!!”\r\n<<expression Lee Angry>>\r\n<<name Friendship Lee>>\r\nI wouldn’t say that’s positive…\r\n<<name Friendship Aig>>\r\nAnd I actually ate a massive burger before the show.\r\n<<expression Lee Neutral>>\r\n<<name Friendship Lee>>\r\nAiggy! Won’t that greasy food weigh you down just before the show?\r\n<<name Friendship Aig>>\r\nYeah, so let’s put all the blame for our poor performance on the burger!\r\n<<expression Aig Happy>>\r\nGod, it was so good though -- like, I know I’m on a diet, or whatever, but it was SO WORTH IT.\r\n<<name Friendship J-Pe>>\r\nAnyway, if you guys are ready to get roasted some more…\r\nTwitter user @nicebean12 says, “I’ve followed boy bands for years, but NEVER have I seen a debut as sloppy as #XIXDEBUT. Send these boys back to the academy.”\r\n<<expression Aig Neutral>>\r\n<<name Friendship Aig>>\r\nOuch.\r\n<<name Friendship J-Pe>>\r\nOh, it gets worse. Here’s @floatyletty, saying “#XIXDEBUT was SHITE. XIX should change their name to XUX bc they suck.”\r\n<<expression J-Pe Angry>>\r\nWhatever, let’s just forget this Letty person. Bet they aren’t even that floaty.\r\n<<name Friendship Lee>>\r\nI mean, we really have to work harder in the future then. It’s clear that we weren’t great tonight.\r\n<<expression J-Pe Happy>>\r\n<<name Friendship J-Pe>>\r\nWell, there are these tweets from @jpe_unofficial -- “J-Pe looked STUNNING tonight at the #XIXDEBUT”, “I’LL SUPPORT J-PE NO MATTER WHAT FIGHT ME”...\r\n<<name Friendship Aig>>\r\nGreat.\r\nWell, what are they saying about me? I know I might just be asking for trouble, but I’m so curious now...",
+		"position": {
+			"x": 519,
+			"y": 539
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Dance2",
+		"tags": "",
+		"body": "<<name Friendship J-Pe>>\r\nHmm, let’s see… Here’s one from @aigfanclubunofficial: “Aigburth’s dancing in the #XIXDEBUT is so good!! I chose the right person to stan!” followed by a bunch of fire emojis.\r\n<<expression Aig Happy>>\r\n<<name Friendship Aig>>\r\nAww, that’s sweet of them!\r\n<<name Friendship J-Pe>>\r\nYeah, it really seems like people like your dancing!\r\nMost of the feed that's related to you is just people talking about your dancing, really.\r\n<<name Friendship Aig>>\r\nOh, that's good to hear!\r\n<<name Friendship J-Pe>>\r\nWell, if you want to scroll through them all you can, but I'm off to bed now.\r\n<<name Friendship Lee>>\r\nMe too.\r\n<<move J-Pe OffStageRight>><<move Lee OffStageRight>>\r\n<<name Friendship Aig>>\r\nHm... Maybe I should go sleep too. It's been a long day.\r\n<<move Aig OffStageLeft>>",
+		"position": {
+			"x": -123,
+			"y": 755
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Publicity2",
+		"tags": "",
+		"body": "<<name Friendship J-Pe>>\r\nWell, here’s one from @jpaig_fanfics: “The dynamics between J-Pe and Aigburth onstage… the bants… please… I LOVE THEM SO MUCH???? #XIXDEBUT #JPAIG #TheirShipNameIsPronouncedJPEG”\r\n<<expression Aig Happy>>\r\n<<name Friendship Aig>>\r\nThat’s sweet of them! What are those last two hashtags about, though?\r\n<<expression J-Pe Happy>>\r\n<<name Friendship J-Pe>>\r\nYeah, I don’t know! Let me check their other tweets…\r\n<<expression J-Pe Angry>>\r\n...Oh. OH.\r\n<<expression Aig Neutral>>\r\n<<name Friendship Aig>>\r\nWhat?\r\n<<name Friendship J-Pe>>\r\nHey, how about we look at Lee’s mentions instead?\r\n<<expression J-Pe Neutral>>\r\n...Funny, there’s not much…\r\nUm, let’s just call it a night -- we’re all tired, right?\r\n<<move J-Pe OffStageRight>><<move Lee OffStageRight>><<move Aig OffStageLeft>>",
+		"position": {
+			"x": 91,
+			"y": 756
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Vocals2",
+		"tags": "",
+		"body": "<<name Friendship J-Pe>>\r\nWell, here’s @aigfanclubunofficial saying, “I don’t care what other people think -- I loved the #XIXDEBUT and Aigburth sang SO WELL! Stan Aigburth! Stan talent!!”\r\n<<expression J-Pe Angry>>\r\nAlright, I don’t know why they have to put “stan talent” there, but…\r\n<<expression Aig Happy>>\r\n<<name Friendship Aig>>\r\nAww, they’re so nice!\r\n<<name Friendship J-Pe>>\r\nWell, I just think it’s funny how they have to tear down someone else to praise you…\r\n<<name Friendship Lee>>\r\nI don’t think they meant it that way. Aigburth probably just stood out more because he had the chorus.\r\n<<name Friendship J-Pe>>\r\nSure, whatever.\r\nAnyway, I'm going to bed. You guys should too, it's only going to get busier from here.\r\n<<move J-Pe OffStageRight>><<move Lee OffStageRight>><<move Aig OffStageLeft>>",
+		"position": {
+			"x": 306,
+			"y": 757
+		},
+		"colorID": 0
+	},
+	{
+		"title": "AllRounder2",
+		"tags": "",
+		"body": "<<name Friendship J-Pe>>\r\nHere’s @babyaiggy, saying “You’re telling me Aigburth is that charming, can sing and dance, AND he’s the youngest?? #XIXDEBUT”\r\n<<expression Aig Angry>>\r\n<<name Friendship Aig>>\r\nWhy do they have to mention my age like that? I’m not that young. J-Pe’s only a year older than me!\r\n<<name Friendship Lee>>\r\nYou’re always going to be the baby of the group, you might as well accept it. Anyway, they’re praising you for being well-rounded, so it’s good!\r\n<<expression J-Pe Happy>>\r\n<<name Friendship J-Pe>>\r\nHilarious username, though. I don’t know how fans got wind of Lee’s nickname for you, but I’m all for it. That, and the added \"baby\" part.\r\n<<name Friendship Aig>>\r\nUUUUUGHHHHH!\r\nI'm going to bed!\r\n<<name Friendship J-Pe>>\r\nAh, yeah -- it's a little past your kiddy bed time, isn't it?\r\n<<expression Lee Happy>>\r\n<<name Friendship Lee>>\r\nWould you like me to check under your bed for monsters?\r\n<<name Friendship Aig>>\r\nUUUUUUUUUUUUUUUUUUUUUUGGGHHHHHHHHHHHHHHHHHHH!\r\n<<move J-Pe OffStageRight>><<move Lee OffStageRight>><<move Aig OffStageLeft>>",
+		"position": {
+			"x": 523,
+			"y": 756
+		},
+		"colorID": 0
+	},
+	{
+		"title": "LowStats2",
+		"tags": "",
+		"body": "<<name Friendship J-Pe>>\r\nHuh, funny… I can’t really find much about you.\r\nWait, here’s a meme where someone zooms in on you looking sad in the background while Lee’s singing?\r\nIt doesn’t seem like it’s a meme that’s taking off though…\r\n<<expression Aig Angry>>\r\n<<name Friendship Aig>>\r\nGreat, so I can’t even make it as a meme…\r\n<<name Friendship Lee>>\r\nTry not to take it too hard, Aiggy.\r\nAnyway, it's late. We should get some rest.\r\n<<move J-Pe OffStageRight>><<move Lee OffStageRight>><<move Aig OffStageLeft>>\r\n",
+		"position": {
+			"x": 738,
+			"y": 756
+		},
+		"colorID": 0
+	}
+]
