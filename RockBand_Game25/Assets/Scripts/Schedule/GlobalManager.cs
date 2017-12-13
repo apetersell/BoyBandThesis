@@ -101,7 +101,7 @@ public class GlobalManager :  Singleton<GlobalManager>{
 				if(currentIndex + 1 < scheduleList.Count){
 					return scheduleList[currentIndex+1].type.ToString();
 				}else{
-					return "End of the Day";
+					return "End of the Week";
 				}
 			}
 			return "";
@@ -277,6 +277,7 @@ public class GlobalManager :  Singleton<GlobalManager>{
 						StoryManager.scenesVisited.Add (currentTextAsset.name);
 					}
 					SceneManager.LoadScene("VN");
+					GetComponent<DJSchedgy> ().shuffle ();
 					myState = PlayerState.visualNoveling;
 					scheduleSettledCount = 0;
 				}

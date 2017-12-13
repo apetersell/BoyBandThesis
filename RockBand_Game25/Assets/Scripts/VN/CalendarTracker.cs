@@ -73,10 +73,10 @@ public class CalendarTracker : MonoBehaviour
 			monthIndex = 0;
 		}
 
-		if (Input.GetKeyDown (KeyCode.Space)) 
-		{
-			advanceDay ();
-		}
+//		if (Input.GetKeyDown (KeyCode.Space)) 
+//		{
+//			advanceDay ();
+//		}
 		
 	}
 
