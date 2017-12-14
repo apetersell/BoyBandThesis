@@ -37,6 +37,7 @@ namespace Yarn.Unity
 	[AddComponentMenu("Scripts/Yarn Spinner/Dialogue Runner")]
 	public class DialogueRunner : MonoBehaviour
 	{
+		public bool fading;
 		// The JSON files to load the conversation from
 		public TextAsset[] sourceText;
 

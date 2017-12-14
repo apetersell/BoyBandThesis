@@ -1071,7 +1071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   game: PR
   score: 0
-  baseValue: 25
+  baseValue: 10
   firstMulti: 10
   secondMulti: 20
   thirdMulti: 30
@@ -1339,8 +1339,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1473352584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 306, y: 172, z: 0}
-  m_LocalScale: {x: 0.31851852, y: 0.31851852, z: 0.31851852}
+  m_LocalPosition: {x: 298, y: 167.5, z: 0}
+  m_LocalScale: {x: 0.3101852, y: 0.3101852, z: 0.3101852}
   m_Children:
   - {fileID: 1523905282}
   m_Father: {fileID: 0}

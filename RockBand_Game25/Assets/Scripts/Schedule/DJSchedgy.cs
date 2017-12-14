@@ -22,6 +22,7 @@ public class DJSchedgy : MonoBehaviour {
 	{
 		globe = GetComponent<GlobalManager> ();
 		aud = GetComponent<AudioSource> ();
+		shuffle ();
 	}
 	
 	// Update is called once per frame

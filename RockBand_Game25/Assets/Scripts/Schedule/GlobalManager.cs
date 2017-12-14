@@ -208,6 +208,25 @@ public class GlobalManager :  Singleton<GlobalManager>{
 		//Calculate total fans.
 		totalFans = Mathf.Round(AigFans) + Mathf.Round (JPFans) + Mathf.Round(LeeFans);
 
+		//Caps on Relationship Values
+		if (jPeRelationship > 100) 
+		{
+			jPeRelationship = 100;
+		}
+		if (jPeRelationship < 0) 
+		{
+			jPeRelationship = 0;
+		}
+		if (leeRelationship > 100) 
+		{
+			leeRelationship = 100;
+		}
+		if (leeRelationship < 0) 
+		{
+			leeRelationship = 0;
+		}
+
+
 		//Calculates stats minus stress.
 		effectiveDance = DanceScore - Stress;
 		effectiveVocal = VocalScore - Stress;
@@ -227,7 +246,7 @@ public class GlobalManager :  Singleton<GlobalManager>{
 		//Resets the game.
 		if (Input.GetKeyDown (KeyCode.R)) 
 		{
-			SceneManager.LoadScene (0);
+			SceneManager.LoadScene ("Title");
 			Destroy (this.gameObject);
 		}
 			
@@ -309,7 +328,16 @@ public class GlobalManager :  Singleton<GlobalManager>{
 		//VN exclusive update.
 		else if(myState == PlayerState.visualNoveling)
 		{
-
+//			if (Input.GetKeyDown (KeyCode.Space)) 
+//			{
+//				StoryManager.updateStats (effectiveDance, effectiveVocal, effectivePR, Stress, jPeRelationship, leeRelationship);
+//				Debug.Log ("Dance: " + StoryManager.danceScore);
+//				Debug.Log ("Vocal: " + StoryManager.vocalScore);
+//				Debug.Log ("PR: " + StoryManager.prScore);
+//				Debug.Log ("Stress: " + StoryManager.stressLevel);
+//				Debug.Log ("J-Pe: " + StoryManager.jPeRelationship);
+//				Debug.Log ("Lee: " + StoryManager.leeRelationship);
+//			}
 		}
 
 	}

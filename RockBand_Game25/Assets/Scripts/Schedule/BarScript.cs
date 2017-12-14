@@ -30,11 +30,11 @@ public class BarScript : MonoBehaviour {
 	{
 		if (stressBar) {
 			if (Dance) {
-				img.fillAmount = gm.DanceScore / StoryManager.statMilestone1;
+				img.fillAmount = gm.DanceScore / StoryManager.statMeterFull;
 			} else if (Vocal) {
-				img.fillAmount = gm.VocalScore / StoryManager.statMilestone1;
+				img.fillAmount = gm.VocalScore / StoryManager.statMeterFull;
 			} else if (PR) {
-				img.fillAmount = gm.PRScore / StoryManager.statMilestone1;
+				img.fillAmount = gm.PRScore / StoryManager.statMeterFull;
 			}
 		} else if (fanBar) {
 			if (Aig) {
@@ -46,11 +46,11 @@ public class BarScript : MonoBehaviour {
 			}
 		}else {
 			if (Dance) {
-				img.fillAmount = gm.effectiveDance / StoryManager.statMilestone1;
+				img.fillAmount = gm.effectiveDance / StoryManager.statMeterFull;
 			} else if (Vocal) {
-				img.fillAmount = gm.effectiveVocal / StoryManager.statMilestone1;
+				img.fillAmount = gm.effectiveVocal / StoryManager.statMeterFull;
 			} else if (PR) {
-				img.fillAmount = gm.effectivePR / StoryManager.statMilestone1;
+				img.fillAmount = gm.effectivePR / StoryManager.statMeterFull;
 			} else if (Relationship) {
 				if (JP) {
 					img.fillAmount = gm.jPeRelationship / 100;
@@ -58,7 +58,7 @@ public class BarScript : MonoBehaviour {
 					img.fillAmount = gm.leeRelationship / 100;
 				}
 			} else if (Stress) {
-				img.fillAmount = gm.Stress / StoryManager.statMilestone1;
+				img.fillAmount = gm.Stress / StoryManager.statMeterFull;
 			}
 		}
 	}

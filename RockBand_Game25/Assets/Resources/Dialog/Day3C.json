@@ -1,0 +1,12 @@
+[
+	{
+		"title": "Start",
+		"tags": "",
+		"body": "<<outfit Aig Casual>>\n<<outfit Lee Casual>>\n<<expression Aig Neutral>>\n<<expression Lee Neutral>>\n<<flip Lee>>\n<<move Lee StageRight2>>\n<<name Friendship Lee>>\n*GURGLE GURGLE GURGLE*\n*SPIT*\nahh.\nAhhh.\nAHHHH!\n<<expression Lee Happy>>\nHa! Perfect!\n<<move Aig StageLeft1>>\n<<name Friendship Aig>>\nHey, Lee!\n<<flip Lee>>\n<<name Friendship Lee>>\n<<expression Lee Neutral>>\nGood evening, Aigburth.\n<<name Friendship Aig>>\nWhat were you doing there?\n<<name Friendship Lee>>\nJust gargling some salt water.  Helps loosen up the old vocal chords.\n->Does that work?\n    <<name Friendship Aig>>\n    Does that work?\n    <<name Friendship Lee>>\n    Sure does! Here--\n->Sounds kind of gross.\n    <<name Friendship Aig>>\n    That, uh...sounds pretty gross.\n    <<name Friendship Lee>>\n    It's not gross! Here--\n<<flip Lee>>\n<<name Friendship ...>>\nHe fills up a glass in the sink and stirs in a spoonful of salt.\n<<flip Lee>>\n<<name Friendship Lee>>\nTry it!\n<<name Friendship Aig>>\nI...uh.\n->Sure.\n    Yeah...sure. Okay.\n    <<name Friendship Lee>>\n    <<statUp Friendship Lee>>\n    <<expression Lee Happy>>\n    That's the spirit!\n    <<name Friendship ...>>\n    You take the glass in hand and tentatively raise it to your lips.\n    <<name Friendship Lee>>\n    <<expression Lee Neutral>>\n    Remember, you don't have to swallow it.  Just swish it around a bit.\n    Make sure to really get in there.\n    <<name Friendship ...>>\n    You take a swig and gargle it.  \n    The salt stings as it hits the back of your throat.\n    <<flip Lee>>\n    <<move Lee StageRight1>>\n    <<move Aig StageRight2>>\n    <<name Friendship Aig>>\n    *SPIT*\n    <<name Friendship Lee>>\n    Better, right?\n    <<name Friendship Aig>>\n    <<flip Aig>>\n    <<expression Aig Happy>>\n    Weirdly...yeah! I feel pretty great!\n    <<name Friendship Lee>>\n    <<expression Lee Happy>>\n    See, told you so!\n->I'll pass.\n    <<name Friendship Aig>>\n    I, uh...no thanks.\n    <<name Friendship Lee>>\n    You sure? I'm telling you it works wonders.\n    <<name Friendship Aig>>\n    Yeah, I'm pretty sure.\n    <<name Friendship Lee>>\n    <<statDown Friendship Lee>>\n    Huh. Well, suit yourself I guess.",
+		"position": {
+			"x": 539,
+			"y": 260
+		},
+		"colorID": 0
+	}
+]
