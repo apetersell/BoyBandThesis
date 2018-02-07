@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour {
 
 	void Awake () 
 	{
-	   clock = Clock.Instance;
+	  clock = Clock.Instance;
       clock.SetBPM(100);
       maxTimer = clock.MeasureLength();
 

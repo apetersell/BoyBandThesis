@@ -110,6 +110,13 @@ public class ExampleDialogueUI : Yarn.Unity.DialogueUIBehaviour
 				foreach (char c in line.text) {
 					stringBuilder.Append (c);
 					lineText.text = stringBuilder.ToString ();
+					if (Input.anyKeyDown) 
+					{
+						yield return new WaitForSeconds (0.00001f);
+						Debug.Log (lineText.text);
+						lineText.text = line.text;
+						break;
+					}
 					yield return new WaitForSeconds (textSpeed);
 				}
 			} else {
@@ -124,10 +131,10 @@ public class ExampleDialogueUI : Yarn.Unity.DialogueUIBehaviour
 			}
 
 			// Wait for any user input
-			while (Input.anyKeyDown == false || fading) {
+			while (Input.anyKeyDown == false) {
 				yield return null;
 			}
-			
+			yield return new WaitForSeconds (0.001f);
 			// Hide the text and prompt
 			lineText.gameObject.SetActive (false);
 			

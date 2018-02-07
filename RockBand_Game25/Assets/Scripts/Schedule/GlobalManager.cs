@@ -14,11 +14,13 @@ public enum PlayerState{
 public class GlobalManager :  Singleton<GlobalManager>{
 	protected GlobalManager () {}
 
+	//Turn on in inspector when debugging minigames
+	public bool miniGameDebug;
+
 	//Main Stats
 	public float DanceScore = 0;
 	public float VocalScore = 0;
 	public float PRScore = 0;
-	public float vocalScore = 0; 
 	public float Stress = 0;
 	public float jPeRelationship = 0;
 	public float leeRelationship = 0; 
@@ -42,6 +44,17 @@ public class GlobalManager :  Singleton<GlobalManager>{
 
 	public int scheduleSettledCount; //How much of the schedule has been filled out?
 	public string upNext; //The name of the next mini-game.
+
+	//What your stats are at the beginning of the week.  Used for end of week result screen.
+	public float SOWdance;
+	public float SOWvocal;
+	public float SOWpr;
+	public float SOWlee;
+	public float SOWjp;
+	public float SOWstress;
+	public float SOWEDance;
+	public float SOWEvocal;
+	public float SOWEpr;
 
 	//Gets access to the VN text assets;
 	public int dayIndex = 0;
@@ -97,12 +110,16 @@ public class GlobalManager :  Singleton<GlobalManager>{
 	//Finds the string for the next actiivty.
 	public string NextActivity{
 		get{
-			if(scheduleList.Count > 0){
-				if(currentIndex + 1 < scheduleList.Count){
-					return scheduleList[currentIndex+1].type.ToString();
-				}else{
-					return "End of the Week";
+			if (!miniGameDebug) {
+				if (scheduleList.Count > 0) {
+					if (currentIndex + 1 < scheduleList.Count) {
+						return scheduleList [currentIndex + 1].type.ToString ();
+					} else {
+						return "End of the Week";
+					}
 				}
+			} else {
+				return "DEBUG MODE";
 			}
 			return "";
 		}
@@ -128,6 +145,8 @@ public class GlobalManager :  Singleton<GlobalManager>{
 		}
 
 		DontDestroyOnLoad(instance);
+
+		Screen.SetResolution(1600, 900, true);
 	}
 
 	//Called when mini-game phase begins.
@@ -228,9 +247,9 @@ public class GlobalManager :  Singleton<GlobalManager>{
 
 
 		//Calculates stats minus stress.
-		effectiveDance = DanceScore - Stress;
-		effectiveVocal = VocalScore - Stress;
-		effectivePR = PRScore - Stress;
+		effectiveDance = DanceScore - Mathf.Round(Stress);
+		effectiveVocal = VocalScore - Mathf.Round (Stress);
+		effectivePR = PRScore - Mathf.Round(Stress);
 		if (effectiveDance < 0) 
 		{
 			effectiveDance = 0;
@@ -254,7 +273,10 @@ public class GlobalManager :  Singleton<GlobalManager>{
 		if(myState == PlayerState.miniGaming)
 		{
 			findFriendObject ();
-			handleCalendar ();
+			if (!miniGameDebug) 
+			{
+				handleCalendar ();
+			}
 			if (LeeImage != null) 
 			{
 				LeeImage.SetActive (LeePresent);
@@ -278,45 +300,41 @@ public class GlobalManager :  Singleton<GlobalManager>{
 			currentGameTime += Time.deltaTime; // ticks up the mini-game timer.
 			currentJPTime += Time.deltaTime;
 			currentLeeTime += Time.deltaTime; 
-			if(currentGameTime > maxGameTimer)
-			{
-				currentIndex ++; //Move to next game in schedule.
-				if(currentIndex < scheduleList.Count) //Load new game if we're not at the end of the list.
-				{
-					JPImage = null;
-					LeeImage = null;
-					loadMiniGame();
-				}
-				else // If We're done with the current schedule.
-				{
-					scheduleList.Clear();
-					sceneToLoad = StoryManager.determineScene(dayIndex, effectiveDance, effectiveVocal, effectivePR, Stress, jPeRelationship, leeRelationship);
-					if (!StoryManager.scenesVisited.Contains (currentTextAsset.name)) 
-					{
-						StoryManager.scenesVisited.Add (currentTextAsset.name);
+			if (currentGameTime > maxGameTimer) {
+				if (!miniGameDebug) {
+					currentIndex++; //Move to next game in schedule.
+					if (currentIndex < scheduleList.Count) { //Load new game if we're not at the end of the list.
+						JPImage = null;
+						LeeImage = null;
+						loadMiniGame ();
+					} else { // If We're done with the current schedule.
+						scheduleList.Clear ();
+						sceneToLoad = StoryManager.determineScene (dayIndex, effectiveDance, effectiveVocal, effectivePR, Stress, jPeRelationship, leeRelationship);
+						if (!StoryManager.scenesVisited.Contains (currentTextAsset.name)) {
+							StoryManager.scenesVisited.Add (currentTextAsset.name);
+						}
+						SceneManager.LoadScene ("VN");
+						GetComponent<DJSchedgy> ().shuffle ();
+						myState = PlayerState.visualNoveling;
+						scheduleSettledCount = 0;
 					}
-					SceneManager.LoadScene("VN");
-					GetComponent<DJSchedgy> ().shuffle ();
-					myState = PlayerState.visualNoveling;
-					scheduleSettledCount = 0;
-				}
-			}
-			if (currentJPTime > maxJPTime) 
-			{
-				JPIndex++;
-				if (JPIndex < JPSchedule.Count) {
-					advanceFriendSchedule ("JP");
-				} else {
-					JPSchedule.Clear ();
-				}
-			}
-			if (currentLeeTime > maxLeeTime) 
-			{
-				LeeIndex++;
-				if (LeeIndex < LeeSchedule.Count) {
-					advanceFriendSchedule ("Lee");
-				} else {
-					LeeSchedule.Clear ();
+				
+					if (currentJPTime > maxJPTime) {
+						JPIndex++;
+						if (JPIndex < JPSchedule.Count) {
+							advanceFriendSchedule ("JP");
+						} else {
+							JPSchedule.Clear ();
+						}
+					}
+					if (currentLeeTime > maxLeeTime) {
+						LeeIndex++;
+						if (LeeIndex < LeeSchedule.Count) {
+							advanceFriendSchedule ("Lee");
+						} else {
+							LeeSchedule.Clear ();
+						}
+					}
 				}
 			}
 		}
@@ -384,5 +402,19 @@ public class GlobalManager :  Singleton<GlobalManager>{
 			}
 			dayNightTimer = 0;
 		}
+	}
+
+	//Used at the start of each week, so what know what scores the player has at the beginning of the week.
+	public void saveScores()
+	{
+		SOWdance = DanceScore;
+		SOWvocal = VocalScore;
+		SOWpr = PRScore;
+		SOWlee = leeRelationship;
+		SOWjp = jPeRelationship;
+		SOWstress = stressMultiplier;
+		SOWEDance = effectiveDance;
+		SOWEvocal = effectiveVocal;
+		SOWEpr = effectivePR;
 	}
 }

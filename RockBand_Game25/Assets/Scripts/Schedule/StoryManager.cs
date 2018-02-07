@@ -12,7 +12,7 @@ public class StoryManager : MonoBehaviour {
 	public static float jPeRelationship;
 	public static float leeRelationship;
 
-	public static float statMeterFull = 1000f;
+	public static float statMeterFull = 500f;
 	public static float statHighThresh1 = 5000f;
 	public static float statLowThresh1 = 2000;
 	public static float fanMileStone1 = 5000;
@@ -161,10 +161,10 @@ public class StoryManager : MonoBehaviour {
 	// PRE - DEBUT **************************************************************************************************************
 	static string DayOne()
 	{
-		float minPRScore = 500;
-		float minVocalScore = 500;
-		float minDanceScore = 500;
-		float maxStress = 500;
+		float minPRScore = 100;
+		float minVocalScore = 100;
+		float minDanceScore = 100;
+		float maxStress = 1000;
 
 		string result = "";
 
@@ -195,10 +195,10 @@ public class StoryManager : MonoBehaviour {
 
 	static string DayTwo()
 	{
-		float minPRScore = 1000;
-		float minVocalScore = 1000;
-		float minDanceScore = 1000;
-		float maxStress = 1000;
+		float minPRScore = 200;
+		float minVocalScore = 200;
+		float minDanceScore = 200;
+		float maxStress = 2000;
 		string result = "";
 		if(stressLevel > maxStress)
 		{
@@ -251,8 +251,8 @@ public class StoryManager : MonoBehaviour {
 
 	static string DayThree() 
 	{
-		float minPRScore = 1500;
-		float minVocalScore = 1500;
+		float minPRScore = 300;
+		float minVocalScore = 300;
 		string result = "";
 
 		if (jPeRelationship >= leeRelationship) {
