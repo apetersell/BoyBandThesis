@@ -1,0 +1,12 @@
+[
+	{
+		"title": "Start",
+		"tags": "",
+		"body": "<<outfit Aig Casual>> \n<<outfit J-Pe Casual>> \n<<expression Aig Neutral>>\n<<expression J-Pe Happy>>\n<<flip Aig>>\n<<move Aig StageLeft2>>\n<<name Friendship Aig>>\n*sigh*\nOnly two more weeks.\n<<move J-Pe StageRight1>>\n<<name Friendship J-Pe>>\nWorking hard, Aiggy?\n<<name Friendship Aig>>\n<<flip Aig>>\n<<expression Aig Happy>>\nOh! Hey J-Pe!\n<<expression Aig Neutral>>\nYeah, I've been focusing really hard on my training lately.\nI just want make sure I'm ready for the debut concert, you know?\n<<name Friendship J-Pe>>\n<<expression J-Pe Neutral>>\nYeah, sure sure.\nBut you shouldn't work TOO hard, you know what I'm saying?\nI mean, you do know how important getting rest is, right?\n-> What do you mean?\n    <<name Friendship Aig>>\n    What do you mean?\n    <<name Friendship J-Pe>>\n    I mean, if you spend all your time training, you're just going to end up stressing yourself out.\n    And if you're stressed out, you won't won't be able to perform to your maximum potential.\n    All that training will just go to waste.\n    <<name Friendship Aig>>\n    That makes sense.\n    So...what should I do?\n    <<name Friendship J-Pe>>\n    <<expression J-Pe Happy>>\n    Just relaaaaaax, my guy!\n    Make sure you schedule some time to rest each week.\n    Keep that stress low and those spirits high!\n    <<name Friendship Aig>>\n    <<expression Aig Happy>>\n    Got it! That sounds like a good idea.\n-> I know.\n    <<name Friendship Aig>>\n    Yeah, I know.  I shouldn't stress myself out. I'll be sure to take some time for rest.\n    <<name Friendship J-Pe>>\n    Exactly.\n<<expression J-Pe Happy>>\nIt's like I always say...all work and no play...\n<<expression J-Pe Neutral>>\n<<flip J-Pe>>\n...something, something...\n...does it make a sound?\n<<flip J-Pe>>\n<<name Friendship Aig>>\n<<expression Aig Neutral>>\n...\nUm.\n<<name Friendship J-Pe>>\n<<expression J-Pe Happy>>\nAaaaaanyway, I'm going to turn in. I want to get up early tomorrow.\nI'm going to wake up right at the crack of noon and hit the ground running.\n<<flip J-Pe>>\nLater, Aiggy!\n<<move J-Pe OffStageRight>>\n<<name Friendship Aig>>\n...\nDid he say \"the crack of noon?\"",
+		"position": {
+			"x": 301,
+			"y": 263
+		},
+		"colorID": 0
+	}
+]
