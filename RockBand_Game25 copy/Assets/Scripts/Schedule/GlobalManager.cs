@@ -281,8 +281,8 @@ public class GlobalManager :  Singleton<GlobalManager>{
 		//Resets the game.
 		if (Input.GetKeyDown (KeyCode.R)) 
 		{
-			SceneManager.LoadScene ("Title");
 			Destroy (this.gameObject);
+			SceneManager.LoadScene ("Title");
 		}
 			
 		//Mini-game stuff exclusive update.
