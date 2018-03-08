@@ -28,10 +28,7 @@ public class BlockUnit : MonoBehaviour {
 			{
 				if (GetComponentInParent<LineUnit> ().unwinnable == false) 
 				{
-					GetComponentInParent<LineUnit> ().unwinnable = true;
-					GameObject.Find ("ScoreManager").GetComponent<ScoreManager> ().misses++;
-					GameObject.Find ("ScoreManager").GetComponent<ScoreManager> ().inARow = 0;
-					globe.Stress += 10;
+					GameObject.Find ("ScoreManager").GetComponent<ScoreManager> ().scorePoints (false);
 				}
 			}
 		}

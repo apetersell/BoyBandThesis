@@ -5,7 +5,10 @@ using UnityEngine.UI;
 using Yarn.Unity;
 using DG.Tweening;
 
-public class CharacterSpriteController : MonoBehaviour {
+public class CharacterSpriteController : MonoBehaviour 
+{
+	public string spriteIndexName;
+	public string outfitString; 
 	public Transform fadeOutTransfrom;
 	public Transform OffStageLeft; 
 	public Transform OffStageRight;
@@ -16,16 +19,24 @@ public class CharacterSpriteController : MonoBehaviour {
 	public Transform stageleft2;
 	public GameObject friendEffect;
 	private Vector3 fadeInPos;
-	public Sprite [] casual;
-	public Sprite [] regular; 
-	public Sprite [] currentOutfit; 
+	public Sprite [] outfitBases;
+	public Image[] faceParts;
 	Image img;
 	public bool speaking;
 	public Vector3 speakingScale;
 	public Vector3 normalScale;
 
+	void Awake ()
+	{
+		for (int i = 0; i < 3; i++) 
+		{
+			faceParts [i] = transform.GetChild (i).GetComponent<Image>();
+		}
+	}
+
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		fadeInPos = transform.position;
 		transform.position = fadeOutTransfrom.position;
 		img = GetComponent<Image> ();
@@ -43,7 +54,6 @@ public class CharacterSpriteController : MonoBehaviour {
 
 	[YarnCommand("move")]
 	public void MoveCharacter(string destinationName) {
-//		Debug.Log(destinationName);
 		// move to the destination
 		if (destinationName.Equals ("in")) {
 			transform.DOMove (fadeInPos, 1f);
@@ -98,44 +108,119 @@ public class CharacterSpriteController : MonoBehaviour {
 	[YarnCommand("outfit")]
 	public void changeOutfit (string outfit)
 	{
-		Debug.Log (this.gameObject.name + " changed into " + outfit);
-		if (outfit == "Casual") {
-			for (int i = 0; i < currentOutfit.Length; i++) 
-			{
-				currentOutfit [i] = casual [i];
-			}
-		} 
-		else 
+		if (outfit == "Regular") 
 		{
-			for (int i = 0; i < currentOutfit.Length; i++) 
-			{
-				currentOutfit [i] = regular [i];
-			}
+			img.sprite = outfitBases [0];
+			outfitString = "everyday";
+		} 
+		else if (outfit == "Casual") 
+		{
+			img.sprite = outfitBases [1];
+			outfitString = "casual";
+		} 
+		else if (outfit == "Stage") 
+		{
+			img.sprite = outfitBases [2];
+			outfitString = "stage";
 		}
+			
 	}
 
 	[YarnCommand("expression")]
-	public void changeExpression (string expression)
+	public void changeExpression (string sent)
 	{
-		if (expression == "Neutral") 
+		string _brows = sent.Substring (0, 1);
+		string _mouth = sent.Substring (1, 1);
+		string _eyes = sent.Substring (2, 1); 
+		string _eyePos = sent.Substring (3, 1);
+		string brows = null;
+		string mouth = null;
+		string eyes = null;
+		string eyePos = null;
+
+		switch (_brows) 
 		{
-			img.sprite = currentOutfit [0];
+		case "N":
+			brows = "1";
+			break;
+		case "A":
+			brows = "2";
+			break;
+		case "R":
+			brows = "3";
+			break;
 		}
-		if (expression == "Happy") 
+
+		switch (_mouth) 
 		{
-			img.sprite = currentOutfit [1];
+		case "N":
+			mouth = "1";
+			break;
+		case "H":
+			mouth = "2";
+			break;
+		case "S":
+			mouth = "3";
+			break;
+		case "L":
+			mouth = "4";
+			break;
+		case "O":
+			mouth = "5";
+			break;
 		}
-		if (expression == "Angry") 
+		switch (_eyes) 
 		{
-			img.sprite = currentOutfit [2];
+		case "N":
+			eyes = "1";
+			break;
+		case "S":
+			eyes = "2";
+			break;
+		case "W":
+			eyes = "3";
+			break;
 		}
-		if (expression == "Smile") 
+		switch (_eyePos) 
 		{
-			img.sprite = currentOutfit [3];
+		case "F":
+			eyePos = "-1";
+			break;
+		case "B":
+			eyePos = "-2";
+			break;
+		case "U":
+			eyePos = "-3";
+			break;
 		}
-		if (expression == "Surprise") 
+
+		faceParts [0].sprite = findFacePart ("brows", brows);
+		faceParts [1].sprite = findFacePart ("eyes", eyes + eyePos);
+		faceParts [2].sprite = findFacePart ("mouth", mouth);
+
+	}
+
+	public Sprite findFacePart (string piece, string lookingFor)
+	{
+		string filePath = null;
+		string initFilePath = "Sprites/visualnovelly/MainCharacters/";
+		if (this.gameObject.name == "Kent") 
 		{
-			img.sprite = currentOutfit [4];
+			filePath = initFilePath + this.gameObject.name + "/" + spriteIndexName + "-" + piece + "-"  + lookingFor;
+		} 
+		else 
+		{
+			if (piece == "mouth") 
+			{
+				filePath = initFilePath + this.gameObject.name + "/" + this.gameObject.name + "_everyday/" + spriteIndexName + "-mouth-" + lookingFor;
+			} 
+			else 
+			{
+				filePath = initFilePath + this.gameObject.name + "/" + this.gameObject.name + "_" + outfitString + "/" + spriteIndexName + "-" + outfitString + "-" + piece + "-" + lookingFor;
+			}
 		}
+		Sprite s = Resources.Load<Sprite> (filePath);
+		Debug.Assert (s != null, "Couldn't find " + piece + " sprite!");
+		return s;
 	}
 }

@@ -48,12 +48,18 @@ public class UpAndDownHandler : MonoBehaviour {
 		if(coll.GetComponent<SpriteRenderer>())
 		{
 			coll.GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color;
-			sm.scorePoints (true);
-//			score ++;
-//			txtScore.text = score.ToString();
-//			if(globe){
-//				globe.VocalScore ++;
-
+//			if (!globe.performance) 
+//			{
+//				sm.scorePoints (true);
+//			} 
+//			else 
+//			{
+//				score++;
+//				txtScore.text = score.ToString ();
+//				if (globe) {
+//					globe.VocalScore++;
+//				}
+//			}
 		}
 	}
 }

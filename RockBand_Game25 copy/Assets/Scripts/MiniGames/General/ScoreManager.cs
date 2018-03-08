@@ -20,21 +20,29 @@ public class ScoreManager : MonoBehaviour {
 	public float misses;
 	public float streak;
 	public AudioClip hitSound;
+	public AudioClip fanSound;
 	public AudioClip smallCheer;
 	public AudioClip midCheer;
 	public AudioClip bigCheer;
 	public int inARow;
 	public float valueOfMatch;
 	public float relationshipMultiplier = 1;
+	public float danceFanValue;
+	public float vocalFanValue;
+	public float PRFanValue;
 	bool theEnd;
 	GameObject scoreBoard;
 	GlobalManager globe;
 	AudioSource auds;
    	private Clock clock;
+	public GameObject fanBar;
 
 	void Awake ()
 	{
 	   clock = Clock.Instance;
+		if (game == "PR" || game == "Sing" || game == "Dance") {
+			fanBar = GameObject.Find ("FanBar");
+		}
 	}
 
 	// Use this for initialization
@@ -54,28 +62,42 @@ public class ScoreManager : MonoBehaviour {
 		pointValue ();
 		displayScores ();
 		determineRelationshipMulti ();
+		fanBar.SetActive (globe.performance);
 	}
 
 	public void scorePoints (bool hit)
 	{
-		if (!globe.isStopped) {
-			if (hit) {
-				score += valueOfMatch;
-				if (globe != null) {
-					if (game == "PR" || game == "Talk Show") {
-						globe.PRScore += valueOfMatch;
-						globe.AigFans++;
-					}
-					if (game == "Sing" || game == "Songwriting") {
-						globe.VocalScore += valueOfMatch;
-					}
-					if (game == "Dance" || game == "Street Modeling") {
-						globe.DanceScore += valueOfMatch;
+		if (!globe.isStopped) 
+		{
+			if (hit) 
+			{
+				if (globe.performance) 
+				{
+					score += performancePointValue ();
+					globe.AigFans += performancePointValue ();
+				} 
+				else 
+				{
+					score += valueOfMatch;
+					if (globe != null) {
+						if (game == "PR" || game == "Talk Show") {
+							globe.PRScore += valueOfMatch;
+							globe.AigFans++;
+						}
+						if (game == "Sing" || game == "Songwriting") {
+							globe.VocalScore += valueOfMatch;
+						}
+						if (game == "Dance" || game == "Street Modeling") {
+							globe.DanceScore += valueOfMatch;
+						}
 					}
 				}
-				if (game != "Sing") {
-					inARow++;
-					hits++;
+				inARow++;
+				hits++;
+				if (globe.performance) {
+					auds.clip = fanSound;
+					auds.PlayScheduled (clock.AtNextSixteenth ());
+				} else {
 					auds.clip = hitSound;
 					auds.PlayScheduled (clock.AtNextSixteenth ());
 				}
@@ -118,12 +140,33 @@ public class ScoreManager : MonoBehaviour {
 		{
 			streak = inARow;
 		}
+
+		danceFanValue = Mathf.Round (globe.effectiveDance / 50);
+		vocalFanValue = Mathf.Round (globe.effectiveVocal / 50);
+		PRFanValue = Mathf.Round (globe.effectivePR / 50);
+
+		if (danceFanValue < 1) 
+		{
+			danceFanValue = 1;
+		}
+		if (vocalFanValue < 1) 
+		{
+			vocalFanValue = 1;
+		}
+		if (PRFanValue < 1) 
+		{
+			PRFanValue = 1;
+		}
 	}
 
 	void displayScores ()
 	{
 		float trueMulti = multiplier * relationshipMultiplier;
-		scoreDisplay.text = "Score: " + Mathf.Round(score).ToString (); 
+		if (!globe.performance) {
+			scoreDisplay.text = "Score: " + Mathf.Round (score).ToString (); 
+		} else {
+			scoreDisplay.text = "FansPerHit: " + performancePointValue ().ToString ();
+		}
 		multiplierDisplay.text = "Multiplier: x" + trueMulti.ToString (); 
 		inARowDisplay.text = "Combo: " + inARow.ToString (); 
 	}
@@ -142,6 +185,27 @@ public class ScoreManager : MonoBehaviour {
 			relationshipMultiplier = 1;
 		}
 	}
+
+	float performancePointValue ()
+	{
+		float result = 0;
+		float stat = 0;
+		if (game == "PR" || game == "Talk Show") 
+		{
+			stat = PRFanValue;
+		}
+		if (game == "Sing" || game == "Songwriting") {
+			stat = vocalFanValue;
+		}
+		if (game == "Dance" || game == "Street Modeling") {
+			stat = danceFanValue;
+		}
+
+		result = Mathf.Round((stat * multiplier) * relationshipMultiplier); 
+
+		return result;
+	}
+
 
 	float multi (float score) 
 	{

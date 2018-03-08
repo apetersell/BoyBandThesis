@@ -71,6 +71,8 @@ public class StoryManager : MonoBehaviour {
 			result = DayThree ();
 		} else if (dayIndex == 4) {
 			result = "";
+		} else if (dayIndex == 5) {
+			result = "";
 		}
 
 		return result;

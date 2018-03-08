@@ -9,9 +9,11 @@ public class LineUnit : MonoBehaviour {
 	int banked;
 	public int alreadyPassed;
 	public bool unwinnable = false;
+	bool hit;
 	ScoreManager sm;
 	AudioSource auds;
 	HitEffect he;
+	GlobalManager globe;
 
 	// Use this for initialization
 	void Start () 
@@ -20,6 +22,7 @@ public class LineUnit : MonoBehaviour {
 		sm = GameObject.Find ("ScoreManager").GetComponent<ScoreManager> ();
 		auds = GameObject.Find ("ScoreManager").GetComponent<AudioSource> ();
 		he = GameObject.Find ("HitEffect").GetComponent<HitEffect> ();
+		globe = GameObject.Find ("GlobalStats").GetComponent<GlobalManager> ();
 	}
 	
 	// Update is called once per frame
@@ -30,7 +33,7 @@ public class LineUnit : MonoBehaviour {
 			Destroy (this.gameObject);
 		}
 			
-		if (unwinnable == false) 
+		if (!unwinnable) 
 		{
 			for (int i = 0; i < blocks.Count; i++) 
 			{
@@ -46,25 +49,10 @@ public class LineUnit : MonoBehaviour {
 						banked = alreadyPassed;
 					}
 
-					if (banked == blocks.Count) 
+					if (banked == blocks.Count && !hit) 
 					{
-						sm.hits++;
-						sm.inARow++;
-						auds.PlayOneShot (sm.hitSound);
-						he.active = true;
-						if (sm.inARow == sm.firstMulti) 
-						{
-							auds.PlayOneShot (sm.smallCheer);
-						}
-						if (sm.inARow == sm.secondMulti) 
-						{
-							auds.PlayOneShot (sm.midCheer);
-						}
-						if (sm.inARow == sm.thirdMulti) 
-						{
-							auds.PlayOneShot (sm.bigCheer);
-						}
-						unwinnable = true;
+						hit = true;
+						sm.scorePoints (true);
 					}
 				} 
 				else 

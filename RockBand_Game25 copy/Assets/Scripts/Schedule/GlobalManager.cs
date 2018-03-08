@@ -62,6 +62,11 @@ public class GlobalManager :  Singleton<GlobalManager>{
 	public string SOWstring;
 	public bool isStopped;
 
+	//Peformance Stuff
+	public bool performance; //Tells the manager whether or not we are currently in a performance.
+	public List <int> performanceDates = new List<int>();  //All the specific days that there will be performances.
+	public float numberOfFansRequired; //The number of fans required to pass the current phase.
+
 	//Gets access to the VN text assets;
 	public int dayIndex = 0;
 	public int sceneLayers
@@ -158,7 +163,7 @@ public class GlobalManager :  Singleton<GlobalManager>{
 	}
 
 	//Called when mini-game phase begins.
-	void StartMiniGaming()
+	public void StartMiniGaming()
 	{
 		currentIndex = 0; //
 		JPIndex = 0;
@@ -182,11 +187,17 @@ public class GlobalManager :  Singleton<GlobalManager>{
 		currentGameTime = 0; //Resets timer;
 		ScheduleUnit su = scheduleList [currentIndex];
 		UnitType currentType = su.type;
-		maxGameTimer = su.time * timePerUnit;	//Sets game timer to the time from schedule.
+		if (performance) {
+			maxGameTimer = su.time;
+		} else {
+			maxGameTimer = su.time * timePerUnit;	
+		}
+		//Sets game timer to the time from schedule. If it is a performance, the time we take the time is seconds directly from the unity
+			//if it is normal day. we take the time from the unity and multiply it by the time per unit.
 
 		currentGame = currentType;
 
-		Debug.Log(currentIndex+"."+currentType.ToString()+" for "+maxGameTimer+"seconds");
+		Debug.Log(currentIndex+"."+currentType.ToString()+" for		 "+maxGameTimer+"seconds");
 		//Loads game type depending on schedule list.
 		switch(currentType){
 		case UnitType.Dance:SceneManager.LoadScene("PoseyMatchy");break;
@@ -203,7 +214,10 @@ public class GlobalManager :  Singleton<GlobalManager>{
 		if(currentType != UnitType.Sleep)
 		{
 			//if(Stress + currentTime*10f< 1000f){
-			Stress += maxGameTimer * stressMultiplier;
+			if (!performance) 
+			{
+				Stress += maxGameTimer * stressMultiplier;
+			}
 			//}else{
 			//	Stress = 1000f;
 			//	//game over
@@ -220,7 +234,11 @@ public class GlobalManager :  Singleton<GlobalManager>{
 			currentJPTime = 0;
 			ScheduleUnit su = JPSchedule [JPIndex];
 			JPCurrentType = su.type;
-			maxJPTime = su.time * timePerUnit;
+			if (performance) {
+				maxJPTime = su.time;
+			} else {
+				maxJPTime = su.time * timePerUnit;
+			}
 //			Debug.Log(currentIndex+"."+su.type.ToString()+" for "+maxJPTime+"seconds");
 		}
 
@@ -229,7 +247,11 @@ public class GlobalManager :  Singleton<GlobalManager>{
 			currentLeeTime = 0;
 			ScheduleUnit su = LeeSchedule [LeeIndex];
 			LeeCurrentType = su.type;
-			maxLeeTime = su.time * timePerUnit;
+			if (performance) {
+				maxLeeTime = su.time;
+			} else {
+				maxLeeTime = su.time * timePerUnit;
+			}
 		}
 	}
 		
@@ -289,6 +311,10 @@ public class GlobalManager :  Singleton<GlobalManager>{
 		if(myState == PlayerState.miniGaming)
 		{
 			findFriendObject ();
+			if(Input.GetKeyDown(KeyCode.Escape))
+			{
+				loadVNScene ();
+			}
 			if (!miniGameDebug) 
 			{
 				handleCalendar ();
@@ -391,13 +417,21 @@ public class GlobalManager :  Singleton<GlobalManager>{
 	{
 		scheduleList.Clear ();
 		sceneToLoad = StoryManager.determineScene (dayIndex, effectiveDance, effectiveVocal, effectivePR, Stress, jPeRelationship, leeRelationship);
-		if (!StoryManager.scenesVisited.Contains (currentTextAsset.name)) {
+		if (!StoryManager.scenesVisited.Contains (currentTextAsset.name)) 
+		{
 			StoryManager.scenesVisited.Add (currentTextAsset.name);
 		}
 		SceneManager.LoadScene ("VN");
 		GetComponent<DJSchedgy> ().shuffle ();
 		myState = PlayerState.visualNoveling;
 		scheduleSettledCount = 0;
+		if (performanceDates.Contains (dayIndex)) {
+			GetComponent<PerformanceScheduler> ().makePerformanceSchedule (dayIndex);
+			performance = true;
+		} else {
+			performance = false;
+		}
+
 	}
 
 

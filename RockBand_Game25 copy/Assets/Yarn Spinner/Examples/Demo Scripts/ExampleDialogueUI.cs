@@ -44,7 +44,8 @@ public class ExampleDialogueUI : Yarn.Unity.DialogueUIBehaviour
 	{
 		GUIStyle style = new GUIStyle(); 
 		public int layersDeep;
-		public bool fading;
+		public bool fading; 
+		public int endDate;
 		
 		// The object that contains the dialogue and the options.
 		// This object will be enabled when conversation starts, and
@@ -231,11 +232,16 @@ public class ExampleDialogueUI : Yarn.Unity.DialogueUIBehaviour
 			{
 				if (gm) 
 				{
-					//Camera.main.
 					gm.myState = PlayerState.timescheduling;
-					if (gm.dayIndex >= 4) {
+					if (gm.dayIndex >= endDate) 
+					{
 						SceneManager.LoadScene ("End");
-					} else {
+					} else if (gm.performance)
+					{
+						gm.StartMiniGaming ();
+					}
+					else
+					{
 						SceneManager.LoadScene ("Main");
 						gm.saveStartofWeekScores (gm.gameObject.GetComponent<CalendarTracker>().displayDate + " - " + gm.gameObject.GetComponent<CalendarTracker>().oneWeeklater);
 					}
