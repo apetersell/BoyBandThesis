@@ -2444,7 +2444,7 @@ MonoBehaviour:
   performanceDates: 04000000
   numberOfFansRequired: 1000
   dayIndex: 0
-  testText: {fileID: 4900000, guid: e58626cad57584fc185619ea2553dabd, type: 3}
+  testText: {fileID: 4900000, guid: 85e809dfd4051437488601c8adf56ddb, type: 3}
   timePerUnit: 0
   countDown: {fileID: 8300000, guid: 855fff2b168654637b72e4ba084029e8, type: 3}
   maxGameTimer: 0
@@ -2703,11 +2703,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1334746243}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c650b447b791e4324883cd75ae001b37, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c6469c030e164f11aff44a9dbd423f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteIndexName: 
-  outfitString: 
+  spriteIndexName: wendy
+  outfitString: N/A
   fadeOutTransfrom: {fileID: 2129823777}
   OffStageLeft: {fileID: 285395187}
   OffStageRight: {fileID: 2129823777}
@@ -2722,6 +2722,12 @@ MonoBehaviour:
   speaking: 0
   speakingScale: {x: 1.1, y: 1.1, z: 1.1}
   normalScale: {x: 1, y: 1, z: 1}
+  expressions:
+  - {fileID: 21300000, guid: 5d636985c2c5640bb8f411c0384d365a, type: 3}
+  - {fileID: 21300000, guid: d917875992b75438e86d96f112c6a19c, type: 3}
+  - {fileID: 21300000, guid: d2286ec1fcf3c481aa116bf24cfe69ad, type: 3}
+  - {fileID: 21300000, guid: 89cca6c89afd745bbbe8c2b654b16256, type: 3}
+  - {fileID: 21300000, guid: 01c802cbb3cb5462e9144e0aed3e897e, type: 3}
 --- !u!114 &1334746246
 MonoBehaviour:
   m_ObjectHideFlags: 0

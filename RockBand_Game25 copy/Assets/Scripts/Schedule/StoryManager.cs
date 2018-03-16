@@ -82,7 +82,7 @@ public class StoryManager : MonoBehaviour {
 	public static int findLayers (int dayIndex)
 	{
 		int result = 0;
-		if (dayIndex == 3) {
+		if (dayIndex == 0) {
 			result = 2;
 		} else if (dayIndex == 4) {
 			result = 3;
@@ -107,7 +107,7 @@ public class StoryManager : MonoBehaviour {
 		}
 		if (day == "Day3PR") 
 		{
-			if (prScore < 200) {
+			if (prScore < 350) {
 				result = "Bad";
 			} else {
 				result = "Good";
@@ -115,7 +115,7 @@ public class StoryManager : MonoBehaviour {
 		}
 		if (day == "Day3Dance") 
 		{
-			if (danceScore < 200) {
+			if (danceScore > 350) {
 				result = "Bad";
 			} else {
 				result = "Good";

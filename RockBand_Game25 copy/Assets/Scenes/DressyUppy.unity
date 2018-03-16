@@ -994,7 +994,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 11.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!4 &278433497
 Transform:
@@ -1022,8 +1022,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hidden: 0
   outfits:
-  - {fileID: 21300000, guid: 103e524c25ec6480c8fed0d3882e6262, type: 3}
-  - {fileID: 21300000, guid: b18dbf66bdde14f05bf02d2c3f775430, type: 3}
+  - {fileID: 21300000, guid: c250b18b2fbdb48b09ec015cc8f4897b, type: 3}
+  - {fileID: 21300000, guid: dbc2001edd33c464192be54ad03661b2, type: 3}
   - {fileID: 21300000, guid: f66ecbe2952c24ef5aa1ac555f5aa7d2, type: 3}
   outfitIndex: 0
   facingRight: 0
@@ -4314,12 +4314,17 @@ MonoBehaviour:
   misses: 0
   streak: 0
   hitSound: {fileID: 8300000, guid: 717fc567fcdf54a86b06823f2f5eda31, type: 3}
+  fanSound: {fileID: 0}
   smallCheer: {fileID: 8300000, guid: 63d86be0054e343b58435691f86b0b25, type: 3}
   midCheer: {fileID: 8300000, guid: cd934ff0091f44ec3837ead6f897b422, type: 3}
   bigCheer: {fileID: 8300000, guid: f2cfae90260cd4f79ab13c37f44d7667, type: 3}
   inARow: 0
   valueOfMatch: 0
   relationshipMultiplier: 1
+  danceFanValue: 0
+  vocalFanValue: 0
+  PRFanValue: 0
+  fanBar: {fileID: 0}
 --- !u!4 &1270535028
 Transform:
   m_ObjectHideFlags: 0
@@ -5362,7 +5367,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 103e524c25ec6480c8fed0d3882e6262, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c250b18b2fbdb48b09ec015cc8f4897b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6127,6 +6132,9 @@ MonoBehaviour:
   SOWEpr: 0
   SOWstring: 
   isStopped: 0
+  performance: 0
+  performanceDates: 
+  numberOfFansRequired: 0
   dayIndex: 0
   testText: {fileID: 0}
   timePerUnit: 0
@@ -6371,7 +6379,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: b18dbf66bdde14f05bf02d2c3f775430, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dbc2001edd33c464192be54ad03661b2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

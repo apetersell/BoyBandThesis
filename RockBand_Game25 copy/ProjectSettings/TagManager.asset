@@ -15,10 +15,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Aig_mini
+  - Wendy_mini
+  - JPe-mini
+  - Lee_mini
   - 
   - 
   - 
@@ -42,4 +42,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: mini_Lee
+    uniqueID: 635647397
+    locked: 0
+  - name: mini-JPe
+    uniqueID: 1313324489
+    locked: 0
+  - name: mini-Aig
+    uniqueID: 2593647609
     locked: 0

@@ -115,8 +115,8 @@ MonoBehaviour:
   speed: 5
   brandIndex: 2
   brands:
-  - {fileID: 21300000, guid: 103e524c25ec6480c8fed0d3882e6262, type: 3}
-  - {fileID: 21300000, guid: b18dbf66bdde14f05bf02d2c3f775430, type: 3}
+  - {fileID: 21300000, guid: c250b18b2fbdb48b09ec015cc8f4897b, type: 3}
+  - {fileID: 21300000, guid: dbc2001edd33c464192be54ad03661b2, type: 3}
   - {fileID: 21300000, guid: f66ecbe2952c24ef5aa1ac555f5aa7d2, type: 3}
   endPos: 0
   spawnedRight: 0
@@ -167,7 +167,7 @@ SpriteRenderer:
   m_Size: {x: 5.47, y: 11.47}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!212 &212339494865788056
 SpriteRenderer:

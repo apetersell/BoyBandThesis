@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae0543fe805424df99fe08ce744cbe49, type: 3}
+  m_Name: Lee_scrunch
+  m_EditorClassIdentifier: 
+  m_PoseEntries:
+  - path: Skeleton/Hip
+    localPosition: {x: 0.51584935, y: -1.9754415, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.7502207, w: 0.6611876}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/Hip/Stomach
+    localPosition: {x: 0.46000534, y: 0.000001013279, z: 0}
+    localRotation: {x: -0, y: 0, z: -0.017138474, w: -0.99985313}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/Hip/Stomach/Chest
+    localPosition: {x: 0.665114, y: 0.00000094209827, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.092214175, w: 0.99573916}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/Hip/Stomach/Chest/Head
+    localPosition: {x: 2.2502956, y: 0.00000074412674, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.029797079, w: 0.999556}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/Hip/Stomach/Chest/RightUpperArm
+    localPosition: {x: 1.767537, y: 0.67826194, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.99990743, w: 0.01360847}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/Hip/Stomach/Chest/RightUpperArm/RightLowerArm
+    localPosition: {x: 1.5900004, y: -0.0000012516975, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.6937738, w: 0.72019297}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/Hip/Stomach/Chest/RightUpperArm/RightLowerArm/RightHand
+    localPosition: {x: 1.2400012, y: -0.0000013709068, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.0023047915, w: -0.9999974}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/Hip/Stomach/Chest/LeftUpperArm
+    localPosition: {x: 1.7503066, y: -0.934623, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.9995723, w: 0.02924617}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/Hip/Stomach/Chest/LeftUpperArm/LeftLowerArm
+    localPosition: {x: 1.670675, y: -0.00000010430813, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.6330651, w: 0.7740986}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/Hip/Stomach/Chest/LeftUpperArm/LeftLowerArm/LeftHand
+    localPosition: {x: 1.2800002, y: -0.00000024528708, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.09835534, w: -0.99515134}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/Hip/RightThigh
+    localPosition: {x: 0.18453975, y: 0.70781934, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.85271525, w: 0.522376}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/Hip/RightThigh/RightCalf
+    localPosition: {x: 1.9151495, y: -0.00000047683716, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.6546942, w: 0.7558939}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/Hip/RightThigh/RightCalf/RightShoe
+    localPosition: {x: 2.650003, y: -0.0000019073486, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.69510883, w: 0.71890455}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/Hip/LeftThigh
+    localPosition: {x: 0.27906194, y: -0.5018836, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.9243089, w: 0.38164517}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/Hip/LeftThigh/LeftCalf
+    localPosition: {x: 1.7035565, y: -0.00000011920929, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.5126915, w: 0.8585729}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/Hip/LeftThigh/LeftCalf/LeftShoe
+    localPosition: {x: 2.7600026, y: -0.000000493892, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.7408416, w: -0.67167974}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/Hip/ShirtBack
+    localPosition: {x: 0.83147585, y: -0.024299026, z: 0}
+    localRotation: {x: -0, y: 0, z: -0.99388415, w: -0.11042805}
+    localScale: {x: 1, y: 1, z: 1}

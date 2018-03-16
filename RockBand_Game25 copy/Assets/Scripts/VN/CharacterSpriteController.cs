@@ -21,12 +21,12 @@ public class CharacterSpriteController : MonoBehaviour
 	private Vector3 fadeInPos;
 	public Sprite [] outfitBases;
 	public Image[] faceParts;
-	Image img;
+	protected Image img;
 	public bool speaking;
 	public Vector3 speakingScale;
 	public Vector3 normalScale;
 
-	void Awake ()
+	public virtual void Awake ()
 	{
 		for (int i = 0; i < 3; i++) 
 		{
@@ -106,7 +106,7 @@ public class CharacterSpriteController : MonoBehaviour
 	}
 
 	[YarnCommand("outfit")]
-	public void changeOutfit (string outfit)
+	public virtual void changeOutfit (string outfit)
 	{
 		if (outfit == "Regular") 
 		{
@@ -127,7 +127,7 @@ public class CharacterSpriteController : MonoBehaviour
 	}
 
 	[YarnCommand("expression")]
-	public void changeExpression (string sent)
+	public virtual void changeExpression (string sent)
 	{
 		string _brows = sent.Substring (0, 1);
 		string _mouth = sent.Substring (1, 1);
@@ -166,7 +166,11 @@ public class CharacterSpriteController : MonoBehaviour
 			mouth = "4";
 			break;
 		case "O":
-			mouth = "5";
+			if (this.gameObject.name == "Kent") {
+				mouth = "4";
+			} else {
+				mouth = "5";
+			}
 			break;
 		}
 		switch (_eyes) 
