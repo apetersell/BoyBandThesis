@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour {
 			playerInput ();
 			handleTimer ();
 		}
-//		SpeedUp ();
+		SpeedUp ();
 //		handleEnding ();
 	}
 

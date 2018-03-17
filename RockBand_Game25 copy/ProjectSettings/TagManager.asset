@@ -52,3 +52,6 @@ TagManager:
   - name: mini-Aig
     uniqueID: 2593647609
     locked: 0
+  - name: mini-passyNPC
+    uniqueID: 1389433429
+    locked: 0

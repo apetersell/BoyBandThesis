@@ -51,18 +51,16 @@ public class NPCSpawner : MonoBehaviour {
 		string whichSide = sideBag.Next ();
 		GameObject newNpc = Instantiate (npc) as GameObject;
 		PassyNPC p = newNpc.GetComponent<PassyNPC> ();
-		SpriteRenderer sr = newNpc.GetComponent<SpriteRenderer> ();
 		if (whichSide == "LEFT") 
 		{
 			p.startPos = leftPos;
 			p.endPos = rightPos;
-			sr.flipX = true;
+			newNpc.transform.localScale = new Vector3 (npc.transform.localScale.x * -1, npc.transform.localScale.y, npc.transform.localScale.z);
 		}
 		if (whichSide == "RIGHT") 
 		{
 			p.startPos = rightPos;
 			p.endPos = leftPos;
-			sr.flipX = false;
 		}
 		p.speed = NPCMoveSpeed;
 	}

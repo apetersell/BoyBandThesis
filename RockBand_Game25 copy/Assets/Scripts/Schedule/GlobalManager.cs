@@ -197,7 +197,7 @@ public class GlobalManager :  Singleton<GlobalManager>{
 
 		currentGame = currentType;
 
-		Debug.Log(currentIndex+"."+currentType.ToString()+" for		 "+maxGameTimer+"seconds");
+//		Debug.Log(currentIndex+"."+currentType.ToString()+" for		 "+maxGameTimer+"seconds");
 		//Loads game type depending on schedule list.
 		switch(currentType){
 		case UnitType.Dance:SceneManager.LoadScene("PoseyMatchy");break;

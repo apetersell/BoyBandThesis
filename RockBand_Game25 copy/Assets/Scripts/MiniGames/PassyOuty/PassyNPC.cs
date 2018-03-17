@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PassyNPC : MonoBehaviour {
 
-	public Sprite[] sprites;
 	public bool active = true;
 	public bool hasFlier;
 	SpriteRenderer sr;
@@ -13,15 +12,14 @@ public class PassyNPC : MonoBehaviour {
 	public Vector3 endPos; 
 	public float speed;
 	float lerpPercent;
-	public GameObject exclaim;
+	Animator anim;
 
 	// Use this for initialization
 	void Start () {
 
 		sr = GetComponent<SpriteRenderer> ();
 		sm = GameObject.Find ("ScoreManager").GetComponent<ScoreManager> ();
-		exclaim = transform.GetChild (0).gameObject;
-		exclaim.SetActive (false);
+		anim = GetComponent<Animator> ();
 		
 	}
 	
@@ -45,7 +43,6 @@ public class PassyNPC : MonoBehaviour {
 	void reset () 
 	{
 		active = true;
-		sr.sprite = sprites [0];
 		transform.position = startPos;
 	}
 		
@@ -53,18 +50,17 @@ public class PassyNPC : MonoBehaviour {
 	{
 		active = false;
 		if (got) {
-			sr.sprite = sprites [1];
 			hasFlier = true;
 			sm.scorePoints (true);
-			transform.GetChild (1).gameObject.GetComponent<HitEffect> ().active = true;
+			anim.SetTrigger ("Hit");
 		} else {
-			sr.sprite = sprites [2];
 			sm.scorePoints (false);
+			anim.SetTrigger ("Miss");
 		}
 	}
 
 	public void seePlayer (bool sees)
 	{
-		exclaim.SetActive (sees);
+		anim.SetTrigger ("SeePlayer");
 	}
 }

@@ -82,7 +82,7 @@ public class StoryManager : MonoBehaviour {
 	public static int findLayers (int dayIndex)
 	{
 		int result = 0;
-		if (dayIndex == 0) {
+		if (dayIndex == 3) {
 			result = 2;
 		} else if (dayIndex == 4) {
 			result = 3;

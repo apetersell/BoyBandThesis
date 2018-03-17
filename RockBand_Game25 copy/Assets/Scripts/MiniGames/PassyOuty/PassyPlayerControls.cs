@@ -4,35 +4,35 @@ using UnityEngine;
 
 public class PassyPlayerControls : MonoBehaviour {
 
-	public Sprite[] sprites; 
-	SpriteRenderer sr; 
-	float startingScaleX;
 	public float activeFrames;
 	public float activeTimer;
 	bool playerActive;
 	Detector detectBoxL; 
 	Detector detectBoxR;
+	Animator anim;
+	bool hit;
 
 	void Awake ()
 	{
-		startingScaleX = transform.localScale.x;
 		activeTimer = activeFrames;
 		detectBoxL = GameObject.Find ("LeftDetector").GetComponent<Detector>(); 
 		detectBoxR = GameObject.Find ("RightDetector").GetComponent<Detector> ();
-
+		anim = GetComponent<Animator> ();
 	}
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 
-		sr = GetComponent<SpriteRenderer> ();
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 
 		controls ();
+		anim.SetBool ("Hit", hit);
 		
 	}
 
@@ -59,7 +59,6 @@ public class PassyPlayerControls : MonoBehaviour {
 		{
 			playerActive = false;
 			activeTimer = activeFrames;
-			sr.sprite = sprites [0];
 		}
 	}
 
@@ -68,28 +67,32 @@ public class PassyPlayerControls : MonoBehaviour {
 		playerActive = true;
 		if (dir == 1) 
 		{
-			sr.sprite = sprites [1];
-			if (detectBoxR.NPC != null) 
-			{
+			anim.SetTrigger ("Right");
+			if (detectBoxR.NPC != null) {
 				PassyNPC p = detectBoxR.NPC.GetComponent<PassyNPC> ();
-				if (p.active) 
-				{
+				if (p.active) {
 					p.gotFlier (true);
-					sr.sprite = sprites [2];
+					hit = true;
+				} else {
+					hit = false;
 				}
+			} else {
+				hit = false;
 			}
 		}
 		if (dir == -1) 
 		{
-			sr.sprite = sprites [3];
-			if (detectBoxL.NPC != null) 
-			{
+			anim.SetTrigger ("Left");
+			if (detectBoxL.NPC != null) {
 				PassyNPC p = detectBoxL.NPC.GetComponent<PassyNPC> ();
-				if (p.active) 
-				{
+				if (p.active) {
 					p.gotFlier (true);
-					sr.sprite = sprites [4];
+					hit = true;
+				} else {
+					hit = false;
 				}
+			} else {
+				hit = false;
 			}
 		}
 	}
