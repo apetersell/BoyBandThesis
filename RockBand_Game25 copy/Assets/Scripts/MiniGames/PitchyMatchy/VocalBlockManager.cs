@@ -15,7 +15,6 @@ public class VocalBlockManager : Singleton<VocalBlockManager> {
 	public float BeginPosX, EndPosX;//Transform beginTransform, EndTransfrom;
 	public float speed = 4f;
 	public GameObject blockUnit;
-
 	public int unitNumOneTime = 5;
 
 	// Use this for initialization
