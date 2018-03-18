@@ -2441,7 +2441,7 @@ MonoBehaviour:
   SOWstring: 
   isStopped: 0
   performance: 0
-  performanceDates: 04000000
+  performanceDates: 
   numberOfFansRequired: 1000
   dayIndex: 0
   testText: {fileID: 4900000, guid: e58626cad57584fc185619ea2553dabd, type: 3}
@@ -3045,7 +3045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layersDeep: 0
   fading: 0
-  endDate: 6
+  endDate: 4
   dialogueContainer: {fileID: 177895917}
   lineText: {fileID: 749774901}
   continuePrompt: {fileID: 526324874}

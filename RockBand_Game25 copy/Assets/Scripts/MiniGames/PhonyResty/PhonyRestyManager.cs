@@ -18,17 +18,20 @@ public class PhonyRestyManager : MonoBehaviour {
 	public GameObject hattyCatchy; 
 	public bool testing;
 	float testTimer;
+	Animator anim;
 
 	// Use this for initialization
 	void Start () 
 	{
 		globe = (GlobalManager)FindObjectOfType(typeof(GlobalManager));
 		thumbPositions [0] = thumb.transform.localPosition;
+		anim = GameObject.Find ("Aig-mini-rest").GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		anim.SetBool ("Frustrated", frustrated);
 		chooseGame ();
 		display.text = "Stress: " + Mathf.Round(globe.Stress).ToString();
 		thumbPlacement ();
@@ -91,9 +94,17 @@ public class PhonyRestyManager : MonoBehaviour {
 			}
 		}
 	}
-	public void frustrate ()
+	public void frustrate (int sent)
 	{
 		GameObject effect = Instantiate (frustrationEffect) as GameObject;
+		FrustrationEffect fe = effect.GetComponent<FrustrationEffect> ();
+		Animator animeEffect = effect.transform.GetChild (0).GetComponent<Animator> ();
+		anim.SetTrigger ("Miss");
+		if (sent == 0) 
+		{
+			anim.SetBool ("Drop", true);
+		}
+		fe.spriteIndex = sent;
 		frustrated = true;
 		frustrationTimer = 0;
 	}

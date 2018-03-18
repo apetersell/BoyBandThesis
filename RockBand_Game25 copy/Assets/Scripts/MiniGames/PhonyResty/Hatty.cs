@@ -20,7 +20,7 @@ public class Hatty : MonoBehaviour {
 			GameObject.Find ("HattyPlayer").GetComponent<HattyPlayer> ().changeFace (2);
 			GameObject.Find ("HattyPlayer").GetComponent<HattyPlayer> ().currentHat = null;
 			GameObject.Find ("HattyPlayer").GetComponent<HattyPlayer> ().score = 0;
-			prm.frustrate ();
+			prm.frustrate (0);
 			Destroy (this.gameObject);
 		}
 	}		

@@ -143,7 +143,7 @@ public class TextingManager : MonoBehaviour {
 				} else {
 					newTP.content = rt.wrongContent;
 					globe.jPeRelationship -= friendshipMod;
-					prm.frustrate ();
+					prm.frustrate (1);
 
 				}
 				newTP.owner = rt.sender;
@@ -163,7 +163,7 @@ public class TextingManager : MonoBehaviour {
 				} else {
 					newTP.content = rt.wrongContent;
 					globe.leeRelationship -= friendshipMod;
-					prm.frustrate ();
+					prm.frustrate (2);
 				}
 				newTP.owner = rt.sender;
 				activeTexts.Add (newTP);
