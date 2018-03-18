@@ -226,24 +226,26 @@ public class GameManager : MonoBehaviour {
 
 	void SpeedUp ()
 	{
-		if (gameTimer > firstSpeedUp) {
-			maxTimer = clock.HalfLength();
-		} else if (gameTimer <= firstSpeedUp && gameTimer > secondSpeedUp) {
-			maxTimer = clock.QuarterLength();
-		} else
-		{
-		   maxTimer = clock.MeasureLength();
-		}
-
-		if (gameTimer <= firstSpeedUp + 1 && gameTimer > firstSpeedUp) 
-		{
-			activateSpeedText ();
-		}
-
-		if (gameTimer <= secondSpeedUp + 1 && gameTimer > secondSpeedUp) 
-		{
-			activateSpeedText ();
-		}
+		maxTimer = clock.HalfLength ();
+//		if (gameTimer > firstSpeedUp) {
+//			maxTimer = clock.HalfLength();
+//		} else if (gameTimer <= firstSpeedUp && gameTimer > secondSpeedUp) {
+//			maxTimer = clock.QuarterLength();
+//		} 
+//		else
+//		{
+//		   maxTimer = clock.MeasureLength();
+//		}
+//
+//		if (gameTimer <= firstSpeedUp + 1 && gameTimer > firstSpeedUp) 
+//		{
+//			activateSpeedText ();
+//		}
+//
+//		if (gameTimer <= secondSpeedUp + 1 && gameTimer > secondSpeedUp) 
+//		{
+//			activateSpeedText ();
+//		}
 	}
 
 	void activateSpeedText()

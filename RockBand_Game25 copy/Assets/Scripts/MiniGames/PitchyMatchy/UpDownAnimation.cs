@@ -11,7 +11,7 @@ public class UpDownAnimation : MonoBehaviour
 	bool Up;
 	bool Down;
 	bool coughing;
-	public GameObject[] musicNotes;
+	public Animator [] musicNotes;
 	public AudioClip coughSound; 
 	AudioSource auds;
 
@@ -39,6 +39,11 @@ public class UpDownAnimation : MonoBehaviour
 		} else {
 			Up = false;
 			Down = true;
+		}
+
+		foreach (Animator anim in musicNotes) 
+		{
+			anim.SetBool ("Coughing", coughing);
 		}
 	}
 

@@ -7,6 +7,7 @@ public class BlockUnit : MonoBehaviour {
 	VocalBlockManager vbm;
 	GlobalManager globe;
 	public float pointOfNoReturn = -4.718f; 
+	public bool lookedAt;
 	
 	// Use this for initialization
 	void Start () {
@@ -28,8 +29,12 @@ public class BlockUnit : MonoBehaviour {
 			{
 				if (GetComponentInParent<LineUnit> ().unwinnable == false) 
 				{
-					GameObject.Find ("ScoreManager").GetComponent<ScoreManager> ().scorePoints (false);
-					GameObject.Find ("Aig-mini-vocal").GetComponent<UpDownAnimation> ().doCough ();
+					if (!lookedAt) 
+					{
+						lookedAt = true;
+						GameObject.Find ("ScoreManager").GetComponent<ScoreManager> ().scorePoints (false);
+						GameObject.Find ("Aig-mini-vocal").GetComponent<UpDownAnimation> ().doCough ();
+					}
 				}
 			}
 		}

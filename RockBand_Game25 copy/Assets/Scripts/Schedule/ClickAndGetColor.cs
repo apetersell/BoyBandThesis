@@ -67,7 +67,7 @@ public class ClickAndGetColor : MonoBehaviour,IPointerClickHandler,IPointerEnter
 	void Start () {
 		isTweenForward = isTweenBack = false;
 		originalScale = transform.localScale;
-		buttons = new ClickAndGetColor[6];
+		buttons = new ClickAndGetColor[3];
 		ClickAndGetColor[] cagc = FindObjectsOfType(typeof(ClickAndGetColor)) as ClickAndGetColor[];
 		int i = 0;
 		foreach(ClickAndGetColor c in cagc){

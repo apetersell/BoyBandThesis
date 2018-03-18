@@ -23,7 +23,7 @@ public class PhonyRestyManager : MonoBehaviour {
 	void Start () 
 	{
 		globe = (GlobalManager)FindObjectOfType(typeof(GlobalManager));
-		thumbPositions [0] = thumb.transform.position;
+		thumbPositions [0] = thumb.transform.localPosition;
 	}
 	
 	// Update is called once per frame
@@ -70,11 +70,11 @@ public class PhonyRestyManager : MonoBehaviour {
 	void thumbPlacement ()
 	{
 		if (Input.GetKey (KeyCode.LeftArrow)) {
-			thumb.transform.position = thumbPositions [1];
+			thumb.transform.localPosition = thumbPositions [1];
 		} else if (Input.GetKey (KeyCode.RightArrow)) {
-			thumb.transform.position = thumbPositions [2];
+			thumb.transform.localPosition = thumbPositions [2];
 		} else {
-			thumb.transform.position = thumbPositions [0];
+			thumb.transform.localPosition = thumbPositions [0];
 		}
 	}
 

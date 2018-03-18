@@ -21,7 +21,7 @@ public class LineUnit : MonoBehaviour {
 		scored = GameObject.Find ("Point").GetComponent<SpriteRenderer> ().color;
 		sm = GameObject.Find ("ScoreManager").GetComponent<ScoreManager> ();
 		auds = GameObject.Find ("ScoreManager").GetComponent<AudioSource> ();
-		he = GameObject.Find ("HitEffect").GetComponent<HitEffect> ();
+//		he = GameObject.Find ("HitEffect").GetComponent<HitEffect> ();
 		globe = GameObject.Find ("GlobalStats").GetComponent<GlobalManager> ();
 	}
 	
