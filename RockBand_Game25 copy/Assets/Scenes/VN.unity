@@ -2314,9 +2314,11 @@ MonoBehaviour:
   selectedTrack: {fileID: 8300000, guid: 4a1c99c3af6484c1ea9dad6a497a9c72, type: 3}
   VNMusic: {fileID: 8300000, guid: 718c10f38505d4e969a148d8887f9160, type: 3}
   miniGameSongs:
-  - {fileID: 8300000, guid: 54657058786d50443ab918e17ca8fd6c, type: 3}
-  - {fileID: 8300000, guid: a99b59b55d1605844858e8773d61df71, type: 3}
-  - {fileID: 8300000, guid: 5bd4393ac20fb464eaa0a18eecf71edb, type: 3}
+  - {fileID: 8300000, guid: 3de03b6a313fe4440aa45112e4fbfaa1, type: 3}
+  - {fileID: 8300000, guid: a8f0f695583234f4a8260d406b823235, type: 3}
+  - {fileID: 8300000, guid: 284de59956b1846e89e93f2479cfdbea, type: 3}
+  - {fileID: 8300000, guid: ec35b9d2e30ad41078024e1c9ec27f1d, type: 3}
+  - {fileID: 8300000, guid: 7bf795580fd7748a49e647f2884418b9, type: 3}
 --- !u!82 &1092553439
 AudioSource:
   m_ObjectHideFlags: 0

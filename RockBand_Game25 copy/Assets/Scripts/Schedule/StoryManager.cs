@@ -12,9 +12,9 @@ public class StoryManager : MonoBehaviour {
 	public static float jPeRelationship;
 	public static float leeRelationship;
 
-	public static float statMeterFull = 500f;
+	public static float statMeterFull = 1000f;
 	public static float statHighThresh1 = 500f;
-	public static float statLowThresh1 = 200;
+	public static float statLowThresh1 = 500;
 	public static float fanMileStone1 = 5000;
 
 	//Keeps track of all the scenes we've already visited;
@@ -99,7 +99,7 @@ public class StoryManager : MonoBehaviour {
 
 		if (day == "Day3Rounded") 
 		{
-			if (danceScore + vocalScore + prScore < 300) {
+			if (danceScore + vocalScore + prScore < 600) {
 				result = "Bad";
 			} else {
 				result = "Good";
@@ -107,7 +107,7 @@ public class StoryManager : MonoBehaviour {
 		}
 		if (day == "Day3PR") 
 		{
-			if (prScore < 350) {
+			if (prScore < 500) {
 				result = "Bad";
 			} else {
 				result = "Good";
@@ -115,7 +115,7 @@ public class StoryManager : MonoBehaviour {
 		}
 		if (day == "Day3Dance") 
 		{
-			if (danceScore > 350) {
+			if (danceScore < 500) {
 				result = "Bad";
 			} else {
 				result = "Good";
@@ -128,7 +128,7 @@ public class StoryManager : MonoBehaviour {
 
 		if (day == "Day4") 
 		{
-			float average = 75;
+			float average = 100;
 			if (layer == 3) 
 			{
 				if (danceScore + vocalScore + prScore <= statLowThresh1) {
